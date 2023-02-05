@@ -1,15 +1,16 @@
 import {
-  Body,
   Controller,
   Delete,
   Get,
   HttpCode,
   HttpStatus,
   Param,
+  ParseUUIDPipe,
   Post,
-} from '@nestjs/common';
-import { ArtistService } from './artist/artist.service';
-import { FavoritesService } from './favorites.service';
+  Req,
+} from '@nestjs/common'
+import { FavoritesService } from './favorites.service'
+import { Request } from 'express'
 
 @Controller('favs')
 export class FavoritesController {
@@ -17,29 +18,48 @@ export class FavoritesController {
 
   @Get()
   async getAll() {
-    return this.favoriteService.getAll();
-  }
-
-  // @Post()
-  // @HttpCode(HttpStatus.CREATED)
-  // addTracks(@Body() addTracks: TrackEvent) {
-  // 	return this.favoriteService.create(addTracks)
-  // }
-
-  @Get('artist')
-  async getArtist() {
-    return this.favoriteService.getArtist();
+    return this.favoriteService.getAll()
   }
 
   @Post('artist/:id')
   @HttpCode(HttpStatus.CREATED)
-  addArtist(@Param('id') id: string) {
-    return this.favoriteService.addArtist(id);
+  addArtist(@Req() req: Request, @Param('id', ParseUUIDPipe) id: string) {
+    const path = req.route.path.split('/')
+    return this.favoriteService.add(id, path[2])
   }
 
   @Delete('artist/:id')
+  @HttpCode(HttpStatus.NO_CONTENT)
+  deleteArtist(@Req() req: Request, @Param('id', ParseUUIDPipe) id: string) {
+    const path = req.route.path.split('/')
+    return this.favoriteService.delete(id, path[2])
+  }
+
+  @Post('album/:id')
   @HttpCode(HttpStatus.CREATED)
-  deleteArtist(@Param('id') id: string) {
-    return this.favoriteService.deleteArtist(id);
+  addAlbum(@Req() req: Request, @Param('id', ParseUUIDPipe) id: string) {
+    const path = req.route.path.split('/')
+    return this.favoriteService.add(id, path[2])
+  }
+
+  @Delete('album/:id')
+  @HttpCode(HttpStatus.NO_CONTENT)
+  deleteAlbum(@Req() req: Request, @Param('id', ParseUUIDPipe) id: string) {
+    const path = req.route.path.split('/')
+    return this.favoriteService.delete(id, path[2])
+  }
+
+  @Post('track/:id')
+  @HttpCode(HttpStatus.CREATED)
+  addTrack(@Req() req: Request, @Param('id', ParseUUIDPipe) id: string) {
+    const path = req.route.path.split('/')
+    return this.favoriteService.add(id, path[2])
+  }
+
+  @Delete('track/:id')
+  @HttpCode(HttpStatus.NO_CONTENT)
+  deleteTrack(@Req() req: Request, @Param('id', ParseUUIDPipe) id: string) {
+    const path = req.route.path.split('/')
+    return this.favoriteService.delete(id, path[2])
   }
 }
