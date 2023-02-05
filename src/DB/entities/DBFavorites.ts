@@ -1,64 +1,62 @@
-import { DBEntityFav } from './DBEntity';
-
 export type FavoritesEntity = {
-  artists: string[]; // favorite artists ids
-  albums: string[]; // favorite albums ids
-  tracks: string[]; // favorite tracks ids
-};
+  artists: string[] // favorite artists ids
+  albums: string[] // favorite albums ids
+  tracks: string[] // favorite tracks ids
+}
 
 export default class DBFavorites {
   favorites: FavoritesEntity = {
     albums: [],
     artists: [],
     tracks: [],
-  };
-
-  constructor() {
-    // this.favorites.albums = []
-    // this.favorites.artists = []
-    // this.favorites.tracks = []
-    this.getFav = this.getFav.bind(this);
-    this.addArt = this.addArt.bind(this);
   }
 
-  async getFavorites() {
-    console.log('📢 [DBFavorites.ts:23]', this.favorites);
-    return this.favorites;
+  getFavorites = () => {
+    return this.favorites
   }
 
-  async addArtist(id: string) {
-    this.favorites.artists.push(id);
-    return this.favorites.artists;
+  add = (id: string, type: string) => {
+    switch (type) {
+      case 'artist': {
+        return this.favorites.artists.push(id)
+      }
+      case 'album': {
+        return this.favorites.albums.push(id)
+      }
+      case 'track': {
+        return this.favorites.tracks.push(id)
+      }
+    }
   }
 
-  getFav = () => {
-    console.log('📢 [DBFavorites.ts:23]', this.favorites);
-    return this.favorites;
-  };
+  delete = (id: string, type: string) => {
+    switch (type) {
+      case 'artist': {
+        const arr: string[] = this.favorites.artists.filter((el) => el !== id)
+        return (this.favorites.artists = arr)
+      }
+      case 'album': {
+        const arr: string[] = this.favorites.albums.filter((el) => el !== id)
+        return (this.favorites.albums = arr)
+      }
+      case 'track': {
+        const arr: string[] = this.favorites.tracks.filter((el) => el !== id)
+        return (this.favorites.tracks = arr)
+      }
+    }
+  }
 
-  addArt = (id: string) => {
-    this.favorites.artists.push(id);
-
-    console.log('📌:ADD!!!!!======>>>', this.favorites);
-  };
-
-  async deleteArtist(id: string) {
-    const arr: string[] = this.favorites.artists.filter(
-      (artId) => artId !== id,
-    );
-    return (this.favorites.artists = arr);
+  find = (id: string, type: 'artist' | 'album' | 'track') => {
+    switch (type) {
+      case 'artist': {
+        return this.favorites.artists.indexOf(id)
+      }
+      case 'album': {
+        return this.favorites.albums.indexOf(id)
+      }
+      case 'track': {
+        return this.favorites.tracks.indexOf(id)
+      }
+    }
   }
 }
-
-// export type CreateFavoritesDTO = Partial<FavoritesEntity>
-
-// export default class DBFavorites extends DBEntityFav<
-// 	FavoritesEntity,
-// 	CreateFavoritesDTO
-// > {
-// 	async create(dto: FavoritesEntity) {
-// 		console.log('📢 [DBFavorites.ts:25]', this)
-// 		this.entities.push(dto)
-// 		return dto
-// 	}
-// }
