@@ -12,28 +12,28 @@ import {
   UsePipes,
   ValidationPipe,
 } from '@nestjs/common'
-import { TracksService } from './tracks.service'
-import { CreateTrackDto } from './dto/tracks.dto'
+import { ArtistsService } from './artists.service'
+import { CreateArtistDto } from './dto/artists.dto'
 
-@Controller('track')
-export class TracksController {
-  constructor(private readonly trackService: TracksService) {}
+@Controller('artist')
+export class ArtistsController {
+  constructor(private readonly artistService: ArtistsService) {}
 
   @Get()
   async getAll() {
-    return await this.trackService.getAll()
+    return await this.artistService.getAll()
   }
 
   @Get(':id')
   @HttpCode(HttpStatus.OK)
   getOne(@Param('id', ParseUUIDPipe) id: string) {
-    return this.trackService.getOne(id)
+    return this.artistService.getOne(id)
   }
 
   @UsePipes(ValidationPipe)
   @Post()
-  create(@Body() CreateTrackDto: CreateTrackDto) {
-    return this.trackService.create(CreateTrackDto)
+  create(@Body() CreateArtistDto: CreateArtistDto) {
+    return this.artistService.create(CreateArtistDto)
   }
 
   @UsePipes(ValidationPipe)
@@ -41,14 +41,14 @@ export class TracksController {
   @HttpCode(HttpStatus.OK)
   update(
     @Param('id', ParseUUIDPipe) id: string,
-    @Body() ChangeTrack: CreateTrackDto,
+    @Body() ChangeTrack: CreateArtistDto,
   ) {
-    return this.trackService.update(id, ChangeTrack)
+    return this.artistService.update(id, ChangeTrack)
   }
 
   @Delete(':id')
   @HttpCode(HttpStatus.NO_CONTENT)
   delete(@Param('id', ParseUUIDPipe) id: string) {
-    return this.trackService.delete(id)
+    return this.artistService.delete(id)
   }
 }

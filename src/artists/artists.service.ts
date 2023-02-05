@@ -1,73 +1,103 @@
 import * as crypto from 'node:crypto'
-import { Injectable, NotFoundException } from '@nestjs/common'
+import {
+  forwardRef,
+  Inject,
+  Injectable,
+  NotFoundException,
+} from '@nestjs/common'
 import { DB } from 'src/DB/db.service'
-import { TracksEntity } from 'src/DB/entities/DBTracks'
-import { CreateTrackDto, TrackDto } from './dto/tracks.dto'
+import { ArtistDto, CreateArtistDto } from './dto/artists.dto'
+import { ArtistEntity } from '../DB/entities/DBArtists'
+import { FavoritesService } from '../favorites/favorites.service'
+import { TracksService } from '../tracks/tracks.service'
 
 @Injectable()
-export class TracksService {
-  constructor(private db: DB) {}
+export class ArtistsService {
+  private static db = new DB()
+
+  constructor(
+    @Inject(forwardRef(() => FavoritesService))
+    private favoriteService: FavoritesService,
+    @Inject(forwardRef(() => TracksService))
+    private tracksService: TracksService,
+  ) {}
 
   async getAll() {
-    const tracksAll = await this.db.tracks.findMany()
-    const arr: CreateTrackDto[] = []
-    tracksAll.forEach((track) => {
-      arr.push(new TrackDto(track))
+    const artistsAll = await ArtistsService.db.artist.findMany()
+    const arr: CreateArtistDto[] = []
+    artistsAll.forEach((track) => {
+      arr.push(new ArtistDto(track))
     })
     return arr
   }
 
   async getOne(id) {
-    const track = await this.db.tracks.findOne({ key: 'id', equals: id })
-    if (track) {
-      return track
+    const artist = await ArtistsService.db.artist.findOne({
+      key: 'id',
+      equals: id,
+    })
+    if (artist) {
+      return artist
     } else {
-      throw new NotFoundException('Track not found')
+      throw new NotFoundException('Artist not found')
     }
   }
 
-  create(tracks: CreateTrackDto) {
-    const track = new TrackDto({
-      id: crypto.randomUUID(),
-      name: tracks.name,
-      duration: tracks.duration,
-      artistId: tracks.artistId || null,
-      albumId: tracks.albumId || null,
+  async getOneForFav(id) {
+    return await ArtistsService.db.artist.findOne({
+      key: 'id',
+      equals: id,
     })
-    this.db.tracks.create(track as TracksEntity)
-    return track
   }
 
-  async update(id: string, trackData: CreateTrackDto) {
-    const track: TracksEntity = await this.db.tracks.findOne({
+  create(data: CreateArtistDto) {
+    const artist = new ArtistDto({
+      id: crypto.randomUUID(),
+      name: data.name,
+      grammy: data.grammy,
+    })
+    ArtistsService.db.artist.create(artist as ArtistEntity)
+    return artist
+  }
+
+  async update(id: string, data: CreateArtistDto) {
+    const artist: ArtistEntity = await ArtistsService.db.artist.findOne({
       key: 'id',
       equals: id,
     })
 
-    if (!track) {
-      throw new NotFoundException('Track not found')
+    if (!artist) {
+      throw new NotFoundException('Artist not found')
     } else {
-      const newTrack = new TrackDto({
-        id: track.id,
-        name: trackData.name,
-        duration: trackData.duration,
-        artistId: trackData.artistId || null,
-        albumId: trackData.albumId || null,
+      const newArtist = new ArtistDto({
+        id: artist.id,
+        name: data.name,
+        grammy: data.grammy,
       })
-      return await this.db.tracks.change(id, newTrack as TracksEntity)
+      return await ArtistsService.db.artist.change(
+        id,
+        newArtist as ArtistEntity,
+      )
     }
   }
 
   async delete(id: string) {
-    const track: TracksEntity = await this.db.tracks.findOne({
+    const artist: ArtistEntity = await ArtistsService.db.artist.findOne({
       key: 'id',
       equals: id as unknown as string,
     })
 
-    if (track) {
-      return await this.db.tracks.delete(id)
+    if (artist) {
+      const checkFav = await this.favoriteService.check(id, 'artist')
+      if (checkFav !== -1) {
+        this.favoriteService.delete(id, 'artist')
+      }
+
+      await this.tracksService.getManyAndDelete(id, 'artistId')
+
+      return await ArtistsService.db.artist.delete(id)
     } else {
-      throw new NotFoundException('Track not found')
+      throw new NotFoundException('Artist not found')
     }
   }
 }

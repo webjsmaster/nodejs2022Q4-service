@@ -1,26 +1,21 @@
-import { IsInt, IsNotEmpty, IsString } from 'class-validator'
+import { IsBoolean, IsNotEmpty, IsString } from 'class-validator'
 
-export class TrackDto {
-  readonly id: string // uuid v4
-  readonly name: string
-  readonly artistId: string | null // refers to Artist
-  readonly albumId: string | null // refers to Album
-  readonly duration: number // integer number
+export class ArtistDto {
+  id: string // uuid v4
+  name: string
+  grammy: boolean
 
-  constructor(partial: Partial<TrackDto>) {
+  constructor(partial: Partial<ArtistDto>) {
     Object.assign(this, partial)
   }
 }
 
-export class CreateTrackDto {
+export class CreateArtistDto {
   @IsString()
   @IsNotEmpty()
   readonly name: string
 
-  @IsInt()
+  @IsBoolean()
   @IsNotEmpty()
-  readonly duration: number
-
-  readonly artistId: string | null // refers to Artist
-  readonly albumId: string | null // refers to Album
+  readonly grammy: boolean
 }
