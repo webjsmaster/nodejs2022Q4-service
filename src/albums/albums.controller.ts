@@ -12,28 +12,28 @@ import {
   UsePipes,
   ValidationPipe,
 } from '@nestjs/common'
-import { TracksService } from './tracks.service'
-import { CreateTrackDto } from './dto/tracks.dto'
+import { AlbumsService } from './albums.service'
+import { CreateAlbumDto } from './dto/albums.dto'
 
-@Controller('track')
-export class TracksController {
-  constructor(private readonly trackService: TracksService) {}
+@Controller('album')
+export class AlbumsController {
+  constructor(private readonly albumService: AlbumsService) {}
 
   @Get()
   async getAll() {
-    return await this.trackService.getAll()
+    return await this.albumService.getAll()
   }
 
   @Get(':id')
   @HttpCode(HttpStatus.OK)
   getOne(@Param('id', ParseUUIDPipe) id: string) {
-    return this.trackService.getOne(id)
+    return this.albumService.getOne(id)
   }
 
   @UsePipes(ValidationPipe)
   @Post()
-  create(@Body() CreateTrackDto: CreateTrackDto) {
-    return this.trackService.create(CreateTrackDto)
+  create(@Body() CreateTrackDto: CreateAlbumDto) {
+    return this.albumService.create(CreateTrackDto)
   }
 
   @UsePipes(ValidationPipe)
@@ -41,14 +41,14 @@ export class TracksController {
   @HttpCode(HttpStatus.OK)
   update(
     @Param('id', ParseUUIDPipe) id: string,
-    @Body() ChangeTrack: CreateTrackDto,
+    @Body() ChangeAlbum: CreateAlbumDto,
   ) {
-    return this.trackService.update(id, ChangeTrack)
+    return this.albumService.update(id, ChangeAlbum)
   }
 
   @Delete(':id')
   @HttpCode(HttpStatus.NO_CONTENT)
   delete(@Param('id', ParseUUIDPipe) id: string) {
-    return this.trackService.delete(id)
+    return this.albumService.delete(id)
   }
 }

@@ -1,73 +1,101 @@
 import * as crypto from 'node:crypto'
-import { Injectable, NotFoundException } from '@nestjs/common'
+import {
+  forwardRef,
+  Inject,
+  Injectable,
+  NotFoundException,
+} from '@nestjs/common'
 import { DB } from 'src/DB/db.service'
-import { TracksEntity } from 'src/DB/entities/DBTracks'
-import { CreateTrackDto, TrackDto } from './dto/tracks.dto'
+import { AlbumDto, CreateAlbumDto } from './dto/albums.dto'
+import { AlbumEntity } from '../DB/entities/DBAlbum'
+import { FavoritesService } from '../favorites/favorites.service'
+import { TracksService } from '../tracks/tracks.service'
 
 @Injectable()
-export class TracksService {
-  constructor(private db: DB) {}
+export class AlbumsService {
+  private static db = new DB()
+
+  constructor(
+    @Inject(forwardRef(() => FavoritesService))
+    private favoriteService: FavoritesService,
+    @Inject(forwardRef(() => TracksService))
+    private tracksService: TracksService,
+  ) {}
 
   async getAll() {
-    const tracksAll = await this.db.tracks.findMany()
-    const arr: CreateTrackDto[] = []
-    tracksAll.forEach((track) => {
-      arr.push(new TrackDto(track))
+    const albumAll = await AlbumsService.db.album.findMany()
+    const arr: CreateAlbumDto[] = []
+    albumAll.forEach((track) => {
+      arr.push(new AlbumDto(track))
     })
     return arr
   }
 
   async getOne(id) {
-    const track = await this.db.tracks.findOne({ key: 'id', equals: id })
-    if (track) {
-      return track
-    } else {
-      throw new NotFoundException('Track not found')
-    }
-  }
-
-  create(tracks: CreateTrackDto) {
-    const track = new TrackDto({
-      id: crypto.randomUUID(),
-      name: tracks.name,
-      duration: tracks.duration,
-      artistId: tracks.artistId || null,
-      albumId: tracks.albumId || null,
-    })
-    this.db.tracks.create(track as TracksEntity)
-    return track
-  }
-
-  async update(id: string, trackData: CreateTrackDto) {
-    const track: TracksEntity = await this.db.tracks.findOne({
+    const album = await AlbumsService.db.album.findOne({
       key: 'id',
       equals: id,
     })
 
-    if (!track) {
-      throw new NotFoundException('Track not found')
+    if (album) {
+      return album
     } else {
-      const newTrack = new TrackDto({
-        id: track.id,
-        name: trackData.name,
-        duration: trackData.duration,
-        artistId: trackData.artistId || null,
-        albumId: trackData.albumId || null,
+      throw new NotFoundException('Album not found')
+    }
+  }
+
+  async getOneForFav(id) {
+    return await AlbumsService.db.album.findOne({
+      key: 'id',
+      equals: id,
+    })
+  }
+
+  create(tracks: CreateAlbumDto) {
+    const album = new AlbumDto({
+      id: crypto.randomUUID(),
+      name: tracks.name,
+      year: tracks.year,
+      artistId: tracks.artistId || null,
+    })
+    return AlbumsService.db.album.create(album as AlbumEntity)
+  }
+
+  async update(id: string, data: CreateAlbumDto) {
+    const album: AlbumEntity = await AlbumsService.db.album.findOne({
+      key: 'id',
+      equals: id,
+    })
+
+    if (!album) {
+      throw new NotFoundException('Album not found')
+    } else {
+      const newAlbum = new AlbumDto({
+        id: album.id,
+        name: data.name,
+        year: data.year,
+        artistId: data.artistId || null,
       })
-      return await this.db.tracks.change(id, newTrack as TracksEntity)
+      return await AlbumsService.db.album.change(id, newAlbum as AlbumEntity)
     }
   }
 
   async delete(id: string) {
-    const track: TracksEntity = await this.db.tracks.findOne({
+    const album: AlbumEntity = await AlbumsService.db.album.findOne({
       key: 'id',
-      equals: id as unknown as string,
+      equals: id,
     })
 
-    if (track) {
-      return await this.db.tracks.delete(id)
+    if (album) {
+      const checkFav = await this.favoriteService.check(id, 'album')
+      if (checkFav !== -1) {
+        this.favoriteService.delete(id, 'album')
+      }
+      await this.tracksService.getManyAndDelete(id, 'albumId')
+      await AlbumsService.db.album.delete(id)
+      return null
     } else {
-      throw new NotFoundException('Track not found')
+      throw new NotFoundException('Album not found')
     }
   }
 }
