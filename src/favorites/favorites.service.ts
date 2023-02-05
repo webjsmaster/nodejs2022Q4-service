@@ -69,8 +69,6 @@ export class FavoritesService {
       }
     }
 
-    console.log('📌:FIND ONE', findOne)
-
     const check = FavoritesService.db.favorites.find(id, type)
 
     if (check !== -1) {
