@@ -1,35 +1,26 @@
-import { Exclude } from 'class-transformer';
+import { IsInt, IsNotEmpty, IsString } from 'class-validator'
 
-export class CreateTrackDto {
-  readonly id?: string; // uuid v4
-  readonly name: string;
-  //readonly artistId: string | null // refers to Artist
-  readonly albumId: string | null; // refers to Album
-  readonly duration: number; // integer number
+export class TrackDto {
+  readonly id: string // uuid v4
+  readonly name: string
+  readonly artistId: string | null // refers to Artist
+  readonly albumId: string | null // refers to Album
+  readonly duration: number // integer number
 
-  @Exclude()
-  readonly artistId: string;
-
-  constructor(partial: Partial<CreateTrackDto>) {
-    Object.assign(this, partial);
+  constructor(partial: Partial<TrackDto>) {
+    Object.assign(this, partial)
   }
 }
 
-// export class TracksDto {
-// 	constructor(private Tracks: CreateTrackDto) {}
-// }
+export class CreateTrackDto {
+  @IsString()
+  @IsNotEmpty()
+  readonly name: string
 
-// import { Exclude } from 'class-transformer'
+  @IsInt()
+  @IsNotEmpty()
+  readonly duration: number
 
-// export class TrackEntity {
-// 	id: string
-// 	name: string
-// 	duration: string
-
-// 	@Exclude()
-// 	artistId: string
-
-// 	constructor(partial: Partial<TrackEntity>) {
-// 		Object.assign(this, partial)
-// 	}
-// }
+  readonly artistId: string | null // refers to Artist
+  readonly albumId: string | null // refers to Album
+}
