@@ -1,6 +1,7 @@
+version: '3.9'
 services:
   db:
-    container_name: lesson
+    container_name: db_container
     image: postgres:15.1-alpine
     restart: always
     environment:
@@ -10,4 +11,38 @@ services:
     volumes:
       - ./pgdata:/var/lib/postgresql/data
     ports:
-      - ${TYPEORM_PORT}:${TYPEORM_PORT_POSTGRES}
+      - ${TYPEORM_PORT_POSTGRES}:${TYPEORM_PORT_POSTGRES}
+    networks:
+      - app_bridge
+  app:
+    image: webjsmaster/app_image
+    container_name: app_container
+    restart: always
+    build: .
+    ports:
+      - ${API_PORT}:${API_PORT}
+    env_file: .env
+    environment:
+      - API_PORT=${API_PORT}
+      - API_HOST=${API_HOST}
+      - TYPEORM_CONNECTION=${TYPEORM_CONNECTION}
+      - TYPEORM_USERNAME=${TYPEORM_USERNAME}
+      - TYPEORM_PASSWORD=${TYPEORM_PASSWORD}
+      - TYPEORM_DATABASE=${TYPEORM_DATABASE}
+      - TYPEORM_PORT=${TYPEORM_PORT_POSTGRES}
+      - TYPEORM_HOST=db
+    depends_on:
+      - db
+    volumes:
+      - ./:/usr/app
+      - /usr/app/node_modules
+    networks:
+      - app_bridge
+volumes:
+  db:
+    driver: local
+    name: 'db'
+networks:
+  app_bridge:
+    name: 'app_bridge'
+    driver: bridge
