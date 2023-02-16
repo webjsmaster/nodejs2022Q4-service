@@ -13,7 +13,7 @@ import {
   ValidationPipe,
 } from '@nestjs/common'
 import { TracksService } from './tracks.service'
-import { CreateTrackDto } from './dto/tracks.dto'
+import { CreateTrackDto } from './dto/create-track.dto'
 
 @Controller('track')
 export class TracksController {

@@ -5,97 +5,64 @@ import {
   Injectable,
   NotFoundException,
 } from '@nestjs/common'
-import { DB } from 'src/DB/db.service'
-import { ArtistDto, CreateArtistDto } from './dto/artists.dto'
-import { ArtistEntity } from '../DB/entities/DBArtists'
-import { FavoritesService } from '../favorites/favorites.service'
+import { CreateArtistDto } from './dto/create-artist.dto'
+import { InjectRepository } from '@nestjs/typeorm'
+import { ArtistsEntity } from './entity/artists.entity'
+import { DeleteResult, Repository } from 'typeorm'
+import { UpdateArtistDto } from './dto/update-artist.dto'
 import { TracksService } from '../tracks/tracks.service'
 
 @Injectable()
 export class ArtistsService {
-  private static db = new DB()
-
   constructor(
-    @Inject(forwardRef(() => FavoritesService))
-    private favoriteService: FavoritesService,
+    @InjectRepository(ArtistsEntity)
+    private readonly artistRepository: Repository<ArtistsEntity>,
+    // @Inject(forwardRef(() => FavoritesService))
+    // private favoriteService: FavoritesService,
     @Inject(forwardRef(() => TracksService))
     private tracksService: TracksService,
   ) {}
 
-  async getAll() {
-    const artistsAll = await ArtistsService.db.artist.findMany()
-    const arr: CreateArtistDto[] = []
-    artistsAll.forEach((track) => {
-      arr.push(new ArtistDto(track))
-    })
-    return arr
+  async getAll(): Promise<ArtistsEntity[]> {
+    return await this.artistRepository.find()
   }
 
-  async getOne(id) {
-    const artist = await ArtistsService.db.artist.findOne({
-      key: 'id',
-      equals: id,
-    })
-    if (artist) {
-      return artist
+  async getOne(id): Promise<ArtistsEntity> {
+    const user = await this.artistRepository.findOne({ where: { id } })
+    if (user) {
+      return user
     } else {
-      throw new NotFoundException('Artist not found')
+      throw new NotFoundException()
     }
   }
 
-  async getOneForFav(id) {
-    return await ArtistsService.db.artist.findOne({
-      key: 'id',
-      equals: id,
-    })
+  async getOneForFav(id): Promise<ArtistsEntity> {
+    return await this.artistRepository.findOne({ where: { id } })
   }
 
-  create(data: CreateArtistDto) {
-    const artist = new ArtistDto({
+  async create(data: CreateArtistDto): Promise<ArtistsEntity> {
+    const artist = await this.artistRepository.save({
       id: crypto.randomUUID(),
-      name: data.name,
-      grammy: data.grammy,
+      ...data,
     })
-    ArtistsService.db.artist.create(artist as ArtistEntity)
-    return artist
+    return await this.getOne(artist.id)
   }
 
-  async update(id: string, data: CreateArtistDto) {
-    const artist: ArtistEntity = await ArtistsService.db.artist.findOne({
-      key: 'id',
-      equals: id,
-    })
+  async update(id: string, data: UpdateArtistDto): Promise<ArtistsEntity> {
+    const artist = await this.getOne(id)
 
     if (!artist) {
       throw new NotFoundException('Artist not found')
     } else {
-      const newArtist = new ArtistDto({
-        id: artist.id,
-        name: data.name,
-        grammy: data.grammy,
-      })
-      return await ArtistsService.db.artist.change(
-        id,
-        newArtist as ArtistEntity,
-      )
+      await this.artistRepository.update(id, data)
+      return await this.getOne(id)
     }
   }
 
-  async delete(id: string) {
-    const artist: ArtistEntity = await ArtistsService.db.artist.findOne({
-      key: 'id',
-      equals: id as unknown as string,
-    })
-
+  async delete(id: string): Promise<DeleteResult> {
+    const artist = await this.getOne(id)
     if (artist) {
-      const checkFav = await this.favoriteService.check(id, 'artist')
-      if (checkFav !== -1) {
-        this.favoriteService.delete(id, 'artist')
-      }
-
-      await this.tracksService.getManyAndDelete(id, 'artistId')
-
-      return await ArtistsService.db.artist.delete(id)
+      return await this.artistRepository.delete({ id: artist.id })
     } else {
       throw new NotFoundException('Artist not found')
     }

@@ -5,19 +5,13 @@ import {
   NotFoundException,
   UnprocessableEntityException,
 } from '@nestjs/common'
-import { DB } from 'src/DB/db.service'
 import { ArtistsService } from '../artists/artists.service'
-import { ArtistEntity } from '../DB/entities/DBArtists'
-import { AlbumEntity } from '../DB/entities/DBAlbum'
-import { TracksEntity } from '../DB/entities/DBTracks'
 import { AlbumsService } from '../albums/albums.service'
 import { TracksService } from '../tracks/tracks.service'
 import { FavoriteDto } from './dto/favotite.dto'
 
 @Injectable()
 export class FavoritesService {
-  private static db = new DB()
-
   constructor(
     @Inject(forwardRef(() => ArtistsService))
     private artistService: ArtistsService,

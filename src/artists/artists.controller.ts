@@ -13,7 +13,7 @@ import {
   ValidationPipe,
 } from '@nestjs/common'
 import { ArtistsService } from './artists.service'
-import { CreateArtistDto } from './dto/artists.dto'
+import { CreateArtistDto } from './dto/create-artist.dto'
 
 @Controller('artist')
 export class ArtistsController {

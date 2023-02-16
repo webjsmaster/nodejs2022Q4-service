@@ -1,85 +1,61 @@
-import * as crypto from 'node:crypto'
 import {
   ForbiddenException,
   Injectable,
   NotFoundException,
 } from '@nestjs/common'
-import { DB } from 'src/DB/db.service'
-import { UserEntity } from 'src/DB/entities/DBUsers'
-import {
-  CreateUsersDto,
-  FindOneParams,
-  UpdateUserDto,
-  UserDto,
-} from './dto/users.dto'
+import { CreateUsersDto, UpdateUserDto } from './dto/users.dto'
+import { InjectRepository } from '@nestjs/typeorm'
+import { UserEntityPG } from './entity/users.entity'
+import { DeleteResult, Repository } from 'typeorm'
+import * as crypto from 'node:crypto'
 
 @Injectable()
 export class UsersService {
-  private static db = new DB()
+  constructor(
+    @InjectRepository(UserEntityPG)
+    private readonly userRepository: Repository<UserEntityPG>,
+  ) {}
 
-  async getAll() {
-    const users = await UsersService.db.users.findMany()
-    const arr: UserDto[] = []
-    users.forEach((u) => {
-      arr.push(new UserDto(u))
-    })
-    return arr
+  async getAll(): Promise<UserEntityPG[]> {
+    return await this.userRepository.find()
   }
 
-  async getOne(id: FindOneParams) {
-    const user = await UsersService.db.users.findOne({
-      key: 'id',
-      equals: id as unknown as string,
-    })
+  async getOne(id: string): Promise<UserEntityPG> {
+    const user = await this.userRepository.findOne({ where: { id } })
     if (user) {
-      return new UserDto(user)
+      return user
     } else {
       throw new NotFoundException()
     }
   }
 
-  async create(userData: CreateUsersDto) {
-    const date = +new Date()
-    const user = new UserDto({
-      ...userData,
+  async create(userInput: CreateUsersDto): Promise<UserEntityPG> {
+    const user = await this.userRepository.save({
       id: crypto.randomUUID(),
+      ...userInput,
       version: 1,
-      createdAt: date,
-      updatedAt: date,
     })
-    await UsersService.db.users.create(user as UserEntity)
-    return user
+    return await this.getOne(user.id)
   }
 
-  async update(id: string, userData: UpdateUserDto) {
-    const user: UserEntity = await UsersService.db.users.findOne({
-      key: 'id',
-      equals: id,
-    })
-
+  async update(id: string, userInput: UpdateUserDto): Promise<UserEntityPG> {
+    const user = await this.getOne(id)
     if (!user) throw new NotFoundException('User not found')
-
-    if (user && userData.oldPassword === user.password) {
-      const date = +new Date()
-      const newUser = await UsersService.db.users.change(id, {
-        password: userData.newPassword,
+    if (userInput.oldPassword === user.password) {
+      await this.userRepository.update(id, {
+        password: userInput.newPassword,
         version: ++user.version,
-        updatedAt: date,
       })
-      return new UserDto(newUser)
+      return await this.getOne(user.id)
     } else {
       throw new ForbiddenException('Old password is not correct')
     }
   }
 
-  async delete(id: string) {
-    const user: UserEntity = await UsersService.db.users.findOne({
-      key: 'id',
-      equals: id as unknown as string,
-    })
-
+  async delete(id: string): Promise<DeleteResult> {
+    const user: UserEntityPG = await this.getOne(id)
     if (user) {
-      return await UsersService.db.users.delete(id)
+      return await this.userRepository.delete({ id: user.id })
     } else {
       throw new NotFoundException('User not found')
     }
