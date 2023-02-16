@@ -1,15 +1,4 @@
-import { IsInt, IsNotEmpty, IsString } from 'class-validator'
-
-export class AlbumDto {
-  readonly id: string // uuid v4
-  readonly name: string
-  readonly year: number
-  readonly artistId: string | null // refers to Artist
-
-  constructor(partial: Partial<AlbumDto>) {
-    Object.assign(this, partial)
-  }
-}
+import { IsInt, IsNotEmpty, IsString, IsUUID } from 'class-validator'
 
 export class CreateAlbumDto {
   @IsString()
@@ -20,5 +9,6 @@ export class CreateAlbumDto {
   @IsNotEmpty()
   readonly year: number
 
+  @IsUUID()
   readonly artistId: string | null // refers to Artist
 }

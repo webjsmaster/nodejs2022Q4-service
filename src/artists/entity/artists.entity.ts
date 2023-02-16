@@ -1,7 +1,7 @@
 import { Column, Entity } from 'typeorm'
 
-@Entity('tracks')
-export class ArtistsEntity {
+@Entity('artist')
+export class ArtistEntity {
   @Column({ primary: true })
   id: string
 
@@ -11,7 +11,7 @@ export class ArtistsEntity {
   @Column()
   grammy: boolean
 
-  constructor(partial: Partial<ArtistsEntity>) {
+  constructor(partial: Partial<ArtistEntity>) {
     Object.assign(this, partial)
   }
 }

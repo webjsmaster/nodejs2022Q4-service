@@ -2,7 +2,7 @@ import { Column, CreateDateColumn, Entity, UpdateDateColumn } from 'typeorm'
 import { Exclude } from 'class-transformer'
 
 @Entity('users')
-export class UserEntityPG {
+export class UserEntity {
   @Column({ primary: true })
   id: string
 
@@ -22,7 +22,7 @@ export class UserEntityPG {
   @UpdateDateColumn()
   updateAt: Date
 
-  constructor(partial: Partial<UserEntityPG>) {
+  constructor(partial: Partial<UserEntity>) {
     Object.assign(this, partial)
   }
 }

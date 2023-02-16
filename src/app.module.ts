@@ -5,12 +5,16 @@ import { TypeOrmModule } from '@nestjs/typeorm'
 import { ConfigService } from '@nestjs/config/dist'
 import { TracksModule } from './tracks/tracks.module'
 import { ArtistsModule } from './artists/artists.module'
+import { AlbumsModule } from './albums/albums.module'
+import { FavoriteModule } from './favorites/favorite.module'
 
 @Module({
   imports: [
     UsersModule,
     TracksModule,
     ArtistsModule,
+    AlbumsModule,
+    FavoriteModule,
     ConfigModule.forRoot({
       isGlobal: true,
       envFilePath: '.env',

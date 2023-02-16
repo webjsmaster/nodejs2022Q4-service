@@ -5,22 +5,22 @@ import {
 } from '@nestjs/common'
 import { CreateUsersDto, UpdateUserDto } from './dto/users.dto'
 import { InjectRepository } from '@nestjs/typeorm'
-import { UserEntityPG } from './entity/users.entity'
+import { UserEntity } from './entity/users.entity'
 import { DeleteResult, Repository } from 'typeorm'
 import * as crypto from 'node:crypto'
 
 @Injectable()
 export class UsersService {
   constructor(
-    @InjectRepository(UserEntityPG)
-    private readonly userRepository: Repository<UserEntityPG>,
+    @InjectRepository(UserEntity)
+    private readonly userRepository: Repository<UserEntity>,
   ) {}
 
-  async getAll(): Promise<UserEntityPG[]> {
+  async getAll(): Promise<UserEntity[]> {
     return await this.userRepository.find()
   }
 
-  async getOne(id: string): Promise<UserEntityPG> {
+  async getOne(id: string): Promise<UserEntity> {
     const user = await this.userRepository.findOne({ where: { id } })
     if (user) {
       return user
@@ -29,7 +29,7 @@ export class UsersService {
     }
   }
 
-  async create(userInput: CreateUsersDto): Promise<UserEntityPG> {
+  async create(userInput: CreateUsersDto): Promise<UserEntity> {
     const user = await this.userRepository.save({
       id: crypto.randomUUID(),
       ...userInput,
@@ -38,7 +38,7 @@ export class UsersService {
     return await this.getOne(user.id)
   }
 
-  async update(id: string, userInput: UpdateUserDto): Promise<UserEntityPG> {
+  async update(id: string, userInput: UpdateUserDto): Promise<UserEntity> {
     const user = await this.getOne(id)
     if (!user) throw new NotFoundException('User not found')
     if (userInput.oldPassword === user.password) {
@@ -53,7 +53,7 @@ export class UsersService {
   }
 
   async delete(id: string): Promise<DeleteResult> {
-    const user: UserEntityPG = await this.getOne(id)
+    const user: UserEntity = await this.getOne(id)
     if (user) {
       return await this.userRepository.delete({ id: user.id })
     } else {
