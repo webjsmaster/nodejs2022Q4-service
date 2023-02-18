@@ -43,7 +43,9 @@ export class AlbumsService {
   async create(createAlbum: CreateAlbumDto) {
     const album = await this.albumRepository.save({
       id: crypto.randomUUID(),
-      ...createAlbum,
+      name: createAlbum.name,
+      year: createAlbum.year,
+      artistId: createAlbum.artistId || null,
     })
     return await this.getOne(album.id)
   }

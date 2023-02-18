@@ -58,8 +58,6 @@ export class UsersController {
   @Delete(':id')
   @HttpCode(HttpStatus.NO_CONTENT)
   delete(@Param('id', ParseUUIDPipe) id: string) {
-    console.log('📌:')
-
     return this.usersService.delete(id)
   }
 }

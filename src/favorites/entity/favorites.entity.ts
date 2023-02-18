@@ -1,20 +1,34 @@
-import { Column, Entity } from 'typeorm'
+import { Exclude } from 'class-transformer'
+import { Entity, JoinTable, ManyToMany, PrimaryGeneratedColumn } from 'typeorm'
+import { AlbumEntity } from '../../albums/entity/albums.entity'
+import { ArtistEntity } from '../../artists/entity/artists.entity'
+import { TrackEntity } from '../../tracks/entity/tracks.entity'
 
 @Entity('favorite')
 export class FavoritesEntity {
-  @Column({ primary: true })
+  @PrimaryGeneratedColumn('uuid')
+  @Exclude()
   id: string
 
-  @Column('simple-array', { nullable: true })
-  albumsId: string[]
+  @ManyToMany(() => AlbumEntity, {
+    eager: true,
+  })
+  @JoinTable()
+  albums: AlbumEntity[]
 
-  @Column('simple-array', { nullable: true })
-  artistsId: string[]
+  @ManyToMany(() => ArtistEntity, {
+    eager: true,
+  })
+  @JoinTable()
+  artists: ArtistEntity[]
 
-  @Column('simple-array', { nullable: true })
-  tracksId: string[]
+  @ManyToMany(() => TrackEntity, {
+    eager: true,
+  })
+  @JoinTable()
+  tracks: TrackEntity[]
 
-  constructor(partial: Partial<FavoritesEntity>) {
-    Object.assign(this, partial)
-  }
+  // constructor(partial: Partial<FavoritesEntity>) {
+  //   Object.assign(this, partial)
+  // }
 }

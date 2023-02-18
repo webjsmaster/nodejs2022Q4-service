@@ -1,4 +1,5 @@
 import {
+  ClassSerializerInterceptor,
   Controller,
   Delete,
   Get,
@@ -8,6 +9,7 @@ import {
   ParseUUIDPipe,
   Post,
   Req,
+  UseInterceptors,
 } from '@nestjs/common'
 import { FavoritesService } from './favorites.service'
 import { Request } from 'express'
@@ -16,6 +18,7 @@ import { Request } from 'express'
 export class FavoritesController {
   constructor(private readonly favoriteService: FavoritesService) {}
 
+  @UseInterceptors(ClassSerializerInterceptor)
   @Get()
   async getAll() {
     return this.favoriteService.getAll()
