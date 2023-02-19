@@ -2,11 +2,11 @@ import { Module } from '@nestjs/common'
 import { UsersModule } from './users/users.module'
 import { ConfigModule } from '@nestjs/config'
 import { TypeOrmModule } from '@nestjs/typeorm'
-import { ConfigService } from '@nestjs/config/dist'
 import { TracksModule } from './tracks/tracks.module'
 import { ArtistsModule } from './artists/artists.module'
 import { AlbumsModule } from './albums/albums.module'
 import { FavoriteModule } from './favorites/favorite.module'
+import { typeOrmConfig } from './typeorm.config'
 
 @Module({
   imports: [
@@ -19,22 +19,7 @@ import { FavoriteModule } from './favorites/favorite.module'
       isGlobal: true,
       envFilePath: '.env',
     }),
-    TypeOrmModule.forRootAsync({
-      imports: [ConfigModule],
-      inject: [ConfigService],
-      useFactory: async (config: ConfigService) => ({
-        type: config.get<'postgres'>('TYPEORM_CONNECTION'),
-        host: config.get<string>('TYPEORM_HOST'),
-        username: config.get<string>('TYPEORM_USERNAME'),
-        password: config.get<string>('TYPEORM_PASSWORD'),
-        database: config.get<string>('TYPEORM_DATABASE'),
-        port: config.get<number>('TYPEORM_PORT'),
-        entities: [__dirname + 'dist/**/*.entity{.ts,.js}'],
-        synchronize: true,
-        autoLoadEntities: true,
-        logging: true,
-      }),
-    }),
+    TypeOrmModule.forRoot(typeOrmConfig),
   ],
   controllers: [],
   providers: [],

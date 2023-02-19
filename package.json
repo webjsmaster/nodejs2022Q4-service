@@ -13,6 +13,7 @@
     "start:dev": "nodemon --legacy-watch -x ts-node src/main.ts",
     "start:debug": "nest start --debug --watch",
     "start:prod": "node dist/main",
+    "start:migration:dev": "npm run migration:generate && npm run start:dev",
     "docker:build": "docker compose up -d --build",
     "docker:start": "docker compose start",
     "docker:stop": "docker compose stop",
@@ -24,7 +25,11 @@
     "test:auth": "cross-env TEST_MODE=auth jest --config ./test/jest-e2e.json",
     "test:watch": "jest --watch",
     "test:cov": "jest --coverage",
-    "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand"
+    "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
+    "typeorm": "typeorm-ts-node-esm",
+    "migration:create": "npm run build && npm run typeorm migration:create ./src/migrations/migration",
+    "migration:generate": "npm run build && npm run typeorm migration:generate -- -d ./src/data-source.ts ./src/migrations/migration",
+    "migration:run": "npm run build && npm run typeorm migration:run -- -d ./src/data-source.ts"
   },
   "dependencies": {
     "@nestjs/common": "^8.0.0",
@@ -43,7 +48,7 @@
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.2",
     "rxjs": "^7.2.0",
-    "typeorm": "^0.3.12",
+    "typeorm": "^0.3.11",
     "uuid": "^8.3.2"
   },
   "devDependencies": {
