@@ -9,11 +9,13 @@ import {
   ParseUUIDPipe,
   Post,
   Put,
+  Req,
   UsePipes,
   ValidationPipe,
 } from '@nestjs/common'
 import { ArtistsService } from './artists.service'
 import { CreateArtistDto } from './dto/create-artist.dto'
+import { Request } from 'express'
 
 @Controller('artist')
 export class ArtistsController {
@@ -48,7 +50,8 @@ export class ArtistsController {
 
   @Delete(':id')
   @HttpCode(HttpStatus.NO_CONTENT)
-  delete(@Param('id', ParseUUIDPipe) id: string) {
-    return this.artistService.delete(id)
+  delete(@Req() req: Request, @Param('id', ParseUUIDPipe) id: string) {
+    const path = req.route.path.split('/')
+    return this.artistService.delete(id, path[1])
   }
 }

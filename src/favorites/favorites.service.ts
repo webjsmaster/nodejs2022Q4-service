@@ -47,11 +47,7 @@ export class FavoritesService {
         tracks: [],
       })
     } else {
-      return {
-        artists: favs[0].artists.map(({ id }: ArtistEntity) => id),
-        albums: favs[0].albums.map(({ id }: AlbumEntity) => id),
-        tracks: favs[0].tracks.map(({ id }: TrackEntity) => id),
-      }
+      return favs[0]
     }
   }
 

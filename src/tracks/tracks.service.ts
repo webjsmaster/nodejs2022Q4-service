@@ -36,19 +36,13 @@ export class TracksService {
     return await this.trackRepository.findOne({ where: { id } })
   }
 
-  async getManyAndDelete(id: string, type: 'artistId' | 'albumId') {
-    // const tracks = await this.trackRepository.findMany({
-    //   key: type,
-    //   equals: id,
-    // })
-    //
-    // const tracks = await this.trackRepository.find({
-    //   where: { type, id }
-    // })
-    //
-    // tracks.map((track) => {
-    //   TracksService.db.tracks.change(track.id, { ...track, [type]: null })
-    // })
+  async getManyAndDelete(id: string, type: 'artist' | 'album') {
+    const tracks = await this.trackRepository.find({
+      where: { [type + 'Id']: id },
+    })
+    tracks.map((track) => {
+      this.trackRepository.update(track.id, { ...track, [type + 'Id']: null })
+    })
     return { id, type }
   }
 

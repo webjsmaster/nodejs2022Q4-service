@@ -11,6 +11,7 @@ import { ArtistEntity } from './entity/artists.entity'
 import { DeleteResult, Repository } from 'typeorm'
 import { UpdateArtistDto } from './dto/update-artist.dto'
 import { FavoritesService } from '../favorites/favorites.service'
+import { TracksService } from '../tracks/tracks.service'
 
 @Injectable()
 export class ArtistsService {
@@ -18,7 +19,9 @@ export class ArtistsService {
     @InjectRepository(ArtistEntity)
     private readonly artistRepository: Repository<ArtistEntity>,
     @Inject(forwardRef(() => FavoritesService))
-    private favoriteService: FavoritesService, // @Inject(forwardRef(() => TracksService)) // private tracksService: TracksService,
+    private favoriteService: FavoritesService,
+    @Inject(forwardRef(() => TracksService))
+    private tracksService: TracksService,
   ) {}
 
   async getAll(): Promise<ArtistEntity[]> {
@@ -57,9 +60,11 @@ export class ArtistsService {
     }
   }
 
-  async delete(id: string): Promise<DeleteResult> {
+  async delete(id: string, path): Promise<DeleteResult> {
     const artist = await this.getOne(id)
+
     if (artist) {
+      await this.tracksService.getManyAndDelete(id, path)
       return await this.artistRepository.delete({ id: artist.id })
     } else {
       throw new NotFoundException('Artist not found')

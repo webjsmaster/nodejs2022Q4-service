@@ -7,7 +7,6 @@ import { CreateUsersDto, UpdateUserDto } from './dto/users.dto'
 import { InjectRepository } from '@nestjs/typeorm'
 import { UserEntity } from './entity/users.entity'
 import { DeleteResult, Repository } from 'typeorm'
-import * as crypto from 'node:crypto'
 
 @Injectable()
 export class UsersService {
@@ -22,6 +21,7 @@ export class UsersService {
 
   async getOne(id: string): Promise<UserEntity> {
     const user = await this.userRepository.findOne({ where: { id } })
+
     if (user) {
       return user
     } else {
@@ -31,7 +31,6 @@ export class UsersService {
 
   async create(userInput: CreateUsersDto): Promise<UserEntity> {
     const user = await this.userRepository.save({
-      id: crypto.randomUUID(),
       ...userInput,
       version: 1,
     })

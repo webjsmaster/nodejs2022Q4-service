@@ -27,8 +27,4 @@ export class FavoritesEntity {
   })
   @JoinTable()
   tracks: TrackEntity[]
-
-  // constructor(partial: Partial<FavoritesEntity>) {
-  //   Object.assign(this, partial)
-  // }
 }

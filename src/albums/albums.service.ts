@@ -63,9 +63,10 @@ export class AlbumsService {
     }
   }
 
-  async delete(id: string) {
+  async delete(id: string, path) {
     const album = await this.getOne(id)
     if (album) {
+      await this.tracksService.getManyAndDelete(id, path)
       return await this.albumRepository.delete({ id: album.id })
     } else {
       throw new NotFoundException('Album not found')
