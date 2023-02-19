@@ -10,7 +10,8 @@ import { TracksService } from '../tracks/tracks.service'
 import { InjectRepository } from '@nestjs/typeorm'
 import { AlbumEntity } from './entity/albums.entity'
 import { Repository } from 'typeorm'
-import { CreateAlbumDto } from './dto/albums.dto'
+import { CreateAlbumDto } from './dto/create-albums.dto'
+import { UpdateAlbumsDto } from './dto/update-albums.dto'
 
 @Injectable()
 export class AlbumsService {
@@ -50,7 +51,7 @@ export class AlbumsService {
     return await this.getOne(album.id)
   }
 
-  async update(id: string, data: CreateAlbumDto) {
+  async update(id: string, data: UpdateAlbumsDto) {
     const album = await this.albumRepository.findOne({
       where: { id },
     })

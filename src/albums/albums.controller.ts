@@ -14,8 +14,9 @@ import {
   ValidationPipe,
 } from '@nestjs/common'
 import { AlbumsService } from './albums.service'
-import { CreateAlbumDto } from './dto/albums.dto'
+import { CreateAlbumDto } from './dto/create-albums.dto'
 import { Request } from 'express'
+import { UpdateAlbumsDto } from './dto/update-albums.dto'
 
 @Controller('album')
 export class AlbumsController {
@@ -43,7 +44,7 @@ export class AlbumsController {
   @HttpCode(HttpStatus.OK)
   update(
     @Param('id', ParseUUIDPipe) id: string,
-    @Body() ChangeAlbum: CreateAlbumDto,
+    @Body() ChangeAlbum: UpdateAlbumsDto,
   ) {
     return this.albumService.update(id, ChangeAlbum)
   }
