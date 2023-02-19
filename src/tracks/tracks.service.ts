@@ -1,9 +1,8 @@
 import { Injectable, NotFoundException } from '@nestjs/common'
-import { CreateTrackDto } from './dto/create-track.dto'
+import { TrackDto } from './dto/track.dto'
 import { InjectRepository } from '@nestjs/typeorm'
 import { TrackEntity } from './entity/tracks.entity'
 import { Repository } from 'typeorm'
-import { UpdateTrackDto } from './dto/update-track.dto'
 import * as crypto from 'node:crypto'
 import { FavoritesEntity } from '../favorites/entity/favorites.entity'
 
@@ -46,7 +45,7 @@ export class TracksService {
     return { id, type }
   }
 
-  async create(tracks: CreateTrackDto): Promise<TrackEntity> {
+  async create(tracks: TrackDto): Promise<TrackEntity> {
     const track = await this.trackRepository.save({
       id: crypto.randomUUID(),
       name: tracks.name,
@@ -57,7 +56,7 @@ export class TracksService {
     return await this.getOne(track.id)
   }
 
-  async update(id: string, trackData: UpdateTrackDto) {
+  async update(id: string, trackData: TrackDto) {
     const track = await this.trackRepository.findOne({
       where: { id },
     })

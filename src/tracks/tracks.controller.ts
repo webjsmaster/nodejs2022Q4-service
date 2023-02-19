@@ -13,7 +13,7 @@ import {
   ValidationPipe,
 } from '@nestjs/common'
 import { TracksService } from './tracks.service'
-import { CreateTrackDto } from './dto/create-track.dto'
+import { TrackDto } from './dto/track.dto'
 
 @Controller('track')
 export class TracksController {
@@ -32,7 +32,7 @@ export class TracksController {
 
   @UsePipes(ValidationPipe)
   @Post()
-  create(@Body() CreateTrackDto: CreateTrackDto) {
+  create(@Body() CreateTrackDto: TrackDto) {
     return this.trackService.create(CreateTrackDto)
   }
 
@@ -41,7 +41,7 @@ export class TracksController {
   @HttpCode(HttpStatus.OK)
   update(
     @Param('id', ParseUUIDPipe) id: string,
-    @Body() ChangeTrack: CreateTrackDto,
+    @Body() ChangeTrack: TrackDto,
   ) {
     return this.trackService.update(id, ChangeTrack)
   }

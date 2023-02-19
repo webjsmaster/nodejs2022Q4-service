@@ -1,6 +1,6 @@
 import { IsInt, IsNotEmpty, IsString } from 'class-validator'
 
-export class CreateTrackDto {
+export class TrackDto {
   @IsString()
   @IsNotEmpty()
   readonly name: string

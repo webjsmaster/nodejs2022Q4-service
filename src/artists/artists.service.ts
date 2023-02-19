@@ -5,11 +5,10 @@ import {
   Injectable,
   NotFoundException,
 } from '@nestjs/common'
-import { CreateArtistDto } from './dto/create-artist.dto'
+import { ArtistDto } from './dto/artist.dto'
 import { InjectRepository } from '@nestjs/typeorm'
 import { ArtistEntity } from './entity/artists.entity'
 import { DeleteResult, Repository } from 'typeorm'
-import { UpdateArtistDto } from './dto/update-artist.dto'
 import { FavoritesService } from '../favorites/favorites.service'
 import { TracksService } from '../tracks/tracks.service'
 
@@ -41,7 +40,7 @@ export class ArtistsService {
     return await this.artistRepository.findOne({ where: { id } })
   }
 
-  async create(data: CreateArtistDto): Promise<ArtistEntity> {
+  async create(data: ArtistDto): Promise<ArtistEntity> {
     const artist = await this.artistRepository.save({
       id: crypto.randomUUID(),
       ...data,
@@ -49,7 +48,7 @@ export class ArtistsService {
     return await this.getOne(artist.id)
   }
 
-  async update(id: string, data: UpdateArtistDto): Promise<ArtistEntity> {
+  async update(id: string, data: ArtistDto): Promise<ArtistEntity> {
     const artist = await this.getOne(id)
 
     if (!artist) {
