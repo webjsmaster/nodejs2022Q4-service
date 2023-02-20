@@ -12,11 +12,12 @@ import {
   UseInterceptors,
 } from '@nestjs/common'
 import { FavoritesService } from './favorites.service'
-import { Request } from 'express'
+
 
 @Controller('favs')
 export class FavoritesController {
   constructor(private readonly favoriteService: FavoritesService) {}
+
 
   @UseInterceptors(ClassSerializerInterceptor)
   @Get()
@@ -24,45 +25,16 @@ export class FavoritesController {
     return this.favoriteService.getAll()
   }
 
-  @Post('artist/:id')
+  @Post(':path/:id')
   @HttpCode(HttpStatus.CREATED)
-  addArtist(@Req() req: Request, @Param('id', ParseUUIDPipe) id: string) {
-    const path = req.route.path.split('/')
-    return this.favoriteService.add(id, path[2])
+  addArtist(@Param('path') path:  'artist' | 'album' | 'track', @Param('id', ParseUUIDPipe) id: string) {
+    return this.favoriteService.add(id, path)
   }
 
-  @Delete('artist/:id')
+  @Delete(':path/:id')
   @HttpCode(HttpStatus.NO_CONTENT)
-  deleteArtist(@Req() req: Request, @Param('id', ParseUUIDPipe) id: string) {
-    const path = req.route.path.split('/')
-    return this.favoriteService.delete(id, path[2])
+  deleteArtist(@Param('path') path: 'artist' | 'album' | 'track', @Param('id', ParseUUIDPipe) id: string) {
+    return this.favoriteService.delete(id, path)
   }
 
-  @Post('album/:id')
-  @HttpCode(HttpStatus.CREATED)
-  addAlbum(@Req() req: Request, @Param('id', ParseUUIDPipe) id: string) {
-    const path = req.route.path.split('/')
-    return this.favoriteService.add(id, path[2])
-  }
-
-  @Delete('album/:id')
-  @HttpCode(HttpStatus.NO_CONTENT)
-  deleteAlbum(@Req() req: Request, @Param('id', ParseUUIDPipe) id: string) {
-    const path = req.route.path.split('/')
-    return this.favoriteService.delete(id, path[2])
-  }
-
-  @Post('track/:id')
-  @HttpCode(HttpStatus.CREATED)
-  addTrack(@Req() req: Request, @Param('id', ParseUUIDPipe) id: string) {
-    const path = req.route.path.split('/')
-    return this.favoriteService.add(id, path[2])
-  }
-
-  @Delete('track/:id')
-  @HttpCode(HttpStatus.NO_CONTENT)
-  deleteTrack(@Req() req: Request, @Param('id', ParseUUIDPipe) id: string) {
-    const path = req.route.path.split('/')
-    return this.favoriteService.delete(id, path[2])
-  }
 }

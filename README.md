@@ -24,11 +24,12 @@ git clone https://github.com/webjsmaster/nodejs2022Q4-service.git
 [Postman](https://github.com/webjsmaster/nodejs2022Q4-service/blob/development2/Nodejs2022Q4-service.postman_collection.json)
 
 - To deploy the app and the database to docker, run `npm run docker:build`
-- Run `npm run docker:stop` to stop the containers
 - Run `npm run docker:start` to start the containers
+- Run `npm run migration:run` to run migration table for database
 - Run `npm run docker:test` to run the e2e tests inside the docker
 - Run `npm run docker:scan:app` to scan the application for vulnerabilities
 - Run `npm run docker:scan:db` to scan the database for vulnerabilities
+- Run `npm run docker:stop` to stop the containers
 
 - The application is running on port 4000
 - The postgres database is running on port 5432

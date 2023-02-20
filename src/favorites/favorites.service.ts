@@ -41,11 +41,13 @@ export class FavoritesService {
     const favs = await this.favoriteRepository.find()
 
     if (favs.length === 0) {
-      return await this.favoriteRepository.save({
+      await this.favoriteRepository.save({
         artists: [],
         albums: [],
         tracks: [],
       })
+      const favs = await this.favoriteRepository.find()
+      return favs[0]
     } else {
       return favs[0]
     }
@@ -92,8 +94,6 @@ export class FavoritesService {
   async delete(id: string, type: 'artist' | 'album' | 'track') {
     const favs = await this.favoriteRepository.find()
     const exists = await this.doesExist(id, favs[0][type + 's'])
-
-    console.log('📌:', exists)
 
     if (exists) {
       favs[0][type + 's'] = [...favs[0][type + 's']].filter(
