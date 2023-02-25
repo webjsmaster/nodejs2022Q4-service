@@ -1,30 +1,28 @@
-import { request } from './lib';
-import { StatusCodes } from 'http-status-codes';
-import { validate } from 'uuid';
-import {
-  getTokenAndUserId,
-  shouldAuthorizationBeTested,
-  removeTokenUser,
-} from './utils';
-import { artistsRoutes, albumsRoutes, tracksRoutes } from './endpoints';
+import { request } from "./lib";
+import { StatusCodes } from "http-status-codes";
+import { validate } from "uuid";
+import { getTokenAndUserId, removeTokenUser, shouldAuthorizationBeTested } from "./utils";
+
+import { albumsRoutes, artistsRoutes, tracksRoutes } from "./endpoints";
+
 
 const createArtistDto = {
-  name: 'TEST_artist',
-  grammy: true,
+  name: "TEST_artist",
+  grammy: true
 };
 
 // Probability of collisions for UUID is almost zero
-const randomUUID = '0a35dd62-e09f-444b-a628-f4e7c6954f57';
+const randomUUID = "0a35dd62-e09f-444b-a628-f4e7c6954f57";
 
-describe('artist (e2e)', () => {
+describe("artist (e2e)", () => {
   const unauthorizedRequest = request;
-  const commonHeaders = { Accept: 'application/json' };
+  const commonHeaders = { Accept: "application/json" };
   let mockUserId: string | undefined;
 
   beforeAll(async () => {
     if (shouldAuthorizationBeTested) {
       const result = await getTokenAndUserId(unauthorizedRequest);
-      commonHeaders['Authorization'] = result.token;
+      commonHeaders["Authorization"] = result.token;
       mockUserId = result.mockUserId;
     }
   });
@@ -35,13 +33,13 @@ describe('artist (e2e)', () => {
       await removeTokenUser(unauthorizedRequest, mockUserId, commonHeaders);
     }
 
-    if (commonHeaders['Authorization']) {
-      delete commonHeaders['Authorization'];
+    if (commonHeaders["Authorization"]) {
+      delete commonHeaders["Authorization"];
     }
   });
 
-  describe('GET', () => {
-    it('should correctly get all artists', async () => {
+  describe("GET", () => {
+    it("should correctly get all artists", async () => {
       const response = await unauthorizedRequest
         .get(artistsRoutes.getAll)
         .set(commonHeaders);
@@ -50,7 +48,7 @@ describe('artist (e2e)', () => {
       expect(response.body).toBeInstanceOf(Array);
     });
 
-    it('should correctly get artist by id', async () => {
+    it("should correctly get artist by id", async () => {
       const creationResponse = await unauthorizedRequest
         .post(artistsRoutes.create)
         .set(commonHeaders)
@@ -74,9 +72,9 @@ describe('artist (e2e)', () => {
       expect(cleanupResponse.statusCode).toBe(StatusCodes.NO_CONTENT);
     });
 
-    it('should respond with BAD_REQUEST status code in case of invalid id', async () => {
+    it("should respond with BAD_REQUEST status code in case of invalid id", async () => {
       const response = await unauthorizedRequest
-        .get(artistsRoutes.getById('some-invalid-id'))
+        .get(artistsRoutes.getById("some-invalid-id"))
         .set(commonHeaders);
 
       expect(response.status).toBe(StatusCodes.BAD_REQUEST);
@@ -91,8 +89,8 @@ describe('artist (e2e)', () => {
     });
   });
 
-  describe('POST', () => {
-    it('should correctly create artist', async () => {
+  describe("POST", () => {
+    it("should correctly create artist", async () => {
       const response = await unauthorizedRequest
         .post(artistsRoutes.create)
         .set(commonHeaders)
@@ -112,34 +110,34 @@ describe('artist (e2e)', () => {
       expect(cleanupResponse.statusCode).toBe(StatusCodes.NO_CONTENT);
     });
 
-    it('should respond with BAD_REQUEST in case of invalid required data', async () => {
+    it("should respond with BAD_REQUEST in case of invalid required data", async () => {
       const responses = await Promise.all([
         unauthorizedRequest
           .post(artistsRoutes.create)
           .set(commonHeaders)
           .send({}),
         unauthorizedRequest.post(artistsRoutes.create).set(commonHeaders).send({
-          name: 'TEST_artist',
+          name: "TEST_artist"
         }),
         unauthorizedRequest.post(artistsRoutes.create).set(commonHeaders).send({
-          grammy: true,
+          grammy: true
         }),
         unauthorizedRequest.post(artistsRoutes.create).set(commonHeaders).send({
           name: null,
-          grammy: 'true',
-        }),
+          grammy: "true"
+        })
       ]);
 
       expect(
         responses.every(
-          ({ statusCode }) => statusCode === StatusCodes.BAD_REQUEST,
-        ),
-      );
+          ({ statusCode }) => statusCode === StatusCodes.BAD_REQUEST
+        )
+      ).toBe(true);
     });
   });
 
-  describe('PUT', () => {
-    it('should correctly update artist match', async () => {
+  describe("PUT", () => {
+    it("should correctly update artist match", async () => {
       const creationResponse = await unauthorizedRequest
         .post(artistsRoutes.create)
         .set(commonHeaders)
@@ -154,7 +152,7 @@ describe('artist (e2e)', () => {
         .set(commonHeaders)
         .send({
           name: createArtistDto.name,
-          grammy: false,
+          grammy: false
         });
 
       expect(updateResponse.statusCode).toBe(StatusCodes.OK);
@@ -173,19 +171,19 @@ describe('artist (e2e)', () => {
       expect(cleanupResponse.statusCode).toBe(StatusCodes.NO_CONTENT);
     });
 
-    it('should respond with BAD_REQUEST status code in case of invalid id', async () => {
+    it("should respond with BAD_REQUEST status code in case of invalid id", async () => {
       const response = await unauthorizedRequest
-        .put(artistsRoutes.update('some-invalid-id'))
+        .put(artistsRoutes.update("some-invalid-id"))
         .set(commonHeaders)
         .send({
           name: createArtistDto.name,
-          grammy: false,
+          grammy: false
         });
 
       expect(response.status).toBe(StatusCodes.BAD_REQUEST);
     });
 
-    it('should respond with BAD_REQUEST status code in case of invalid dto', async () => {
+    it("should respond with BAD_REQUEST status code in case of invalid dto", async () => {
       const creationResponse = await unauthorizedRequest
         .post(artistsRoutes.create)
         .set(commonHeaders)
@@ -199,7 +197,7 @@ describe('artist (e2e)', () => {
         .set(commonHeaders)
         .send({
           name: 12345,
-          grammy: 'false',
+          grammy: "false"
         });
 
       expect(response.status).toBe(StatusCodes.BAD_REQUEST);
@@ -211,15 +209,15 @@ describe('artist (e2e)', () => {
         .set(commonHeaders)
         .send({
           name: createArtistDto.name,
-          grammy: false,
+          grammy: false
         });
 
       expect(response.status).toBe(StatusCodes.NOT_FOUND);
     });
   });
 
-  describe('DELETE', () => {
-    it('should correctly delete artist', async () => {
+  describe("DELETE", () => {
+    it("should correctly delete artist", async () => {
       const response = await unauthorizedRequest
         .post(artistsRoutes.create)
         .set(commonHeaders)
@@ -242,9 +240,9 @@ describe('artist (e2e)', () => {
       expect(searchResponse.statusCode).toBe(StatusCodes.NOT_FOUND);
     });
 
-    it('should respond with BAD_REQUEST status code in case of invalid id', async () => {
+    it("should respond with BAD_REQUEST status code in case of invalid id", async () => {
       const response = await unauthorizedRequest
-        .delete(artistsRoutes.delete('some-invalid-id'))
+        .delete(artistsRoutes.delete("some-invalid-id"))
         .set(commonHeaders);
 
       expect(response.status).toBe(StatusCodes.BAD_REQUEST);
@@ -258,7 +256,7 @@ describe('artist (e2e)', () => {
       expect(response.status).toBe(StatusCodes.NOT_FOUND);
     });
 
-    it('should set track.artistId to null after deletion', async () => {
+    it("should set track.artistId to null after deletion", async () => {
       const creationArtistResponse = await unauthorizedRequest
         .post(artistsRoutes.create)
         .set(commonHeaders)
@@ -267,10 +265,10 @@ describe('artist (e2e)', () => {
       const { id: artistId } = creationArtistResponse.body;
 
       const createTrackDto = {
-        name: 'TEST_track',
+        name: "TEST_track",
         albumId: null,
         artistId,
-        duration: 200,
+        duration: 200
       };
 
       expect(creationArtistResponse.status).toBe(StatusCodes.CREATED);
@@ -299,6 +297,48 @@ describe('artist (e2e)', () => {
       const { artistId: trackArtistId } = searchTrackResponse.body;
 
       expect(trackArtistId).toBeNull();
+    });
+
+    it("should set album.artistId to null after deletion", async () => {
+      const creationArtistResponse = await unauthorizedRequest
+        .post(artistsRoutes.create)
+        .set(commonHeaders)
+        .send(createArtistDto);
+
+      const { id: artistId } = creationArtistResponse.body;
+
+      const createAlbumDto = {
+        name: "TEST_album",
+        year: 2023,
+        artistId
+      };
+
+      expect(creationArtistResponse.status).toBe(StatusCodes.CREATED);
+
+      const creationAlbumResponse = await unauthorizedRequest
+        .post(albumsRoutes.create)
+        .set(commonHeaders)
+        .send(createAlbumDto);
+
+      const { id: albumId } = creationAlbumResponse.body;
+
+      expect(creationAlbumResponse.statusCode).toBe(StatusCodes.CREATED);
+
+      const artistDeletionResponse = await unauthorizedRequest
+        .delete(artistsRoutes.delete(artistId))
+        .set(commonHeaders);
+
+      expect(artistDeletionResponse.statusCode).toBe(StatusCodes.NO_CONTENT);
+
+      const searchAlbumResponse = await unauthorizedRequest
+        .get(albumsRoutes.getById(albumId))
+        .set(commonHeaders);
+
+      expect(searchAlbumResponse.statusCode).toBe(StatusCodes.OK);
+
+      const { artistId: albumArtistId } = searchAlbumResponse.body;
+
+      expect(albumArtistId).toBeNull();
     });
   });
 });
