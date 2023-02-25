@@ -938,3 +938,307 @@ POST [36mURL:[32m/auth/refresh [36mStatusCode:[32m200 [36mBody:[32m{"refre
 
 POST [36mURL:[32m/auth/refresh [36mStatusCode:[32m403 [36mBody:[32m{"refreshToken":"eJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsb2dpbiI6InVzZXIxIiwiaWQiOiIzNWQ2YWQ4YS01MjI4LTRhNzItYTJiNy1mYmQ1MGYyMmM3Y2MiLCJpYXQiOjE2NzczMTMzMzUsImV4cCI6MTY3NzM5OTczNX0.WV6kv7RtoZpqgugBjlTwAVwhKsXaNHvN22kW-S15Wak"} [33m2 ms	25.02.2023, 09:08:40
 
+tset	25.02.2023, 19:03:31
+
+GET [36mURL:[32m/user [36mStatusCode:[32m200 [36mBody:[32m{} [33m531 ms	25.02.2023, 19:03:31
+
+GET [36mURL:[32m/track [36mStatusCode:[32m200 [36mBody:[32m{} [33m522 ms	25.02.2023, 19:03:31
+
+GET [36mURL:[32m/album [36mStatusCode:[32m200 [36mBody:[32m{} [33m585 ms	25.02.2023, 19:03:31
+
+GET [36mURL:[32m/artist [36mStatusCode:[32m200 [36mBody:[32m{} [33m602 ms	25.02.2023, 19:03:31
+
+GET [36mURL:[32m/favs [36mStatusCode:[32m200 [36mBody:[32m{} [33m663 ms	25.02.2023, 19:03:31
+
+POST [36mURL:[32m/track [36mStatusCode:[32m201 [36mBody:[32m{"name":"TEST_TRACK","duration":199,"artistId":null,"albumId":null,"id":"91532bf0-5b1d-499b-a113-0662761da4a9"} [33m153 ms	25.02.2023, 19:03:31
+
+POST [36mURL:[32m/user [36mStatusCode:[32m201 [36mBody:[32m{"login":"TEST_LOGIN","password":"TEST_PASSWORD"} [33m187 ms	25.02.2023, 19:03:31
+
+POST [36mURL:[32m/album [36mStatusCode:[32m201 [36mBody:[32m{"name":"TEST_ALBUM","year":2022,"artistId":null} [33m130 ms	25.02.2023, 19:03:31
+
+POST [36mURL:[32m/artist [36mStatusCode:[32m201 [36mBody:[32m{"name":"TEST_artist","grammy":true} [33m125 ms	25.02.2023, 19:03:31
+
+GET [36mURL:[32m/track/91532bf0-5b1d-499b-a113-0662761da4a9 [36mStatusCode:[32m200 [36mBody:[32m{} [33m12 ms	25.02.2023, 19:03:31
+
+POST [36mURL:[32m/artist [36mStatusCode:[32m201 [36mBody:[32m{"name":"TEST_artist","grammy":true} [33m134 ms	25.02.2023, 19:03:31
+
+GET [36mURL:[32m/user/b2cbc44f-26b4-4ea9-84ad-111389e16ca7 [36mStatusCode:[32m200 [36mBody:[32m{} [33m27 ms	25.02.2023, 19:03:31
+
+GET [36mURL:[32m/album/45290bd3-ebf5-492c-a001-5e176967355f [36mStatusCode:[32m200 [36mBody:[32m{} [33m19 ms	25.02.2023, 19:03:31
+
+GET [36mURL:[32m/artist/2b37d9b2-e60f-4f10-b305-03cc11ad1668 [36mStatusCode:[32m200 [36mBody:[32m{} [33m23 ms	25.02.2023, 19:03:31
+
+DELETE [36mURL:[32m/track/91532bf0-5b1d-499b-a113-0662761da4a9 [36mStatusCode:[32m204 [36mBody:[32m{} [33m70 ms	25.02.2023, 19:03:32
+
+DELETE [36mURL:[32m/user/b2cbc44f-26b4-4ea9-84ad-111389e16ca7 [36mStatusCode:[32m204 [36mBody:[32m{} [33m58 ms	25.02.2023, 19:03:32
+
+GET [36mURL:[32m/track/some-invalid-id [36mStatusCode:[32m400 [36mBody:[32m{} [33m4 ms	25.02.2023, 19:03:32
+
+POST [36mURL:[32m/album [36mStatusCode:[32m201 [36mBody:[32m{"name":"TEST_ALBUM","year":2022,"artistId":"01fd4202-5f91-411c-a8e1-cae3c55dce39"} [33m97 ms	25.02.2023, 19:03:32
+
+DELETE [36mURL:[32m/album/45290bd3-ebf5-492c-a001-5e176967355f [36mStatusCode:[32m204 [36mBody:[32m{} [33m89 ms	25.02.2023, 19:03:32
+
+GET [36mURL:[32m/user/some-invalid-id [36mStatusCode:[32m400 [36mBody:[32m{} [33m2 ms	25.02.2023, 19:03:32
+
+GET [36mURL:[32m/track/0a35dd62-e09f-444b-a628-f4e7c6954f57 [36mStatusCode:[32m404 [36mBody:[32m{} [33m15 ms	25.02.2023, 19:03:32
+
+DELETE [36mURL:[32m/artist/2b37d9b2-e60f-4f10-b305-03cc11ad1668 [36mStatusCode:[32m204 [36mBody:[32m{} [33m128 ms	25.02.2023, 19:03:32
+
+GET [36mURL:[32m/album/some-invalid-id [36mStatusCode:[32m400 [36mBody:[32m{} [33m1 ms	25.02.2023, 19:03:32
+
+GET [36mURL:[32m/user/0a35dd62-e09f-444b-a628-f4e7c6954f57 [36mStatusCode:[32m404 [36mBody:[32m{} [33m22 ms	25.02.2023, 19:03:32
+
+GET [36mURL:[32m/artist/some-invalid-id [36mStatusCode:[32m400 [36mBody:[32m{} [33m1 ms	25.02.2023, 19:03:32
+
+GET [36mURL:[32m/album/0a35dd62-e09f-444b-a628-f4e7c6954f57 [36mStatusCode:[32m404 [36mBody:[32m{} [33m9 ms	25.02.2023, 19:03:32
+
+POST [36mURL:[32m/track [36mStatusCode:[32m201 [36mBody:[32m{"name":"Test track","duration":335,"artistId":"01fd4202-5f91-411c-a8e1-cae3c55dce39","albumId":"58b8438d-96a5-4852-b13e-c2bccdc1ddd0","id":"9d1cc4f6-e3c6-4eb7-aa71-dee5dc5d0793"} [33m130 ms	25.02.2023, 19:03:32
+
+POST [36mURL:[32m/track [36mStatusCode:[32m201 [36mBody:[32m{"name":"TEST_TRACK","duration":199,"artistId":null,"albumId":null,"id":"2fbfa5aa-b995-4983-8c07-ae70c86f7382"} [33m93 ms	25.02.2023, 19:03:32
+
+GET [36mURL:[32m/artist/0a35dd62-e09f-444b-a628-f4e7c6954f57 [36mStatusCode:[32m404 [36mBody:[32m{} [33m42 ms	25.02.2023, 19:03:32
+
+POST [36mURL:[32m/user [36mStatusCode:[32m201 [36mBody:[32m{"login":"TEST_LOGIN","password":"TEST_PASSWORD"} [33m74 ms	25.02.2023, 19:03:32
+
+POST [36mURL:[32m/album [36mStatusCode:[32m201 [36mBody:[32m{"name":"TEST_ALBUM","year":2022,"artistId":null} [33m76 ms	25.02.2023, 19:03:32
+
+DELETE [36mURL:[32m/track/2fbfa5aa-b995-4983-8c07-ae70c86f7382 [36mStatusCode:[32m204 [36mBody:[32m{} [33m53 ms	25.02.2023, 19:03:32
+
+DELETE [36mURL:[32m/user/910db28e-ab73-4b5b-8102-fd68e401e6d6 [36mStatusCode:[32m204 [36mBody:[32m{} [33m58 ms	25.02.2023, 19:03:32
+
+POST [36mURL:[32m/track [36mStatusCode:[32m400 [36mBody:[32m{} [33m5 ms	25.02.2023, 19:03:32
+
+POST [36mURL:[32m/artist [36mStatusCode:[32m201 [36mBody:[32m{"name":"TEST_artist","grammy":true} [33m110 ms	25.02.2023, 19:03:32
+
+POST [36mURL:[32m/track [36mStatusCode:[32m400 [36mBody:[32m{"name":"TEST_TRACK"} [33m2 ms	25.02.2023, 19:03:32
+
+POST [36mURL:[32m/track [36mStatusCode:[32m400 [36mBody:[32m{"name":null,"duration":"99"} [33m3 ms	25.02.2023, 19:03:32
+
+POST [36mURL:[32m/track [36mStatusCode:[32m400 [36mBody:[32m{"duration":99} [33m1 ms	25.02.2023, 19:03:32
+
+POST [36mURL:[32m/user [36mStatusCode:[32m400 [36mBody:[32m{} [33m3 ms	25.02.2023, 19:03:32
+
+POST [36mURL:[32m/user [36mStatusCode:[32m400 [36mBody:[32m{"login":null,"password":12345} [33m3 ms	25.02.2023, 19:03:32
+
+POST [36mURL:[32m/user [36mStatusCode:[32m400 [36mBody:[32m{"password":"TEST_PASSWORD"} [33m2 ms	25.02.2023, 19:03:32
+
+POST [36mURL:[32m/user [36mStatusCode:[32m400 [36mBody:[32m{"login":"TEST_LOGIN"} [33m2 ms	25.02.2023, 19:03:32
+
+DELETE [36mURL:[32m/album/c64a79f4-4949-41b5-9e4b-53b42d4e1868 [36mStatusCode:[32m204 [36mBody:[32m{} [33m149 ms	25.02.2023, 19:03:32
+
+POST [36mURL:[32m/album [36mStatusCode:[32m400 [36mBody:[32m{} [33m2 ms	25.02.2023, 19:03:32
+
+POST [36mURL:[32m/album [36mStatusCode:[32m400 [36mBody:[32m{"name":"TEST_ALBUM"} [33m1 ms	25.02.2023, 19:03:32
+
+POST [36mURL:[32m/album [36mStatusCode:[32m400 [36mBody:[32m{"name":null,"year":"2022"} [33m3 ms	25.02.2023, 19:03:32
+
+POST [36mURL:[32m/album [36mStatusCode:[32m400 [36mBody:[32m{"year":2022} [33m2 ms	25.02.2023, 19:03:32
+
+DELETE [36mURL:[32m/artist/e4532be9-9586-4251-9032-ce8d76963c50 [36mStatusCode:[32m204 [36mBody:[32m{} [33m132 ms	25.02.2023, 19:03:32
+
+POST [36mURL:[32m/favs/track/9d1cc4f6-e3c6-4eb7-aa71-dee5dc5d0793 [36mStatusCode:[32m201 [36mBody:[32m{} [33m382 ms	25.02.2023, 19:03:32
+
+POST [36mURL:[32m/track [36mStatusCode:[32m201 [36mBody:[32m{"name":"TEST_TRACK","duration":199,"artistId":null,"albumId":null,"id":"b7d5d1de-c4aa-47f8-86b5-d1467a0decad"} [33m141 ms	25.02.2023, 19:03:32
+
+POST [36mURL:[32m/user [36mStatusCode:[32m201 [36mBody:[32m{"login":"TEST_LOGIN","password":"TEST_PASSWORD"} [33m149 ms	25.02.2023, 19:03:32
+
+POST [36mURL:[32m/artist [36mStatusCode:[32m400 [36mBody:[32m{} [33m2 ms	25.02.2023, 19:03:32
+
+POST [36mURL:[32m/artist [36mStatusCode:[32m400 [36mBody:[32m{"name":"TEST_artist"} [33m2 ms	25.02.2023, 19:03:32
+
+POST [36mURL:[32m/artist [36mStatusCode:[32m400 [36mBody:[32m{"grammy":true} [33m2 ms	25.02.2023, 19:03:32
+
+POST [36mURL:[32m/artist [36mStatusCode:[32m400 [36mBody:[32m{"name":null,"grammy":"true"} [33m7 ms	25.02.2023, 19:03:32
+
+POST [36mURL:[32m/album [36mStatusCode:[32m201 [36mBody:[32m{"name":"TEST_ALBUM","year":2022,"artistId":null} [33m177 ms	25.02.2023, 19:03:32
+
+PUT [36mURL:[32m/user/94b2eb97-2663-427c-9a5c-cba64bfee517 [36mStatusCode:[32m200 [36mBody:[32m{"oldPassword":"TEST_PASSWORD","newPassword":"NEW_PASSWORD"} [33m74 ms	25.02.2023, 19:03:32
+
+PUT [36mURL:[32m/track/b7d5d1de-c4aa-47f8-86b5-d1467a0decad [36mStatusCode:[32m200 [36mBody:[32m{"name":"TEST_TRACK","duration":188,"artistId":null,"albumId":null} [33m161 ms	25.02.2023, 19:03:33
+
+PUT [36mURL:[32m/user/94b2eb97-2663-427c-9a5c-cba64bfee517 [36mStatusCode:[32m403 [36mBody:[32m{"oldPassword":"TEST_PASSWORD","newPassword":"NEW_PASSWORD"} [33m13 ms	25.02.2023, 19:03:33
+
+POST [36mURL:[32m/artist [36mStatusCode:[32m201 [36mBody:[32m{"name":"TEST_artist","grammy":true} [33m245 ms	25.02.2023, 19:03:33
+
+DELETE [36mURL:[32m/track/b7d5d1de-c4aa-47f8-86b5-d1467a0decad [36mStatusCode:[32m204 [36mBody:[32m{} [33m118 ms	25.02.2023, 19:03:33
+
+POST [36mURL:[32m/favs/album/58b8438d-96a5-4852-b13e-c2bccdc1ddd0 [36mStatusCode:[32m201 [36mBody:[32m{} [33m362 ms	25.02.2023, 19:03:33
+
+POST [36mURL:[32m/artist [36mStatusCode:[32m201 [36mBody:[32m{"name":"TEST_artist","grammy":true} [33m168 ms	25.02.2023, 19:03:33
+
+PUT [36mURL:[32m/track/some-invalid-id [36mStatusCode:[32m400 [36mBody:[32m{"name":"TEST_TRACK","duration":188,"artistId":null,"albumId":null} [33m3 ms	25.02.2023, 19:03:33
+
+DELETE [36mURL:[32m/user/94b2eb97-2663-427c-9a5c-cba64bfee517 [36mStatusCode:[32m204 [36mBody:[32m{} [33m68 ms	25.02.2023, 19:03:33
+
+PUT [36mURL:[32m/artist/57bb6753-7bb4-4cfe-8cea-388e20f60111 [36mStatusCode:[32m200 [36mBody:[32m{"name":"TEST_artist","grammy":false} [33m77 ms	25.02.2023, 19:03:33
+
+PUT [36mURL:[32m/user/some-invalid-id [36mStatusCode:[32m400 [36mBody:[32m{"oldPassword":"test","newPassword":"fake"} [33m2 ms	25.02.2023, 19:03:33
+
+PUT [36mURL:[32m/album/7d3cb806-b0d5-4137-b4db-c737275de575 [36mStatusCode:[32m200 [36mBody:[32m{"name":"TEST_ALBUM","year":2021,"artistId":"7e26bdf2-78ee-42e5-a5ce-c5584782cc87"} [33m55 ms	25.02.2023, 19:03:33
+
+PUT [36mURL:[32m/user/0a35dd62-e09f-444b-a628-f4e7c6954f57 [36mStatusCode:[32m400 [36mBody:[32m{} [33m2 ms	25.02.2023, 19:03:33
+
+POST [36mURL:[32m/track [36mStatusCode:[32m201 [36mBody:[32m{"name":"TEST_TRACK","duration":199,"artistId":null,"albumId":null,"id":"1ceb3ad9-2eb5-4e83-97c4-88afbf165a86"} [33m87 ms	25.02.2023, 19:03:33
+
+DELETE [36mURL:[32m/artist/57bb6753-7bb4-4cfe-8cea-388e20f60111 [36mStatusCode:[32m204 [36mBody:[32m{} [33m84 ms	25.02.2023, 19:03:33
+
+PUT [36mURL:[32m/user/0a35dd62-e09f-444b-a628-f4e7c6954f57 [36mStatusCode:[32m404 [36mBody:[32m{"oldPassword":"test","newPassword":"fake"} [33m23 ms	25.02.2023, 19:03:33
+
+PUT [36mURL:[32m/track/1ceb3ad9-2eb5-4e83-97c4-88afbf165a86 [36mStatusCode:[32m400 [36mBody:[32m{"name":null,"duration":"188","artistId":123,"albumId":123} [33m2 ms	25.02.2023, 19:03:33
+
+DELETE [36mURL:[32m/album/7d3cb806-b0d5-4137-b4db-c737275de575 [36mStatusCode:[32m204 [36mBody:[32m{} [33m50 ms	25.02.2023, 19:03:33
+
+POST [36mURL:[32m/favs/artist/01fd4202-5f91-411c-a8e1-cae3c55dce39 [36mStatusCode:[32m201 [36mBody:[32m{} [33m168 ms	25.02.2023, 19:03:33
+
+PUT [36mURL:[32m/artist/some-invalid-id [36mStatusCode:[32m400 [36mBody:[32m{"name":"TEST_artist","grammy":false} [33m1 ms	25.02.2023, 19:03:33
+
+PUT [36mURL:[32m/album/some-invalid-id [36mStatusCode:[32m400 [36mBody:[32m{"name":"TEST_ALBUM","year":2021,"artistId":null} [33m1 ms	25.02.2023, 19:03:33
+
+PUT [36mURL:[32m/track/0a35dd62-e09f-444b-a628-f4e7c6954f57 [36mStatusCode:[32m404 [36mBody:[32m{"name":"TEST_TRACK","duration":188,"artistId":null,"albumId":null} [33m18 ms	25.02.2023, 19:03:33
+
+POST [36mURL:[32m/user [36mStatusCode:[32m201 [36mBody:[32m{"login":"TEST_LOGIN","password":"TEST_PASSWORD"} [33m66 ms	25.02.2023, 19:03:33
+
+GET [36mURL:[32m/favs [36mStatusCode:[32m200 [36mBody:[32m{} [33m89 ms	25.02.2023, 19:03:33
+
+POST [36mURL:[32m/album [36mStatusCode:[32m201 [36mBody:[32m{"name":"TEST_ALBUM","year":2022,"artistId":null} [33m95 ms	25.02.2023, 19:03:33
+
+POST [36mURL:[32m/artist [36mStatusCode:[32m201 [36mBody:[32m{"name":"TEST_artist","grammy":true} [33m112 ms	25.02.2023, 19:03:33
+
+DELETE [36mURL:[32m/user/1179a424-6457-4b4b-b0ef-c5b797a74892 [36mStatusCode:[32m204 [36mBody:[32m{} [33m60 ms	25.02.2023, 19:03:33
+
+POST [36mURL:[32m/track [36mStatusCode:[32m201 [36mBody:[32m{"name":"TEST_TRACK","duration":199,"artistId":null,"albumId":null,"id":"606f3955-40c7-4499-a943-c7753bde5b45"} [33m87 ms	25.02.2023, 19:03:33
+
+PUT [36mURL:[32m/album/400fbd4c-2527-4c1e-9f00-2a2f698e9b52 [36mStatusCode:[32m400 [36mBody:[32m{"name":true,"year":"2021","artistId":123} [33m1 ms	25.02.2023, 19:03:33
+
+PUT [36mURL:[32m/artist/004a8086-93dc-411d-bea3-a5ab80eb1ae5 [36mStatusCode:[32m400 [36mBody:[32m{"name":12345,"grammy":"false"} [33m1 ms	25.02.2023, 19:03:33
+
+DELETE [36mURL:[32m/artist/01fd4202-5f91-411c-a8e1-cae3c55dce39 [36mStatusCode:[32m204 [36mBody:[32m{} [33m136 ms	25.02.2023, 19:03:33
+
+GET [36mURL:[32m/user/1179a424-6457-4b4b-b0ef-c5b797a74892 [36mStatusCode:[32m404 [36mBody:[32m{} [33m90 ms	25.02.2023, 19:03:33
+
+PUT [36mURL:[32m/album/0a35dd62-e09f-444b-a628-f4e7c6954f57 [36mStatusCode:[32m404 [36mBody:[32m{"name":"TEST_ALBUM","year":2021,"artistId":null} [33m71 ms	25.02.2023, 19:03:33
+
+DELETE [36mURL:[32m/track/606f3955-40c7-4499-a943-c7753bde5b45 [36mStatusCode:[32m204 [36mBody:[32m{} [33m101 ms	25.02.2023, 19:03:33
+
+DELETE [36mURL:[32m/user/some-invalid-id [36mStatusCode:[32m400 [36mBody:[32m{} [33m2 ms	25.02.2023, 19:03:33
+
+GET [36mURL:[32m/track/606f3955-40c7-4499-a943-c7753bde5b45 [36mStatusCode:[32m404 [36mBody:[32m{} [33m20 ms	25.02.2023, 19:03:33
+
+DELETE [36mURL:[32m/user/0a35dd62-e09f-444b-a628-f4e7c6954f57 [36mStatusCode:[32m404 [36mBody:[32m{} [33m11 ms	25.02.2023, 19:03:33
+
+DELETE [36mURL:[32m/track/some-invalid-id [36mStatusCode:[32m400 [36mBody:[32m{} [33m2 ms	25.02.2023, 19:03:33
+
+DELETE [36mURL:[32m/album/58b8438d-96a5-4852-b13e-c2bccdc1ddd0 [36mStatusCode:[32m204 [36mBody:[32m{} [33m107 ms	25.02.2023, 19:03:33
+
+POST [36mURL:[32m/album [36mStatusCode:[32m201 [36mBody:[32m{"name":"TEST_ALBUM","year":2022,"artistId":null} [33m139 ms	25.02.2023, 19:03:33
+
+DELETE [36mURL:[32m/track/0a35dd62-e09f-444b-a628-f4e7c6954f57 [36mStatusCode:[32m404 [36mBody:[32m{} [33m6 ms	25.02.2023, 19:03:34
+
+DELETE [36mURL:[32m/track/9d1cc4f6-e3c6-4eb7-aa71-dee5dc5d0793 [36mStatusCode:[32m204 [36mBody:[32m{} [33m37 ms	25.02.2023, 19:03:34
+
+DELETE [36mURL:[32m/album/f541638d-17f4-4410-bbed-329cd620d4a8 [36mStatusCode:[32m204 [36mBody:[32m{} [33m36 ms	25.02.2023, 19:03:34
+
+GET [36mURL:[32m/favs [36mStatusCode:[32m200 [36mBody:[32m{} [33m20 ms	25.02.2023, 19:03:34
+
+GET [36mURL:[32m/album/f541638d-17f4-4410-bbed-329cd620d4a8 [36mStatusCode:[32m404 [36mBody:[32m{} [33m24 ms	25.02.2023, 19:03:34
+
+DELETE [36mURL:[32m/album/some-invalid-id [36mStatusCode:[32m400 [36mBody:[32m{} [33m2 ms	25.02.2023, 19:03:34
+
+DELETE [36mURL:[32m/album/0a35dd62-e09f-444b-a628-f4e7c6954f57 [36mStatusCode:[32m404 [36mBody:[32m{} [33m6 ms	25.02.2023, 19:03:34
+
+POST [36mURL:[32m/artist [36mStatusCode:[32m201 [36mBody:[32m{"name":"TEST_artist","grammy":true} [33m52 ms	25.02.2023, 19:03:34
+
+PUT [36mURL:[32m/artist/0a35dd62-e09f-444b-a628-f4e7c6954f57 [36mStatusCode:[32m404 [36mBody:[32m{"name":"TEST_artist","grammy":false} [33m450 ms	25.02.2023, 19:03:34
+
+POST [36mURL:[32m/album [36mStatusCode:[32m201 [36mBody:[32m{"name":"TEST_ALBUM","year":2022,"artistId":null} [33m58 ms	25.02.2023, 19:03:34
+
+POST [36mURL:[32m/artist [36mStatusCode:[32m201 [36mBody:[32m{"name":"TEST_artist","grammy":true} [33m49 ms	25.02.2023, 19:03:34
+
+POST [36mURL:[32m/favs/artist/da76085e-6ce3-4aa3-a7ab-5ff1f8fefa3e [36mStatusCode:[32m201 [36mBody:[32m{} [33m116 ms	25.02.2023, 19:03:34
+
+POST [36mURL:[32m/track [36mStatusCode:[32m201 [36mBody:[32m{"name":"TEST_TRACK","duration":199,"artistId":null,"albumId":"4c883d14-e95b-4e46-b91b-dda40af671cd","id":"dc16cda4-c09a-4b53-bf96-2fcfcba395d7"} [33m91 ms	25.02.2023, 19:03:34
+
+DELETE [36mURL:[32m/artist/de1e90f2-c44f-4093-a0a9-0174faed3587 [36mStatusCode:[32m204 [36mBody:[32m{} [33m44 ms	25.02.2023, 19:03:34
+
+GET [36mURL:[32m/favs [36mStatusCode:[32m200 [36mBody:[32m{} [33m64 ms	25.02.2023, 19:03:34
+
+GET [36mURL:[32m/artist/de1e90f2-c44f-4093-a0a9-0174faed3587 [36mStatusCode:[32m404 [36mBody:[32m{} [33m25 ms	25.02.2023, 19:03:34
+
+DELETE [36mURL:[32m/artist/some-invalid-id [36mStatusCode:[32m400 [36mBody:[32m{} [33m1 ms	25.02.2023, 19:03:34
+
+DELETE [36mURL:[32m/album/4c883d14-e95b-4e46-b91b-dda40af671cd [36mStatusCode:[32m204 [36mBody:[32m{} [33m65 ms	25.02.2023, 19:03:34
+
+DELETE [36mURL:[32m/artist/0a35dd62-e09f-444b-a628-f4e7c6954f57 [36mStatusCode:[32m404 [36mBody:[32m{} [33m16 ms	25.02.2023, 19:03:34
+
+POST [36mURL:[32m/album [36mStatusCode:[32m201 [36mBody:[32m{"name":"TEST_ALBUM","year":2022,"artistId":null} [33m54 ms	25.02.2023, 19:03:34
+
+GET [36mURL:[32m/track/dc16cda4-c09a-4b53-bf96-2fcfcba395d7 [36mStatusCode:[32m200 [36mBody:[32m{} [33m17 ms	25.02.2023, 19:03:34
+
+POST [36mURL:[32m/artist [36mStatusCode:[32m201 [36mBody:[32m{"name":"TEST_artist","grammy":true} [33m57 ms	25.02.2023, 19:03:34
+
+POST [36mURL:[32m/favs/album/713116a5-53fa-44ad-a9cf-20a8ba83701b [36mStatusCode:[32m201 [36mBody:[32m{} [33m80 ms	25.02.2023, 19:03:34
+
+POST [36mURL:[32m/track [36mStatusCode:[32m201 [36mBody:[32m{"name":"TEST_track","albumId":null,"artistId":"3d976ca8-e04c-41e2-ae8a-91fb9f5467e6","duration":200,"id":"4b1a79fd-b939-4c06-91be-36d6cf355bc3"} [33m43 ms	25.02.2023, 19:03:34
+
+DELETE [36mURL:[32m/artist/3d976ca8-e04c-41e2-ae8a-91fb9f5467e6 [36mStatusCode:[32m204 [36mBody:[32m{} [33m22 ms	25.02.2023, 19:03:34
+
+GET [36mURL:[32m/favs [36mStatusCode:[32m200 [36mBody:[32m{} [33m44 ms	25.02.2023, 19:03:34
+
+GET [36mURL:[32m/track/4b1a79fd-b939-4c06-91be-36d6cf355bc3 [36mStatusCode:[32m200 [36mBody:[32m{} [33m15 ms	25.02.2023, 19:03:34
+
+POST [36mURL:[32m/track [36mStatusCode:[32m201 [36mBody:[32m{"name":"Test track","duration":335,"artistId":null,"albumId":null,"id":"9ac28e44-ed3c-4bfe-b160-a7da68694554"} [33m16 ms	25.02.2023, 19:03:34
+
+POST [36mURL:[32m/favs/track/9ac28e44-ed3c-4bfe-b160-a7da68694554 [36mStatusCode:[32m201 [36mBody:[32m{} [33m50 ms	25.02.2023, 19:03:34
+
+GET [36mURL:[32m/favs [36mStatusCode:[32m200 [36mBody:[32m{} [33m46 ms	25.02.2023, 19:03:34
+
+POST [36mURL:[32m/favs/artist/invalid [36mStatusCode:[32m400 [36mBody:[32m{} [33m1 ms	25.02.2023, 19:03:34
+
+POST [36mURL:[32m/favs/album/invalid [36mStatusCode:[32m400 [36mBody:[32m{} [33m1 ms	25.02.2023, 19:03:34
+
+POST [36mURL:[32m/favs/track/invalid [36mStatusCode:[32m400 [36mBody:[32m{} [33m2 ms	25.02.2023, 19:03:34
+
+POST [36mURL:[32m/favs/artist/0a35dd62-e09f-444b-a628-f4e7c6954f57 [36mStatusCode:[32m422 [36mBody:[32m{} [33m15 ms	25.02.2023, 19:03:34
+
+POST [36mURL:[32m/favs/album/0a35dd62-e09f-444b-a628-f4e7c6954f57 [36mStatusCode:[32m422 [36mBody:[32m{} [33m21 ms	25.02.2023, 19:03:34
+
+POST [36mURL:[32m/favs/track/0a35dd62-e09f-444b-a628-f4e7c6954f57 [36mStatusCode:[32m422 [36mBody:[32m{} [33m51 ms	25.02.2023, 19:03:34
+
+POST [36mURL:[32m/album [36mStatusCode:[32m201 [36mBody:[32m{"name":"TEST_ALBUM","year":2022,"artistId":null} [33m19 ms	25.02.2023, 19:03:34
+
+POST [36mURL:[32m/favs/album/6bdede1b-c465-453e-906c-6b9fe9533cd1 [36mStatusCode:[32m201 [36mBody:[32m{} [33m41 ms	25.02.2023, 19:03:35
+
+DELETE [36mURL:[32m/favs/album/6bdede1b-c465-453e-906c-6b9fe9533cd1 [36mStatusCode:[32m204 [36mBody:[32m{} [33m49 ms	25.02.2023, 19:03:35
+
+GET [36mURL:[32m/favs [36mStatusCode:[32m200 [36mBody:[32m{} [33m62 ms	25.02.2023, 19:03:35
+
+DELETE [36mURL:[32m/album/6bdede1b-c465-453e-906c-6b9fe9533cd1 [36mStatusCode:[32m204 [36mBody:[32m{} [33m42 ms	25.02.2023, 19:03:35
+
+POST [36mURL:[32m/artist [36mStatusCode:[32m201 [36mBody:[32m{"name":"TEST_artist","grammy":true} [33m41 ms	25.02.2023, 19:03:35
+
+POST [36mURL:[32m/favs/artist/e79ac850-7a03-4c02-bf62-7f10b86a1289 [36mStatusCode:[32m201 [36mBody:[32m{} [33m57 ms	25.02.2023, 19:03:35
+
+DELETE [36mURL:[32m/favs/artist/e79ac850-7a03-4c02-bf62-7f10b86a1289 [36mStatusCode:[32m204 [36mBody:[32m{} [33m37 ms	25.02.2023, 19:03:35
+
+GET [36mURL:[32m/favs [36mStatusCode:[32m200 [36mBody:[32m{} [33m14 ms	25.02.2023, 19:03:35
+
+DELETE [36mURL:[32m/artist/e79ac850-7a03-4c02-bf62-7f10b86a1289 [36mStatusCode:[32m204 [36mBody:[32m{} [33m13 ms	25.02.2023, 19:03:35
+
+POST [36mURL:[32m/track [36mStatusCode:[32m201 [36mBody:[32m{"name":"Test track","duration":335,"artistId":null,"albumId":null,"id":"adf7195f-5b66-414e-9a2b-cba40ec4b071"} [33m37 ms	25.02.2023, 19:03:35
+
+POST [36mURL:[32m/favs/track/adf7195f-5b66-414e-9a2b-cba40ec4b071 [36mStatusCode:[32m201 [36mBody:[32m{} [33m109 ms	25.02.2023, 19:03:35
+
+DELETE [36mURL:[32m/favs/track/adf7195f-5b66-414e-9a2b-cba40ec4b071 [36mStatusCode:[32m204 [36mBody:[32m{} [33m40 ms	25.02.2023, 19:03:35
+
+GET [36mURL:[32m/favs [36mStatusCode:[32m200 [36mBody:[32m{} [33m15 ms	25.02.2023, 19:03:35
+
+DELETE [36mURL:[32m/track/adf7195f-5b66-414e-9a2b-cba40ec4b071 [36mStatusCode:[32m204 [36mBody:[32m{} [33m15 ms	25.02.2023, 19:03:35
+
+DELETE [36mURL:[32m/album/some-invalid-id [36mStatusCode:[32m400 [36mBody:[32m{} [33m1 ms	25.02.2023, 19:03:35
+
+DELETE [36mURL:[32m/album/0a35dd62-e09f-444b-a628-f4e7c6954f57 [36mStatusCode:[32m404 [36mBody:[32m{} [33m4 ms	25.02.2023, 19:03:35
+
+DELETE [36mURL:[32m/artist/0a35dd62-e09f-444b-a628-f4e7c6954f57 [36mStatusCode:[32m404 [36mBody:[32m{} [33m3 ms	25.02.2023, 19:03:35
+
+DELETE [36mURL:[32m/track/0a35dd62-e09f-444b-a628-f4e7c6954f57 [36mStatusCode:[32m404 [36mBody:[32m{} [33m8 ms	25.02.2023, 19:03:35
+
