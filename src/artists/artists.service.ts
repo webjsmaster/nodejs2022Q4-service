@@ -1,15 +1,9 @@
 import * as crypto from 'node:crypto'
-import {
-  forwardRef,
-  Inject,
-  Injectable,
-  NotFoundException,
-} from '@nestjs/common'
+import { forwardRef, Inject, Injectable, NotFoundException } from '@nestjs/common'
 import { ArtistDto } from './dto/artist.dto'
 import { InjectRepository } from '@nestjs/typeorm'
 import { ArtistEntity } from './entity/artists.entity'
 import { DeleteResult, Repository } from 'typeorm'
-import { FavoritesService } from '../favorites/favorites.service'
 import { TracksService } from '../tracks/tracks.service'
 
 @Injectable()
@@ -17,8 +11,6 @@ export class ArtistsService {
   constructor(
     @InjectRepository(ArtistEntity)
     private readonly artistRepository: Repository<ArtistEntity>,
-    @Inject(forwardRef(() => FavoritesService))
-    private favoriteService: FavoritesService,
     @Inject(forwardRef(() => TracksService))
     private tracksService: TracksService,
   ) {}
