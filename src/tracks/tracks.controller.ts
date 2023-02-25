@@ -1,17 +1,4 @@
-import {
-  Body,
-  Controller,
-  Delete,
-  Get,
-  HttpCode,
-  HttpStatus,
-  Param,
-  ParseUUIDPipe,
-  Post,
-  Put,
-  UsePipes,
-  ValidationPipe,
-} from '@nestjs/common'
+import { Body, Controller, Delete, Get, HttpCode, HttpStatus, Param, ParseUUIDPipe, Post, Put, UsePipes, ValidationPipe } from '@nestjs/common'
 import { TracksService } from './tracks.service'
 import { TrackDto } from './dto/track.dto'
 
@@ -39,10 +26,7 @@ export class TracksController {
   @UsePipes(ValidationPipe)
   @Put(':id')
   @HttpCode(HttpStatus.OK)
-  update(
-    @Param('id', ParseUUIDPipe) id: string,
-    @Body() ChangeTrack: TrackDto,
-  ) {
+  update(@Param('id', ParseUUIDPipe) id: string, @Body() ChangeTrack: TrackDto) {
     return this.trackService.update(id, ChangeTrack)
   }
 

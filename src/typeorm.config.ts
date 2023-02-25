@@ -14,7 +14,7 @@ export const options = {
   migrationsRun: true,
   synchronize: false,
   logging: true,
-  logger: 'file',
+  // logger: 'file',
 }
 
 export const dataSourceConfig = {

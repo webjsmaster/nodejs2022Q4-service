@@ -1,0 +1,940 @@
+GET [36mURL:[32m/album [36mStatusCode:[32m200 [36mBody:[32m{} [33m24 ms	23.02.2023, 21:54:54
+
+GET [36mURL:[32m/album [36mStatusCode:[32m200 [36mBody:[32m{} [33m9 ms	23.02.2023, 21:54:57
+
+GET [36mURL:[32m/album [36mStatusCode:[32m200 [36mBody:[32m{} [33m7 ms	23.02.2023, 21:55:02
+
+GET [36mURL:[32m/album [36mStatusCode:[32m200 [36mBody:[32m{} [33m7 ms	23.02.2023, 21:55:03
+
+GET [36mURL:[32m/album [36mStatusCode:[32m200 [36mBody:[32m{} [33m7 ms	23.02.2023, 21:55:05
+
+GET [36mURL:[32m/album [36mStatusCode:[32m200 [36mBody:[32m{} [33m8 ms	23.02.2023, 21:55:06
+
+GET [36mURL:[32m/track [36mStatusCode:[32m200 [36mBody:[32m{} [33m14 ms	23.02.2023, 21:55:10
+
+GET [36mURL:[32m/track [36mStatusCode:[32m200 [36mBody:[32m{} [33m15 ms	23.02.2023, 21:55:13
+
+GET [36mURL:[32m/auth [36mStatusCode:[32m200 [36mBody:[32m{} [33m13 ms	24.02.2023, 19:04:57
+
+POST [36mURL:[32m/auth/signup [36mStatusCode:[32m400 [36mBody:[32m{} [33m364 ms	24.02.2023, 19:06:26
+
+POST [36mURL:[32m/auth/signup [36mStatusCode:[32m201 [36mBody:[32m{"login":"user1","password":"12345"} [33m603 ms	24.02.2023, 19:06:39
+
+tset	24.02.2023, 19:07:32
+
+GET [36mURL:[32m/user [36mStatusCode:[32m200 [36mBody:[32m{} [33m297 ms	24.02.2023, 19:07:33
+
+POST [36mURL:[32m/auth/login [36mStatusCode:[32m401 [36mBody:[32m{"login":"user1","password":"12345"} [33m372 ms	24.02.2023, 19:15:18
+
+POST [36mURL:[32m/auth/login [36mStatusCode:[32m401 [36mBody:[32m{"login":"user1","password":"12345"} [33m54 ms	24.02.2023, 19:16:15
+
+POST [36mURL:[32m/auth/login [36mStatusCode:[32m201 [36mBody:[32m{"login":"user1","password":"12345"} [33m71 ms	24.02.2023, 19:17:08
+
+POST [36mURL:[32m/auth/login [36mStatusCode:[32m401 [36mBody:[32m{"login":"user1","password":"123456"} [33m19 ms	24.02.2023, 19:17:17
+
+POST [36mURL:[32m/auth/login [36mStatusCode:[32m201 [36mBody:[32m{"login":"user1","password":"12345"} [33m51 ms	24.02.2023, 19:17:21
+
+POST [36mURL:[32m/auth/login [36mStatusCode:[32m401 [36mBody:[32m{"login":"user1","password":"123456"} [33m283 ms	24.02.2023, 19:19:11
+
+POST [36mURL:[32m/auth/login [36mStatusCode:[32m403 [36mBody:[32m{"login":"user1","password":"123456"} [33m165 ms	24.02.2023, 19:20:23
+
+GET [36mURL:[32m/user [36mStatusCode:[32m403 [36mBody:[32m{} [33m11 ms	24.02.2023, 19:36:08
+
+POST [36mURL:[32m/auth/login [36mStatusCode:[32m403 [36mBody:[32m{"login":"user1","password":"123456"} [33m277 ms	24.02.2023, 19:37:37
+
+POST [36mURL:[32m/auth/login [36mStatusCode:[32m201 [36mBody:[32m{"login":"user1","password":"12345"} [33m24 ms	24.02.2023, 19:37:42
+
+GET [36mURL:[32m/user [36mStatusCode:[32m403 [36mBody:[32m{} [33m1 ms	24.02.2023, 19:38:09
+
+GET [36mURL:[32m/user [36mStatusCode:[32m403 [36mBody:[32m{} [33m2 ms	24.02.2023, 19:38:24
+
+GET [36mURL:[32m/user [36mStatusCode:[32m403 [36mBody:[32m{} [33m12 ms	24.02.2023, 19:41:34
+
+POST [36mURL:[32m/auth/login [36mStatusCode:[32m201 [36mBody:[32m{"login":"user1","password":"12345"} [33m291 ms	24.02.2023, 19:41:41
+
+GET [36mURL:[32m/user [36mStatusCode:[32m403 [36mBody:[32m{} [33m2 ms	24.02.2023, 19:41:57
+
+GET [36mURL:[32m/user [36mStatusCode:[32m403 [36mBody:[32m{} [33m2 ms	24.02.2023, 19:41:58
+
+GET [36mURL:[32m/user [36mStatusCode:[32m403 [36mBody:[32m{} [33m25 ms	24.02.2023, 19:43:15
+
+GET [36mURL:[32m/user [36mStatusCode:[32m403 [36mBody:[32m{} [33m25 ms	24.02.2023, 19:46:43
+
+GET [36mURL:[32m/user [36mStatusCode:[32m403 [36mBody:[32m{} [33m39 ms	24.02.2023, 19:48:09
+
+tset	24.02.2023, 19:50:49
+
+GET [36mURL:[32m/user [36mStatusCode:[32m200 [36mBody:[32m{} [33m60 ms	24.02.2023, 19:50:49
+
+GET [36mURL:[32m/user [36mStatusCode:[32m403 [36mBody:[32m{} [33m15 ms	24.02.2023, 19:51:02
+
+tset	24.02.2023, 19:51:08
+
+GET [36mURL:[32m/user [36mStatusCode:[32m200 [36mBody:[32m{} [33m272 ms	24.02.2023, 19:51:08
+
+tset	24.02.2023, 19:52:16
+
+GET [36mURL:[32m/user [36mStatusCode:[32m200 [36mBody:[32m{} [33m67 ms	24.02.2023, 19:52:16
+
+tset	25.02.2023, 04:25:00
+
+GET [36mURL:[32m/user [36mStatusCode:[32m200 [36mBody:[32m{} [33m322 ms	25.02.2023, 04:25:00
+
+GET [36mURL:[32m/favs [36mStatusCode:[32m200 [36mBody:[32m{} [33m558 ms	25.02.2023, 04:25:22
+
+GET [36mURL:[32m/favs [36mStatusCode:[32m403 [36mBody:[32m{} [33m15 ms	25.02.2023, 04:28:25
+
+POST [36mURL:[32m/auth/login [36mStatusCode:[32m201 [36mBody:[32m{"login":"user1","password":"12345"} [33m415 ms	25.02.2023, 04:28:34
+
+GET [36mURL:[32m/favs [36mStatusCode:[32m200 [36mBody:[32m{} [33m343 ms	25.02.2023, 04:28:59
+
+POST [36mURL:[32m/auth/signup [36mStatusCode:[32m201 [36mBody:[32m{"login":"TEST_LOGIN","password":"Tu6!@#%&"} [33m433 ms	25.02.2023, 04:33:44
+
+POST [36mURL:[32m/auth/signup [36mStatusCode:[32m201 [36mBody:[32m{"login":"TEST_LOGIN","password":"Tu6!@#%&"} [33m464 ms	25.02.2023, 04:33:44
+
+POST [36mURL:[32m/auth/signup [36mStatusCode:[32m201 [36mBody:[32m{"login":"TEST_LOGIN","password":"Tu6!@#%&"} [33m468 ms	25.02.2023, 04:33:44
+
+POST [36mURL:[32m/auth/signup [36mStatusCode:[32m201 [36mBody:[32m{"login":"TEST_LOGIN","password":"Tu6!@#%&"} [33m495 ms	25.02.2023, 04:33:44
+
+POST [36mURL:[32m/auth/signup [36mStatusCode:[32m201 [36mBody:[32m{"login":"TEST_LOGIN","password":"Tu6!@#%&"} [33m500 ms	25.02.2023, 04:33:44
+
+POST [36mURL:[32m/auth/login [36mStatusCode:[32m201 [36mBody:[32m{"login":"TEST_LOGIN","password":"Tu6!@#%&"} [33m31 ms	25.02.2023, 04:33:44
+
+POST [36mURL:[32m/auth/login [36mStatusCode:[32m201 [36mBody:[32m{"login":"TEST_LOGIN","password":"Tu6!@#%&"} [33m34 ms	25.02.2023, 04:33:44
+
+POST [36mURL:[32m/auth/login [36mStatusCode:[32m201 [36mBody:[32m{"login":"TEST_LOGIN","password":"Tu6!@#%&"} [33m35 ms	25.02.2023, 04:33:44
+
+POST [36mURL:[32m/auth/login [36mStatusCode:[32m201 [36mBody:[32m{"login":"TEST_LOGIN","password":"Tu6!@#%&"} [33m40 ms	25.02.2023, 04:33:44
+
+tset	25.02.2023, 04:33:44
+
+POST [36mURL:[32m/auth/login [36mStatusCode:[32m201 [36mBody:[32m{"login":"TEST_LOGIN","password":"Tu6!@#%&"} [33m61 ms	25.02.2023, 04:33:44
+
+GET [36mURL:[32m/artist [36mStatusCode:[32m200 [36mBody:[32m{} [33m28 ms	25.02.2023, 04:33:44
+
+GET [36mURL:[32m/user [36mStatusCode:[32m200 [36mBody:[32m{} [33m34 ms	25.02.2023, 04:33:44
+
+GET [36mURL:[32m/favs [36mStatusCode:[32m403 [36mBody:[32m{} [33m2 ms	25.02.2023, 04:33:44
+
+GET [36mURL:[32m/album [36mStatusCode:[32m200 [36mBody:[32m{} [33m31 ms	25.02.2023, 04:33:44
+
+GET [36mURL:[32m/track [36mStatusCode:[32m200 [36mBody:[32m{} [33m39 ms	25.02.2023, 04:33:44
+
+POST [36mURL:[32m/artist [36mStatusCode:[32m201 [36mBody:[32m{"name":"TEST_artist","grammy":true} [33m90 ms	25.02.2023, 04:33:44
+
+POST [36mURL:[32m/user [36mStatusCode:[32m201 [36mBody:[32m{"login":"TEST_LOGIN","password":"TEST_PASSWORD"} [33m75 ms	25.02.2023, 04:33:44
+
+POST [36mURL:[32m/artist [36mStatusCode:[32m201 [36mBody:[32m{"name":"TEST_artist","grammy":true} [33m79 ms	25.02.2023, 04:33:44
+
+GET [36mURL:[32m/artist/470318f2-856d-4422-9c8d-e822a460686c [36mStatusCode:[32m200 [36mBody:[32m{} [33m20 ms	25.02.2023, 04:33:44
+
+POST [36mURL:[32m/album [36mStatusCode:[32m201 [36mBody:[32m{"name":"TEST_ALBUM","year":2022,"artistId":null} [33m117 ms	25.02.2023, 04:33:44
+
+GET [36mURL:[32m/user/49b6052e-4c76-483a-820f-2c2cf92c77c6 [36mStatusCode:[32m200 [36mBody:[32m{} [33m24 ms	25.02.2023, 04:33:44
+
+POST [36mURL:[32m/track [36mStatusCode:[32m201 [36mBody:[32m{"name":"TEST_TRACK","duration":199,"artistId":null,"albumId":null,"id":"d2752a06-1ae6-4d35-a465-4603daa6b302"} [33m107 ms	25.02.2023, 04:33:44
+
+GET [36mURL:[32m/album/6823afb1-479e-4660-aac1-af2bfd091f20 [36mStatusCode:[32m200 [36mBody:[32m{} [33m21 ms	25.02.2023, 04:33:44
+
+GET [36mURL:[32m/track/d2752a06-1ae6-4d35-a465-4603daa6b302 [36mStatusCode:[32m200 [36mBody:[32m{} [33m27 ms	25.02.2023, 04:33:44
+
+POST [36mURL:[32m/album [36mStatusCode:[32m201 [36mBody:[32m{"name":"TEST_ALBUM","year":2022,"artistId":"1f3f0190-fddd-4075-8d31-2cd0111641d5"} [33m79 ms	25.02.2023, 04:33:44
+
+DELETE [36mURL:[32m/user/49b6052e-4c76-483a-820f-2c2cf92c77c6 [36mStatusCode:[32m204 [36mBody:[32m{} [33m59 ms	25.02.2023, 04:33:44
+
+DELETE [36mURL:[32m/artist/470318f2-856d-4422-9c8d-e822a460686c [36mStatusCode:[32m204 [36mBody:[32m{} [33m116 ms	25.02.2023, 04:33:44
+
+GET [36mURL:[32m/user/some-invalid-id [36mStatusCode:[32m400 [36mBody:[32m{} [33m3 ms	25.02.2023, 04:33:44
+
+DELETE [36mURL:[32m/track/d2752a06-1ae6-4d35-a465-4603daa6b302 [36mStatusCode:[32m204 [36mBody:[32m{} [33m47 ms	25.02.2023, 04:33:44
+
+DELETE [36mURL:[32m/album/6823afb1-479e-4660-aac1-af2bfd091f20 [36mStatusCode:[32m204 [36mBody:[32m{} [33m73 ms	25.02.2023, 04:33:44
+
+GET [36mURL:[32m/artist/some-invalid-id [36mStatusCode:[32m400 [36mBody:[32m{} [33m1 ms	25.02.2023, 04:33:44
+
+GET [36mURL:[32m/user/0a35dd62-e09f-444b-a628-f4e7c6954f57 [36mStatusCode:[32m404 [36mBody:[32m{} [33m8 ms	25.02.2023, 04:33:44
+
+GET [36mURL:[32m/track/some-invalid-id [36mStatusCode:[32m400 [36mBody:[32m{} [33m1 ms	25.02.2023, 04:33:44
+
+GET [36mURL:[32m/album/some-invalid-id [36mStatusCode:[32m400 [36mBody:[32m{} [33m2 ms	25.02.2023, 04:33:44
+
+POST [36mURL:[32m/track [36mStatusCode:[32m201 [36mBody:[32m{"name":"Test track","duration":335,"artistId":"1f3f0190-fddd-4075-8d31-2cd0111641d5","albumId":"04903715-8d69-45e3-bd28-74029e766648","id":"5e81f010-337e-4658-8949-1591596c38fa"} [33m122 ms	25.02.2023, 04:33:44
+
+GET [36mURL:[32m/artist/0a35dd62-e09f-444b-a628-f4e7c6954f57 [36mStatusCode:[32m404 [36mBody:[32m{} [33m22 ms	25.02.2023, 04:33:44
+
+GET [36mURL:[32m/track/0a35dd62-e09f-444b-a628-f4e7c6954f57 [36mStatusCode:[32m404 [36mBody:[32m{} [33m13 ms	25.02.2023, 04:33:44
+
+GET [36mURL:[32m/album/0a35dd62-e09f-444b-a628-f4e7c6954f57 [36mStatusCode:[32m404 [36mBody:[32m{} [33m26 ms	25.02.2023, 04:33:44
+
+POST [36mURL:[32m/favs/track/5e81f010-337e-4658-8949-1591596c38fa [36mStatusCode:[32m403 [36mBody:[32m{} [33m1 ms	25.02.2023, 04:33:44
+
+POST [36mURL:[32m/user [36mStatusCode:[32m201 [36mBody:[32m{"login":"TEST_LOGIN","password":"TEST_PASSWORD"} [33m72 ms	25.02.2023, 04:33:44
+
+POST [36mURL:[32m/artist [36mStatusCode:[32m201 [36mBody:[32m{"name":"TEST_artist","grammy":true} [33m82 ms	25.02.2023, 04:33:44
+
+POST [36mURL:[32m/album [36mStatusCode:[32m201 [36mBody:[32m{"name":"TEST_ALBUM","year":2022,"artistId":null} [33m66 ms	25.02.2023, 04:33:44
+
+POST [36mURL:[32m/track [36mStatusCode:[32m201 [36mBody:[32m{"name":"TEST_TRACK","duration":199,"artistId":null,"albumId":null,"id":"ecb6d059-cd3f-455a-a593-b83243767ea9"} [33m105 ms	25.02.2023, 04:33:44
+
+POST [36mURL:[32m/artist [36mStatusCode:[32m201 [36mBody:[32m{"name":"TEST_artist","grammy":true} [33m85 ms	25.02.2023, 04:33:44
+
+DELETE [36mURL:[32m/user/fa9cf7d4-5ce5-47c1-840b-bc253fa69ecd [36mStatusCode:[32m204 [36mBody:[32m{} [33m78 ms	25.02.2023, 04:33:44
+
+POST [36mURL:[32m/favs/artist/4bb73563-9f2a-4c8a-b45d-cd7ee33e7c37 [36mStatusCode:[32m403 [36mBody:[32m{} [33m2 ms	25.02.2023, 04:33:44
+
+POST [36mURL:[32m/user [36mStatusCode:[32m400 [36mBody:[32m{} [33m7 ms	25.02.2023, 04:33:44
+
+POST [36mURL:[32m/user [36mStatusCode:[32m400 [36mBody:[32m{"login":"TEST_LOGIN"} [33m2 ms	25.02.2023, 04:33:44
+
+POST [36mURL:[32m/user [36mStatusCode:[32m400 [36mBody:[32m{"password":"TEST_PASSWORD"} [33m3 ms	25.02.2023, 04:33:44
+
+POST [36mURL:[32m/user [36mStatusCode:[32m400 [36mBody:[32m{"login":null,"password":12345} [33m3 ms	25.02.2023, 04:33:44
+
+DELETE [36mURL:[32m/artist/dfb530b6-52c0-4903-b277-c737bac35ec6 [36mStatusCode:[32m204 [36mBody:[32m{} [33m85 ms	25.02.2023, 04:33:44
+
+POST [36mURL:[32m/artist [36mStatusCode:[32m400 [36mBody:[32m{} [33m2 ms	25.02.2023, 04:33:45
+
+POST [36mURL:[32m/artist [36mStatusCode:[32m400 [36mBody:[32m{"name":"TEST_artist"} [33m1 ms	25.02.2023, 04:33:45
+
+POST [36mURL:[32m/artist [36mStatusCode:[32m400 [36mBody:[32m{"grammy":true} [33m2 ms	25.02.2023, 04:33:45
+
+POST [36mURL:[32m/artist [36mStatusCode:[32m400 [36mBody:[32m{"name":null,"grammy":"true"} [33m2 ms	25.02.2023, 04:33:45
+
+DELETE [36mURL:[32m/album/e2e22f27-0376-4913-b718-ec72a455f5ff [36mStatusCode:[32m204 [36mBody:[32m{} [33m147 ms	25.02.2023, 04:33:45
+
+DELETE [36mURL:[32m/track/ecb6d059-cd3f-455a-a593-b83243767ea9 [36mStatusCode:[32m204 [36mBody:[32m{} [33m144 ms	25.02.2023, 04:33:45
+
+POST [36mURL:[32m/album [36mStatusCode:[32m400 [36mBody:[32m{} [33m2 ms	25.02.2023, 04:33:45
+
+POST [36mURL:[32m/album [36mStatusCode:[32m400 [36mBody:[32m{"year":2022} [33m1 ms	25.02.2023, 04:33:45
+
+POST [36mURL:[32m/album [36mStatusCode:[32m400 [36mBody:[32m{"name":"TEST_ALBUM"} [33m1 ms	25.02.2023, 04:33:45
+
+POST [36mURL:[32m/album [36mStatusCode:[32m400 [36mBody:[32m{"name":null,"year":"2022"} [33m2 ms	25.02.2023, 04:33:45
+
+POST [36mURL:[32m/track [36mStatusCode:[32m400 [36mBody:[32m{"name":"TEST_TRACK"} [33m1 ms	25.02.2023, 04:33:45
+
+POST [36mURL:[32m/track [36mStatusCode:[32m400 [36mBody:[32m{} [33m1 ms	25.02.2023, 04:33:45
+
+POST [36mURL:[32m/track [36mStatusCode:[32m400 [36mBody:[32m{"name":null,"duration":"99"} [33m1 ms	25.02.2023, 04:33:45
+
+POST [36mURL:[32m/track [36mStatusCode:[32m400 [36mBody:[32m{"duration":99} [33m1 ms	25.02.2023, 04:33:45
+
+POST [36mURL:[32m/album [36mStatusCode:[32m201 [36mBody:[32m{"name":"TEST_ALBUM","year":2022,"artistId":null} [33m166 ms	25.02.2023, 04:33:45
+
+POST [36mURL:[32m/user [36mStatusCode:[32m201 [36mBody:[32m{"login":"TEST_LOGIN","password":"TEST_PASSWORD"} [33m172 ms	25.02.2023, 04:33:45
+
+POST [36mURL:[32m/favs/album/617f3a4f-44ea-4310-a390-a8385d429ffa [36mStatusCode:[32m403 [36mBody:[32m{} [33m2 ms	25.02.2023, 04:33:45
+
+POST [36mURL:[32m/album [36mStatusCode:[32m201 [36mBody:[32m{"name":"TEST_ALBUM","year":2022,"artistId":null} [33m58 ms	25.02.2023, 04:33:45
+
+POST [36mURL:[32m/artist [36mStatusCode:[32m201 [36mBody:[32m{"name":"TEST_artist","grammy":true} [33m168 ms	25.02.2023, 04:33:45
+
+PUT [36mURL:[32m/user/b4be5330-b9aa-4478-961d-6f27b7ec4971 [36mStatusCode:[32m200 [36mBody:[32m{"oldPassword":"TEST_PASSWORD","newPassword":"NEW_PASSWORD"} [33m63 ms	25.02.2023, 04:33:45
+
+POST [36mURL:[32m/track [36mStatusCode:[32m201 [36mBody:[32m{"name":"TEST_TRACK","duration":199,"artistId":null,"albumId":null,"id":"6c71e0e4-8385-4d51-b5ab-9b9e80a5987f"} [33m95 ms	25.02.2023, 04:33:45
+
+POST [36mURL:[32m/track [36mStatusCode:[32m201 [36mBody:[32m{"name":"Test track","duration":335,"artistId":null,"albumId":null,"id":"adace894-90d5-4fc1-b524-929616d5b547"} [33m66 ms	25.02.2023, 04:33:45
+
+PUT [36mURL:[32m/user/b4be5330-b9aa-4478-961d-6f27b7ec4971 [36mStatusCode:[32m403 [36mBody:[32m{"oldPassword":"TEST_PASSWORD","newPassword":"NEW_PASSWORD"} [33m9 ms	25.02.2023, 04:33:45
+
+POST [36mURL:[32m/favs/track/adace894-90d5-4fc1-b524-929616d5b547 [36mStatusCode:[32m403 [36mBody:[32m{} [33m1 ms	25.02.2023, 04:33:45
+
+PUT [36mURL:[32m/artist/d39bae05-3e04-461a-9d75-bf84accd8a1e [36mStatusCode:[32m200 [36mBody:[32m{"name":"TEST_artist","grammy":false} [33m96 ms	25.02.2023, 04:33:45
+
+PUT [36mURL:[32m/track/6c71e0e4-8385-4d51-b5ab-9b9e80a5987f [36mStatusCode:[32m200 [36mBody:[32m{"name":"TEST_TRACK","duration":188,"artistId":null,"albumId":null} [33m88 ms	25.02.2023, 04:33:45
+
+POST [36mURL:[32m/artist [36mStatusCode:[32m201 [36mBody:[32m{"name":"TEST_artist","grammy":true} [33m130 ms	25.02.2023, 04:33:45
+
+POST [36mURL:[32m/favs/artist/invalid [36mStatusCode:[32m403 [36mBody:[32m{} [33m1 ms	25.02.2023, 04:33:45
+
+DELETE [36mURL:[32m/user/b4be5330-b9aa-4478-961d-6f27b7ec4971 [36mStatusCode:[32m204 [36mBody:[32m{} [33m89 ms	25.02.2023, 04:33:45
+
+POST [36mURL:[32m/favs/artist/0a35dd62-e09f-444b-a628-f4e7c6954f57 [36mStatusCode:[32m403 [36mBody:[32m{} [33m1 ms	25.02.2023, 04:33:45
+
+PUT [36mURL:[32m/user/some-invalid-id [36mStatusCode:[32m400 [36mBody:[32m{"oldPassword":"test","newPassword":"fake"} [33m1 ms	25.02.2023, 04:33:45
+
+DELETE [36mURL:[32m/artist/d39bae05-3e04-461a-9d75-bf84accd8a1e [36mStatusCode:[32m204 [36mBody:[32m{} [33m66 ms	25.02.2023, 04:33:45
+
+DELETE [36mURL:[32m/track/6c71e0e4-8385-4d51-b5ab-9b9e80a5987f [36mStatusCode:[32m204 [36mBody:[32m{} [33m65 ms	25.02.2023, 04:33:45
+
+PUT [36mURL:[32m/user/0a35dd62-e09f-444b-a628-f4e7c6954f57 [36mStatusCode:[32m400 [36mBody:[32m{} [33m3 ms	25.02.2023, 04:33:45
+
+PUT [36mURL:[32m/album/ef4602ec-f719-41d1-a6ba-24db023b63d3 [36mStatusCode:[32m200 [36mBody:[32m{"name":"TEST_ALBUM","year":2021,"artistId":"1d0ca009-bb0f-435a-9613-49bb382420f3"} [33m101 ms	25.02.2023, 04:33:45
+
+PUT [36mURL:[32m/artist/some-invalid-id [36mStatusCode:[32m400 [36mBody:[32m{"name":"TEST_artist","grammy":false} [33m2 ms	25.02.2023, 04:33:45
+
+PUT [36mURL:[32m/track/some-invalid-id [36mStatusCode:[32m400 [36mBody:[32m{"name":"TEST_TRACK","duration":188,"artistId":null,"albumId":null} [33m1 ms	25.02.2023, 04:33:45
+
+PUT [36mURL:[32m/user/0a35dd62-e09f-444b-a628-f4e7c6954f57 [36mStatusCode:[32m404 [36mBody:[32m{"oldPassword":"test","newPassword":"fake"} [33m10 ms	25.02.2023, 04:33:45
+
+POST [36mURL:[32m/album [36mStatusCode:[32m201 [36mBody:[32m{"name":"TEST_ALBUM","year":2022,"artistId":null} [33m105 ms	25.02.2023, 04:33:45
+
+DELETE [36mURL:[32m/album/ef4602ec-f719-41d1-a6ba-24db023b63d3 [36mStatusCode:[32m204 [36mBody:[32m{} [33m56 ms	25.02.2023, 04:33:45
+
+POST [36mURL:[32m/favs/album/5eb16e59-da3b-46e6-bb3b-14fef18756ee [36mStatusCode:[32m403 [36mBody:[32m{} [33m2 ms	25.02.2023, 04:33:45
+
+POST [36mURL:[32m/track [36mStatusCode:[32m201 [36mBody:[32m{"name":"TEST_TRACK","duration":199,"artistId":null,"albumId":null,"id":"5770f69c-d525-4d7f-97a4-af2ac47e6f5c"} [33m76 ms	25.02.2023, 04:33:45
+
+PUT [36mURL:[32m/album/some-invalid-id [36mStatusCode:[32m400 [36mBody:[32m{"name":"TEST_ALBUM","year":2021,"artistId":null} [33m3 ms	25.02.2023, 04:33:45
+
+POST [36mURL:[32m/user [36mStatusCode:[32m201 [36mBody:[32m{"login":"TEST_LOGIN","password":"TEST_PASSWORD"} [33m70 ms	25.02.2023, 04:33:45
+
+POST [36mURL:[32m/artist [36mStatusCode:[32m201 [36mBody:[32m{"name":"TEST_artist","grammy":true} [33m125 ms	25.02.2023, 04:33:45
+
+PUT [36mURL:[32m/track/5770f69c-d525-4d7f-97a4-af2ac47e6f5c [36mStatusCode:[32m400 [36mBody:[32m{"name":null,"duration":"188","artistId":123,"albumId":123} [33m4 ms	25.02.2023, 04:33:45
+
+PUT [36mURL:[32m/artist/a0e31fd3-7c36-4259-819a-47d32e6dbf11 [36mStatusCode:[32m400 [36mBody:[32m{"name":12345,"grammy":"false"} [33m1 ms	25.02.2023, 04:33:45
+
+DELETE [36mURL:[32m/user/f2fd1a8b-aadd-4b1e-9363-7bd3c6d851f0 [36mStatusCode:[32m204 [36mBody:[32m{} [33m40 ms	25.02.2023, 04:33:45
+
+POST [36mURL:[32m/artist [36mStatusCode:[32m201 [36mBody:[32m{"name":"TEST_artist","grammy":true} [33m103 ms	25.02.2023, 04:33:45
+
+PUT [36mURL:[32m/track/0a35dd62-e09f-444b-a628-f4e7c6954f57 [36mStatusCode:[32m404 [36mBody:[32m{"name":"TEST_TRACK","duration":188,"artistId":null,"albumId":null} [33m28 ms	25.02.2023, 04:33:45
+
+POST [36mURL:[32m/album [36mStatusCode:[32m201 [36mBody:[32m{"name":"TEST_ALBUM","year":2022,"artistId":null} [33m85 ms	25.02.2023, 04:33:45
+
+PUT [36mURL:[32m/artist/0a35dd62-e09f-444b-a628-f4e7c6954f57 [36mStatusCode:[32m404 [36mBody:[32m{"name":"TEST_artist","grammy":false} [33m25 ms	25.02.2023, 04:33:45
+
+GET [36mURL:[32m/user/f2fd1a8b-aadd-4b1e-9363-7bd3c6d851f0 [36mStatusCode:[32m404 [36mBody:[32m{} [33m35 ms	25.02.2023, 04:33:45
+
+POST [36mURL:[32m/favs/artist/83c1dabe-f717-47f2-a261-7ff14594692d [36mStatusCode:[32m403 [36mBody:[32m{} [33m1 ms	25.02.2023, 04:33:45
+
+PUT [36mURL:[32m/album/256e58b7-aae4-4476-8dca-7dc86280f55e [36mStatusCode:[32m400 [36mBody:[32m{"name":true,"year":"2021","artistId":123} [33m2 ms	25.02.2023, 04:33:45
+
+DELETE [36mURL:[32m/user/some-invalid-id [36mStatusCode:[32m400 [36mBody:[32m{} [33m1 ms	25.02.2023, 04:33:45
+
+POST [36mURL:[32m/track [36mStatusCode:[32m201 [36mBody:[32m{"name":"TEST_TRACK","duration":199,"artistId":null,"albumId":null,"id":"6fd33bca-538c-4100-92c0-69986abafc3c"} [33m49 ms	25.02.2023, 04:33:45
+
+PUT [36mURL:[32m/album/0a35dd62-e09f-444b-a628-f4e7c6954f57 [36mStatusCode:[32m404 [36mBody:[32m{"name":"TEST_ALBUM","year":2021,"artistId":null} [33m29 ms	25.02.2023, 04:33:45
+
+POST [36mURL:[32m/artist [36mStatusCode:[32m201 [36mBody:[32m{"name":"TEST_artist","grammy":true} [33m71 ms	25.02.2023, 04:33:45
+
+DELETE [36mURL:[32m/user/0a35dd62-e09f-444b-a628-f4e7c6954f57 [36mStatusCode:[32m404 [36mBody:[32m{} [33m23 ms	25.02.2023, 04:33:45
+
+POST [36mURL:[32m/track [36mStatusCode:[32m201 [36mBody:[32m{"name":"Test track","duration":335,"artistId":null,"albumId":null,"id":"ed680bd5-cd94-40bb-9f6e-a2556919f5c7"} [33m82 ms	25.02.2023, 04:33:46
+
+DELETE [36mURL:[32m/track/6fd33bca-538c-4100-92c0-69986abafc3c [36mStatusCode:[32m204 [36mBody:[32m{} [33m28 ms	25.02.2023, 04:33:46
+
+POST [36mURL:[32m/favs/track/ed680bd5-cd94-40bb-9f6e-a2556919f5c7 [36mStatusCode:[32m403 [36mBody:[32m{} [33m1 ms	25.02.2023, 04:33:46
+
+POST [36mURL:[32m/album [36mStatusCode:[32m201 [36mBody:[32m{"name":"TEST_ALBUM","year":2022,"artistId":null} [33m62 ms	25.02.2023, 04:33:46
+
+GET [36mURL:[32m/track/6fd33bca-538c-4100-92c0-69986abafc3c [36mStatusCode:[32m404 [36mBody:[32m{} [33m24 ms	25.02.2023, 04:33:46
+
+DELETE [36mURL:[32m/album/some-invalid-id [36mStatusCode:[32m400 [36mBody:[32m{} [33m1 ms	25.02.2023, 04:33:46
+
+DELETE [36mURL:[32m/artist/8901f02f-622d-431f-a0f7-f781cdba1757 [36mStatusCode:[32m204 [36mBody:[32m{} [33m72 ms	25.02.2023, 04:33:46
+
+DELETE [36mURL:[32m/track/some-invalid-id [36mStatusCode:[32m400 [36mBody:[32m{} [33m2 ms	25.02.2023, 04:33:46
+
+DELETE [36mURL:[32m/album/0a35dd62-e09f-444b-a628-f4e7c6954f57 [36mStatusCode:[32m404 [36mBody:[32m{} [33m13 ms	25.02.2023, 04:33:46
+
+GET [36mURL:[32m/artist/8901f02f-622d-431f-a0f7-f781cdba1757 [36mStatusCode:[32m404 [36mBody:[32m{} [33m22 ms	25.02.2023, 04:33:46
+
+DELETE [36mURL:[32m/album/26c4c5c1-7ff4-40bc-8031-186f218584cd [36mStatusCode:[32m204 [36mBody:[32m{} [33m53 ms	25.02.2023, 04:33:46
+
+DELETE [36mURL:[32m/track/0a35dd62-e09f-444b-a628-f4e7c6954f57 [36mStatusCode:[32m404 [36mBody:[32m{} [33m20 ms	25.02.2023, 04:33:46
+
+DELETE [36mURL:[32m/artist/some-invalid-id [36mStatusCode:[32m400 [36mBody:[32m{} [33m1 ms	25.02.2023, 04:33:46
+
+DELETE [36mURL:[32m/artist/0a35dd62-e09f-444b-a628-f4e7c6954f57 [36mStatusCode:[32m404 [36mBody:[32m{} [33m19 ms	25.02.2023, 04:33:46
+
+GET [36mURL:[32m/album/26c4c5c1-7ff4-40bc-8031-186f218584cd [36mStatusCode:[32m404 [36mBody:[32m{} [33m20 ms	25.02.2023, 04:33:46
+
+DELETE [36mURL:[32m/artist/0a35dd62-e09f-444b-a628-f4e7c6954f57 [36mStatusCode:[32m404 [36mBody:[32m{} [33m7 ms	25.02.2023, 04:33:46
+
+DELETE [36mURL:[32m/track/0a35dd62-e09f-444b-a628-f4e7c6954f57 [36mStatusCode:[32m404 [36mBody:[32m{} [33m16 ms	25.02.2023, 04:33:46
+
+DELETE [36mURL:[32m/album/some-invalid-id [36mStatusCode:[32m400 [36mBody:[32m{} [33m1 ms	25.02.2023, 04:33:46
+
+DELETE [36mURL:[32m/album/0a35dd62-e09f-444b-a628-f4e7c6954f57 [36mStatusCode:[32m404 [36mBody:[32m{} [33m7 ms	25.02.2023, 04:33:46
+
+POST [36mURL:[32m/artist [36mStatusCode:[32m201 [36mBody:[32m{"name":"TEST_artist","grammy":true} [33m36 ms	25.02.2023, 04:33:46
+
+POST [36mURL:[32m/album [36mStatusCode:[32m201 [36mBody:[32m{"name":"TEST_ALBUM","year":2022,"artistId":null} [33m38 ms	25.02.2023, 04:33:46
+
+POST [36mURL:[32m/track [36mStatusCode:[32m201 [36mBody:[32m{"name":"TEST_track","albumId":null,"artistId":"f5167988-bd06-487c-87f0-b7bf22c49ac3","duration":200,"id":"de759a0e-3984-45ba-912a-ba502096d21e"} [33m39 ms	25.02.2023, 04:33:46
+
+POST [36mURL:[32m/track [36mStatusCode:[32m201 [36mBody:[32m{"name":"TEST_TRACK","duration":199,"artistId":null,"albumId":"fa562480-d599-4049-a852-89ab1c790466","id":"b0ecf802-71da-42e5-88a5-f61a772b9cb3"} [33m41 ms	25.02.2023, 04:33:46
+
+DELETE [36mURL:[32m/artist/f5167988-bd06-487c-87f0-b7bf22c49ac3 [36mStatusCode:[32m204 [36mBody:[32m{} [33m53 ms	25.02.2023, 04:33:46
+
+GET [36mURL:[32m/track/de759a0e-3984-45ba-912a-ba502096d21e [36mStatusCode:[32m200 [36mBody:[32m{} [33m6 ms	25.02.2023, 04:33:46
+
+DELETE [36mURL:[32m/album/fa562480-d599-4049-a852-89ab1c790466 [36mStatusCode:[32m204 [36mBody:[32m{} [33m46 ms	25.02.2023, 04:33:46
+
+GET [36mURL:[32m/track/b0ecf802-71da-42e5-88a5-f61a772b9cb3 [36mStatusCode:[32m200 [36mBody:[32m{} [33m5 ms	25.02.2023, 04:33:46
+
+POST [36mURL:[32m/auth/signup [36mStatusCode:[32m400 [36mBody:[32m{"login":"TEST_LOGIN","password":"Tu6!@#%&"} [33m382 ms	25.02.2023, 04:36:12
+
+POST [36mURL:[32m/auth/signup [36mStatusCode:[32m400 [36mBody:[32m{"login":"TEST_LOGIN","password":"Tu6!@#%&"} [33m386 ms	25.02.2023, 04:36:12
+
+POST [36mURL:[32m/auth/signup [36mStatusCode:[32m400 [36mBody:[32m{"login":"TEST_LOGIN","password":"Tu6!@#%&"} [33m436 ms	25.02.2023, 04:36:12
+
+POST [36mURL:[32m/auth/signup [36mStatusCode:[32m400 [36mBody:[32m{"login":"TEST_LOGIN","password":"Tu6!@#%&"} [33m426 ms	25.02.2023, 04:36:12
+
+POST [36mURL:[32m/auth/signup [36mStatusCode:[32m400 [36mBody:[32m{"login":"TEST_LOGIN","password":"Tu6!@#%&"} [33m393 ms	25.02.2023, 04:36:12
+
+POST [36mURL:[32m/auth/login [36mStatusCode:[32m201 [36mBody:[32m{"login":"TEST_LOGIN","password":"Tu6!@#%&"} [33m53 ms	25.02.2023, 04:36:12
+
+POST [36mURL:[32m/auth/login [36mStatusCode:[32m201 [36mBody:[32m{"login":"TEST_LOGIN","password":"Tu6!@#%&"} [33m51 ms	25.02.2023, 04:36:12
+
+POST [36mURL:[32m/auth/login [36mStatusCode:[32m201 [36mBody:[32m{"login":"TEST_LOGIN","password":"Tu6!@#%&"} [33m50 ms	25.02.2023, 04:36:12
+
+POST [36mURL:[32m/auth/login [36mStatusCode:[32m201 [36mBody:[32m{"login":"TEST_LOGIN","password":"Tu6!@#%&"} [33m51 ms	25.02.2023, 04:36:12
+
+POST [36mURL:[32m/auth/login [36mStatusCode:[32m201 [36mBody:[32m{"login":"TEST_LOGIN","password":"Tu6!@#%&"} [33m49 ms	25.02.2023, 04:36:12
+
+tset	25.02.2023, 04:36:12
+
+GET [36mURL:[32m/user [36mStatusCode:[32m200 [36mBody:[32m{} [33m54 ms	25.02.2023, 04:36:13
+
+GET [36mURL:[32m/track [36mStatusCode:[32m200 [36mBody:[32m{} [33m49 ms	25.02.2023, 04:36:13
+
+GET [36mURL:[32m/album [36mStatusCode:[32m200 [36mBody:[32m{} [33m57 ms	25.02.2023, 04:36:13
+
+GET [36mURL:[32m/artist [36mStatusCode:[32m200 [36mBody:[32m{} [33m47 ms	25.02.2023, 04:36:13
+
+GET [36mURL:[32m/favs [36mStatusCode:[32m200 [36mBody:[32m{} [33m106 ms	25.02.2023, 04:36:13
+
+POST [36mURL:[32m/user [36mStatusCode:[32m201 [36mBody:[32m{"login":"TEST_LOGIN","password":"TEST_PASSWORD"} [33m122 ms	25.02.2023, 04:36:13
+
+POST [36mURL:[32m/album [36mStatusCode:[32m201 [36mBody:[32m{"name":"TEST_ALBUM","year":2022,"artistId":null} [33m139 ms	25.02.2023, 04:36:13
+
+POST [36mURL:[32m/track [36mStatusCode:[32m201 [36mBody:[32m{"name":"TEST_TRACK","duration":199,"artistId":null,"albumId":null,"id":"7e91beb2-7bb8-4688-a679-846ca5a5075d"} [33m154 ms	25.02.2023, 04:36:13
+
+POST [36mURL:[32m/artist [36mStatusCode:[32m201 [36mBody:[32m{"name":"TEST_artist","grammy":true} [33m83 ms	25.02.2023, 04:36:13
+
+GET [36mURL:[32m/user/b16575e0-e401-4d2d-b878-6f9bfe8e3634 [36mStatusCode:[32m200 [36mBody:[32m{} [33m42 ms	25.02.2023, 04:36:13
+
+GET [36mURL:[32m/album/155efc92-323d-40fc-b4df-dfe66d364b09 [36mStatusCode:[32m200 [36mBody:[32m{} [33m18 ms	25.02.2023, 04:36:13
+
+GET [36mURL:[32m/track/7e91beb2-7bb8-4688-a679-846ca5a5075d [36mStatusCode:[32m200 [36mBody:[32m{} [33m22 ms	25.02.2023, 04:36:13
+
+GET [36mURL:[32m/artist/889aa6ab-9266-46b3-98d9-cabfac4a0980 [36mStatusCode:[32m200 [36mBody:[32m{} [33m37 ms	25.02.2023, 04:36:13
+
+POST [36mURL:[32m/artist [36mStatusCode:[32m201 [36mBody:[32m{"name":"TEST_artist","grammy":true} [33m129 ms	25.02.2023, 04:36:13
+
+DELETE [36mURL:[32m/user/b16575e0-e401-4d2d-b878-6f9bfe8e3634 [36mStatusCode:[32m204 [36mBody:[32m{} [33m63 ms	25.02.2023, 04:36:13
+
+DELETE [36mURL:[32m/album/155efc92-323d-40fc-b4df-dfe66d364b09 [36mStatusCode:[32m204 [36mBody:[32m{} [33m67 ms	25.02.2023, 04:36:13
+
+DELETE [36mURL:[32m/track/7e91beb2-7bb8-4688-a679-846ca5a5075d [36mStatusCode:[32m204 [36mBody:[32m{} [33m80 ms	25.02.2023, 04:36:13
+
+GET [36mURL:[32m/user/some-invalid-id [36mStatusCode:[32m400 [36mBody:[32m{} [33m3 ms	25.02.2023, 04:36:13
+
+GET [36mURL:[32m/album/some-invalid-id [36mStatusCode:[32m400 [36mBody:[32m{} [33m2 ms	25.02.2023, 04:36:13
+
+DELETE [36mURL:[32m/artist/889aa6ab-9266-46b3-98d9-cabfac4a0980 [36mStatusCode:[32m204 [36mBody:[32m{} [33m98 ms	25.02.2023, 04:36:13
+
+GET [36mURL:[32m/track/some-invalid-id [36mStatusCode:[32m400 [36mBody:[32m{} [33m3 ms	25.02.2023, 04:36:13
+
+POST [36mURL:[32m/album [36mStatusCode:[32m201 [36mBody:[32m{"name":"TEST_ALBUM","year":2022,"artistId":"98ebf94b-5984-4cb0-aa19-258ac049740f"} [33m132 ms	25.02.2023, 04:36:13
+
+GET [36mURL:[32m/user/0a35dd62-e09f-444b-a628-f4e7c6954f57 [36mStatusCode:[32m404 [36mBody:[32m{} [33m24 ms	25.02.2023, 04:36:13
+
+GET [36mURL:[32m/album/0a35dd62-e09f-444b-a628-f4e7c6954f57 [36mStatusCode:[32m404 [36mBody:[32m{} [33m28 ms	25.02.2023, 04:36:13
+
+GET [36mURL:[32m/artist/some-invalid-id [36mStatusCode:[32m400 [36mBody:[32m{} [33m9 ms	25.02.2023, 04:36:13
+
+GET [36mURL:[32m/track/0a35dd62-e09f-444b-a628-f4e7c6954f57 [36mStatusCode:[32m404 [36mBody:[32m{} [33m16 ms	25.02.2023, 04:36:13
+
+GET [36mURL:[32m/artist/0a35dd62-e09f-444b-a628-f4e7c6954f57 [36mStatusCode:[32m404 [36mBody:[32m{} [33m16 ms	25.02.2023, 04:36:13
+
+POST [36mURL:[32m/album [36mStatusCode:[32m201 [36mBody:[32m{"name":"TEST_ALBUM","year":2022,"artistId":null} [33m64 ms	25.02.2023, 04:36:13
+
+POST [36mURL:[32m/track [36mStatusCode:[32m201 [36mBody:[32m{"name":"Test track","duration":335,"artistId":"98ebf94b-5984-4cb0-aa19-258ac049740f","albumId":"e5e8ec18-6ea6-45a4-8f9d-61e69f760111","id":"35c703f6-0dfb-4a79-8c72-6c3a8ff79864"} [33m106 ms	25.02.2023, 04:36:13
+
+POST [36mURL:[32m/track [36mStatusCode:[32m201 [36mBody:[32m{"name":"TEST_TRACK","duration":199,"artistId":null,"albumId":null,"id":"e7ac655c-6d78-4fc2-8fd3-89d7260676c7"} [33m64 ms	25.02.2023, 04:36:13
+
+POST [36mURL:[32m/user [36mStatusCode:[32m201 [36mBody:[32m{"login":"TEST_LOGIN","password":"TEST_PASSWORD"} [33m105 ms	25.02.2023, 04:36:13
+
+POST [36mURL:[32m/artist [36mStatusCode:[32m201 [36mBody:[32m{"name":"TEST_artist","grammy":true} [33m116 ms	25.02.2023, 04:36:13
+
+DELETE [36mURL:[32m/track/e7ac655c-6d78-4fc2-8fd3-89d7260676c7 [36mStatusCode:[32m204 [36mBody:[32m{} [33m57 ms	25.02.2023, 04:36:13
+
+DELETE [36mURL:[32m/user/30b2d325-cac1-48ca-846c-f7ce589ca576 [36mStatusCode:[32m204 [36mBody:[32m{} [33m48 ms	25.02.2023, 04:36:13
+
+DELETE [36mURL:[32m/album/7da071b2-f4e4-46e1-a8b5-45d573dc0fb5 [36mStatusCode:[32m204 [36mBody:[32m{} [33m105 ms	25.02.2023, 04:36:13
+
+POST [36mURL:[32m/track [36mStatusCode:[32m400 [36mBody:[32m{} [33m4 ms	25.02.2023, 04:36:13
+
+POST [36mURL:[32m/track [36mStatusCode:[32m400 [36mBody:[32m{"name":"TEST_TRACK"} [33m2 ms	25.02.2023, 04:36:13
+
+POST [36mURL:[32m/track [36mStatusCode:[32m400 [36mBody:[32m{"duration":99} [33m2 ms	25.02.2023, 04:36:13
+
+POST [36mURL:[32m/track [36mStatusCode:[32m400 [36mBody:[32m{"name":null,"duration":"99"} [33m2 ms	25.02.2023, 04:36:13
+
+POST [36mURL:[32m/user [36mStatusCode:[32m400 [36mBody:[32m{} [33m3 ms	25.02.2023, 04:36:13
+
+POST [36mURL:[32m/user [36mStatusCode:[32m400 [36mBody:[32m{"login":"TEST_LOGIN"} [33m3 ms	25.02.2023, 04:36:13
+
+POST [36mURL:[32m/user [36mStatusCode:[32m400 [36mBody:[32m{"password":"TEST_PASSWORD"} [33m2 ms	25.02.2023, 04:36:13
+
+POST [36mURL:[32m/user [36mStatusCode:[32m400 [36mBody:[32m{"login":null,"password":12345} [33m2 ms	25.02.2023, 04:36:13
+
+POST [36mURL:[32m/album [36mStatusCode:[32m400 [36mBody:[32m{} [33m1 ms	25.02.2023, 04:36:13
+
+POST [36mURL:[32m/album [36mStatusCode:[32m400 [36mBody:[32m{"year":2022} [33m1 ms	25.02.2023, 04:36:14
+
+POST [36mURL:[32m/album [36mStatusCode:[32m400 [36mBody:[32m{"name":"TEST_ALBUM"} [33m1 ms	25.02.2023, 04:36:14
+
+POST [36mURL:[32m/album [36mStatusCode:[32m400 [36mBody:[32m{"name":null,"year":"2022"} [33m2 ms	25.02.2023, 04:36:14
+
+DELETE [36mURL:[32m/artist/3bead648-344f-4f14-85ae-48253d9ce035 [36mStatusCode:[32m204 [36mBody:[32m{} [33m165 ms	25.02.2023, 04:36:14
+
+POST [36mURL:[32m/artist [36mStatusCode:[32m400 [36mBody:[32m{} [33m2 ms	25.02.2023, 04:36:14
+
+POST [36mURL:[32m/artist [36mStatusCode:[32m400 [36mBody:[32m{"name":"TEST_artist"} [33m1 ms	25.02.2023, 04:36:14
+
+POST [36mURL:[32m/artist [36mStatusCode:[32m400 [36mBody:[32m{"grammy":true} [33m2 ms	25.02.2023, 04:36:14
+
+POST [36mURL:[32m/artist [36mStatusCode:[32m400 [36mBody:[32m{"name":null,"grammy":"true"} [33m1 ms	25.02.2023, 04:36:14
+
+POST [36mURL:[32m/favs/track/35c703f6-0dfb-4a79-8c72-6c3a8ff79864 [36mStatusCode:[32m201 [36mBody:[32m{} [33m382 ms	25.02.2023, 04:36:14
+
+POST [36mURL:[32m/user [36mStatusCode:[32m201 [36mBody:[32m{"login":"TEST_LOGIN","password":"TEST_PASSWORD"} [33m103 ms	25.02.2023, 04:36:14
+
+POST [36mURL:[32m/track [36mStatusCode:[32m201 [36mBody:[32m{"name":"TEST_TRACK","duration":199,"artistId":null,"albumId":null,"id":"e9f8fafb-19de-4cc3-84b0-c34b4ff43d31"} [33m126 ms	25.02.2023, 04:36:14
+
+POST [36mURL:[32m/album [36mStatusCode:[32m201 [36mBody:[32m{"name":"TEST_ALBUM","year":2022,"artistId":null} [33m134 ms	25.02.2023, 04:36:14
+
+PUT [36mURL:[32m/user/901ef98f-5c7f-4989-81cc-da954ab91cde [36mStatusCode:[32m200 [36mBody:[32m{"oldPassword":"TEST_PASSWORD","newPassword":"NEW_PASSWORD"} [33m67 ms	25.02.2023, 04:36:14
+
+POST [36mURL:[32m/artist [36mStatusCode:[32m201 [36mBody:[32m{"name":"TEST_artist","grammy":true} [33m105 ms	25.02.2023, 04:36:14
+
+PUT [36mURL:[32m/track/e9f8fafb-19de-4cc3-84b0-c34b4ff43d31 [36mStatusCode:[32m200 [36mBody:[32m{"name":"TEST_TRACK","duration":188,"artistId":null,"albumId":null} [33m85 ms	25.02.2023, 04:36:14
+
+PUT [36mURL:[32m/user/901ef98f-5c7f-4989-81cc-da954ab91cde [36mStatusCode:[32m403 [36mBody:[32m{"oldPassword":"TEST_PASSWORD","newPassword":"NEW_PASSWORD"} [33m22 ms	25.02.2023, 04:36:14
+
+POST [36mURL:[32m/favs/album/e5e8ec18-6ea6-45a4-8f9d-61e69f760111 [36mStatusCode:[32m201 [36mBody:[32m{} [33m178 ms	25.02.2023, 04:36:14
+
+POST [36mURL:[32m/artist [36mStatusCode:[32m201 [36mBody:[32m{"name":"TEST_artist","grammy":true} [33m91 ms	25.02.2023, 04:36:14
+
+PUT [36mURL:[32m/artist/957bcb8a-9f3e-4ea4-9ddf-c8ae5304dad5 [36mStatusCode:[32m200 [36mBody:[32m{"name":"TEST_artist","grammy":false} [33m72 ms	25.02.2023, 04:36:14
+
+DELETE [36mURL:[32m/track/e9f8fafb-19de-4cc3-84b0-c34b4ff43d31 [36mStatusCode:[32m204 [36mBody:[32m{} [33m46 ms	25.02.2023, 04:36:14
+
+DELETE [36mURL:[32m/user/901ef98f-5c7f-4989-81cc-da954ab91cde [36mStatusCode:[32m204 [36mBody:[32m{} [33m53 ms	25.02.2023, 04:36:14
+
+PUT [36mURL:[32m/track/some-invalid-id [36mStatusCode:[32m400 [36mBody:[32m{"name":"TEST_TRACK","duration":188,"artistId":null,"albumId":null} [33m1 ms	25.02.2023, 04:36:14
+
+PUT [36mURL:[32m/user/some-invalid-id [36mStatusCode:[32m400 [36mBody:[32m{"oldPassword":"test","newPassword":"fake"} [33m1 ms	25.02.2023, 04:36:14
+
+PUT [36mURL:[32m/album/362c7646-db6e-44ea-b65f-d1d7468ea55c [36mStatusCode:[32m200 [36mBody:[32m{"name":"TEST_ALBUM","year":2021,"artistId":"c1f72f80-c447-4273-b297-ccc5da1e5527"} [33m58 ms	25.02.2023, 04:36:14
+
+PUT [36mURL:[32m/user/0a35dd62-e09f-444b-a628-f4e7c6954f57 [36mStatusCode:[32m400 [36mBody:[32m{} [33m2 ms	25.02.2023, 04:36:14
+
+DELETE [36mURL:[32m/artist/957bcb8a-9f3e-4ea4-9ddf-c8ae5304dad5 [36mStatusCode:[32m204 [36mBody:[32m{} [33m88 ms	25.02.2023, 04:36:14
+
+POST [36mURL:[32m/track [36mStatusCode:[32m201 [36mBody:[32m{"name":"TEST_TRACK","duration":199,"artistId":null,"albumId":null,"id":"06a1b093-c9d2-4ec8-9436-19f5c8aeefea"} [33m71 ms	25.02.2023, 04:36:14
+
+PUT [36mURL:[32m/user/0a35dd62-e09f-444b-a628-f4e7c6954f57 [36mStatusCode:[32m404 [36mBody:[32m{"oldPassword":"test","newPassword":"fake"} [33m27 ms	25.02.2023, 04:36:14
+
+PUT [36mURL:[32m/artist/some-invalid-id [36mStatusCode:[32m400 [36mBody:[32m{"name":"TEST_artist","grammy":false} [33m1 ms	25.02.2023, 04:36:14
+
+PUT [36mURL:[32m/track/06a1b093-c9d2-4ec8-9436-19f5c8aeefea [36mStatusCode:[32m400 [36mBody:[32m{"name":null,"duration":"188","artistId":123,"albumId":123} [33m2 ms	25.02.2023, 04:36:14
+
+POST [36mURL:[32m/favs/artist/98ebf94b-5984-4cb0-aa19-258ac049740f [36mStatusCode:[32m201 [36mBody:[32m{} [33m187 ms	25.02.2023, 04:36:14
+
+DELETE [36mURL:[32m/album/362c7646-db6e-44ea-b65f-d1d7468ea55c [36mStatusCode:[32m204 [36mBody:[32m{} [33m97 ms	25.02.2023, 04:36:14
+
+PUT [36mURL:[32m/track/0a35dd62-e09f-444b-a628-f4e7c6954f57 [36mStatusCode:[32m404 [36mBody:[32m{"name":"TEST_TRACK","duration":188,"artistId":null,"albumId":null} [33m14 ms	25.02.2023, 04:36:14
+
+GET [36mURL:[32m/favs [36mStatusCode:[32m200 [36mBody:[32m{} [33m29 ms	25.02.2023, 04:36:14
+
+PUT [36mURL:[32m/album/some-invalid-id [36mStatusCode:[32m400 [36mBody:[32m{"name":"TEST_ALBUM","year":2021,"artistId":null} [33m2 ms	25.02.2023, 04:36:14
+
+POST [36mURL:[32m/user [36mStatusCode:[32m201 [36mBody:[32m{"login":"TEST_LOGIN","password":"TEST_PASSWORD"} [33m73 ms	25.02.2023, 04:36:14
+
+POST [36mURL:[32m/artist [36mStatusCode:[32m201 [36mBody:[32m{"name":"TEST_artist","grammy":true} [33m107 ms	25.02.2023, 04:36:14
+
+POST [36mURL:[32m/track [36mStatusCode:[32m201 [36mBody:[32m{"name":"TEST_TRACK","duration":199,"artistId":null,"albumId":null,"id":"42f9339e-a79c-488c-82cf-5a4befb82ebd"} [33m68 ms	25.02.2023, 04:36:14
+
+PUT [36mURL:[32m/artist/dc5660aa-8b02-4644-970f-f76af8363176 [36mStatusCode:[32m400 [36mBody:[32m{"name":12345,"grammy":"false"} [33m2 ms	25.02.2023, 04:36:14
+
+POST [36mURL:[32m/album [36mStatusCode:[32m201 [36mBody:[32m{"name":"TEST_ALBUM","year":2022,"artistId":null} [33m77 ms	25.02.2023, 04:36:14
+
+DELETE [36mURL:[32m/user/3be14ddf-1f46-4d0f-9db5-d96db2386cd0 [36mStatusCode:[32m204 [36mBody:[32m{} [33m48 ms	25.02.2023, 04:36:14
+
+DELETE [36mURL:[32m/artist/98ebf94b-5984-4cb0-aa19-258ac049740f [36mStatusCode:[32m204 [36mBody:[32m{} [33m87 ms	25.02.2023, 04:36:14
+
+PUT [36mURL:[32m/album/d430b404-1d49-47fc-9690-f84b5efe3a87 [36mStatusCode:[32m400 [36mBody:[32m{"name":true,"year":"2021","artistId":123} [33m2 ms	25.02.2023, 04:36:14
+
+PUT [36mURL:[32m/artist/0a35dd62-e09f-444b-a628-f4e7c6954f57 [36mStatusCode:[32m404 [36mBody:[32m{"name":"TEST_artist","grammy":false} [33m23 ms	25.02.2023, 04:36:14
+
+GET [36mURL:[32m/user/3be14ddf-1f46-4d0f-9db5-d96db2386cd0 [36mStatusCode:[32m404 [36mBody:[32m{} [33m21 ms	25.02.2023, 04:36:14
+
+DELETE [36mURL:[32m/track/42f9339e-a79c-488c-82cf-5a4befb82ebd [36mStatusCode:[32m204 [36mBody:[32m{} [33m50 ms	25.02.2023, 04:36:14
+
+PUT [36mURL:[32m/album/0a35dd62-e09f-444b-a628-f4e7c6954f57 [36mStatusCode:[32m404 [36mBody:[32m{"name":"TEST_ALBUM","year":2021,"artistId":null} [33m10 ms	25.02.2023, 04:36:14
+
+DELETE [36mURL:[32m/user/some-invalid-id [36mStatusCode:[32m400 [36mBody:[32m{} [33m1 ms	25.02.2023, 04:36:14
+
+DELETE [36mURL:[32m/album/e5e8ec18-6ea6-45a4-8f9d-61e69f760111 [36mStatusCode:[32m204 [36mBody:[32m{} [33m90 ms	25.02.2023, 04:36:14
+
+GET [36mURL:[32m/track/42f9339e-a79c-488c-82cf-5a4befb82ebd [36mStatusCode:[32m404 [36mBody:[32m{} [33m20 ms	25.02.2023, 04:36:14
+
+DELETE [36mURL:[32m/user/0a35dd62-e09f-444b-a628-f4e7c6954f57 [36mStatusCode:[32m404 [36mBody:[32m{} [33m13 ms	25.02.2023, 04:36:14
+
+DELETE [36mURL:[32m/track/some-invalid-id [36mStatusCode:[32m400 [36mBody:[32m{} [33m1 ms	25.02.2023, 04:36:14
+
+POST [36mURL:[32m/artist [36mStatusCode:[32m201 [36mBody:[32m{"name":"TEST_artist","grammy":true} [33m109 ms	25.02.2023, 04:36:14
+
+DELETE [36mURL:[32m/track/35c703f6-0dfb-4a79-8c72-6c3a8ff79864 [36mStatusCode:[32m204 [36mBody:[32m{} [33m47 ms	25.02.2023, 04:36:14
+
+POST [36mURL:[32m/album [36mStatusCode:[32m201 [36mBody:[32m{"name":"TEST_ALBUM","year":2022,"artistId":null} [33m82 ms	25.02.2023, 04:36:15
+
+DELETE [36mURL:[32m/track/0a35dd62-e09f-444b-a628-f4e7c6954f57 [36mStatusCode:[32m404 [36mBody:[32m{} [33m24 ms	25.02.2023, 04:36:15
+
+GET [36mURL:[32m/favs [36mStatusCode:[32m200 [36mBody:[32m{} [33m38 ms	25.02.2023, 04:36:15
+
+DELETE [36mURL:[32m/artist/e8cffb7c-891f-4e61-9246-2d1f0050ea39 [36mStatusCode:[32m204 [36mBody:[32m{} [33m50 ms	25.02.2023, 04:36:15
+
+DELETE [36mURL:[32m/album/b1136c4a-913c-48eb-be7d-85cab739de34 [36mStatusCode:[32m204 [36mBody:[32m{} [33m60 ms	25.02.2023, 04:36:15
+
+GET [36mURL:[32m/artist/e8cffb7c-891f-4e61-9246-2d1f0050ea39 [36mStatusCode:[32m404 [36mBody:[32m{} [33m27 ms	25.02.2023, 04:36:15
+
+DELETE [36mURL:[32m/artist/some-invalid-id [36mStatusCode:[32m400 [36mBody:[32m{} [33m2 ms	25.02.2023, 04:36:15
+
+GET [36mURL:[32m/album/b1136c4a-913c-48eb-be7d-85cab739de34 [36mStatusCode:[32m404 [36mBody:[32m{} [33m15 ms	25.02.2023, 04:36:15
+
+POST [36mURL:[32m/artist [36mStatusCode:[32m201 [36mBody:[32m{"name":"TEST_artist","grammy":true} [33m81 ms	25.02.2023, 04:36:15
+
+DELETE [36mURL:[32m/album/some-invalid-id [36mStatusCode:[32m400 [36mBody:[32m{} [33m1 ms	25.02.2023, 04:36:15
+
+DELETE [36mURL:[32m/artist/0a35dd62-e09f-444b-a628-f4e7c6954f57 [36mStatusCode:[32m404 [36mBody:[32m{} [33m13 ms	25.02.2023, 04:36:15
+
+DELETE [36mURL:[32m/album/0a35dd62-e09f-444b-a628-f4e7c6954f57 [36mStatusCode:[32m404 [36mBody:[32m{} [33m12 ms	25.02.2023, 04:36:15
+
+POST [36mURL:[32m/artist [36mStatusCode:[32m201 [36mBody:[32m{"name":"TEST_artist","grammy":true} [33m52 ms	25.02.2023, 04:36:15
+
+POST [36mURL:[32m/favs/artist/00ef4ddc-11ff-421f-aa45-2fddf52f9f58 [36mStatusCode:[32m201 [36mBody:[32m{} [33m76 ms	25.02.2023, 04:36:15
+
+POST [36mURL:[32m/album [36mStatusCode:[32m201 [36mBody:[32m{"name":"TEST_ALBUM","year":2022,"artistId":null} [33m43 ms	25.02.2023, 04:36:15
+
+GET [36mURL:[32m/favs [36mStatusCode:[32m200 [36mBody:[32m{} [33m16 ms	25.02.2023, 04:36:15
+
+POST [36mURL:[32m/track [36mStatusCode:[32m201 [36mBody:[32m{"name":"TEST_track","albumId":null,"artistId":"914f6abf-7bd6-4554-bcf6-356f658632fe","duration":200,"id":"aefdf835-c861-44d9-8134-e28039ae3c89"} [33m69 ms	25.02.2023, 04:36:15
+
+POST [36mURL:[32m/track [36mStatusCode:[32m201 [36mBody:[32m{"name":"TEST_TRACK","duration":199,"artistId":null,"albumId":"9ba95579-d5ab-4550-a19e-72e7f1b76b32","id":"86d6615b-02d2-4e22-8063-340fc0e9aa0b"} [33m83 ms	25.02.2023, 04:36:15
+
+POST [36mURL:[32m/album [36mStatusCode:[32m201 [36mBody:[32m{"name":"TEST_ALBUM","year":2022,"artistId":null} [33m58 ms	25.02.2023, 04:36:15
+
+DELETE [36mURL:[32m/artist/914f6abf-7bd6-4554-bcf6-356f658632fe [36mStatusCode:[32m204 [36mBody:[32m{} [33m44 ms	25.02.2023, 04:36:15
+
+GET [36mURL:[32m/track/aefdf835-c861-44d9-8134-e28039ae3c89 [36mStatusCode:[32m200 [36mBody:[32m{} [33m18 ms	25.02.2023, 04:36:15
+
+DELETE [36mURL:[32m/album/9ba95579-d5ab-4550-a19e-72e7f1b76b32 [36mStatusCode:[32m204 [36mBody:[32m{} [33m42 ms	25.02.2023, 04:36:15
+
+GET [36mURL:[32m/track/86d6615b-02d2-4e22-8063-340fc0e9aa0b [36mStatusCode:[32m200 [36mBody:[32m{} [33m5 ms	25.02.2023, 04:36:15
+
+POST [36mURL:[32m/favs/album/e4dd7f3c-2259-4fc1-be30-e5e1d2654c8b [36mStatusCode:[32m201 [36mBody:[32m{} [33m90 ms	25.02.2023, 04:36:15
+
+GET [36mURL:[32m/favs [36mStatusCode:[32m200 [36mBody:[32m{} [33m14 ms	25.02.2023, 04:36:15
+
+POST [36mURL:[32m/track [36mStatusCode:[32m201 [36mBody:[32m{"name":"Test track","duration":335,"artistId":null,"albumId":null,"id":"53430b75-4047-46bc-9f99-ce9e33ec2dae"} [33m20 ms	25.02.2023, 04:36:15
+
+POST [36mURL:[32m/favs/track/53430b75-4047-46bc-9f99-ce9e33ec2dae [36mStatusCode:[32m201 [36mBody:[32m{} [33m45 ms	25.02.2023, 04:36:15
+
+GET [36mURL:[32m/favs [36mStatusCode:[32m200 [36mBody:[32m{} [33m12 ms	25.02.2023, 04:36:15
+
+POST [36mURL:[32m/favs/artist/invalid [36mStatusCode:[32m400 [36mBody:[32m{} [33m1 ms	25.02.2023, 04:36:15
+
+POST [36mURL:[32m/favs/album/invalid [36mStatusCode:[32m400 [36mBody:[32m{} [33m1 ms	25.02.2023, 04:36:15
+
+POST [36mURL:[32m/favs/track/invalid [36mStatusCode:[32m400 [36mBody:[32m{} [33m1 ms	25.02.2023, 04:36:15
+
+POST [36mURL:[32m/favs/artist/0a35dd62-e09f-444b-a628-f4e7c6954f57 [36mStatusCode:[32m422 [36mBody:[32m{} [33m14 ms	25.02.2023, 04:36:15
+
+POST [36mURL:[32m/favs/album/0a35dd62-e09f-444b-a628-f4e7c6954f57 [36mStatusCode:[32m422 [36mBody:[32m{} [33m14 ms	25.02.2023, 04:36:15
+
+POST [36mURL:[32m/favs/track/0a35dd62-e09f-444b-a628-f4e7c6954f57 [36mStatusCode:[32m422 [36mBody:[32m{} [33m12 ms	25.02.2023, 04:36:15
+
+POST [36mURL:[32m/album [36mStatusCode:[32m201 [36mBody:[32m{"name":"TEST_ALBUM","year":2022,"artistId":null} [33m20 ms	25.02.2023, 04:36:15
+
+POST [36mURL:[32m/favs/album/82cf2d00-18e9-4481-9bab-cc515790f028 [36mStatusCode:[32m201 [36mBody:[32m{} [33m38 ms	25.02.2023, 04:36:15
+
+DELETE [36mURL:[32m/favs/album/82cf2d00-18e9-4481-9bab-cc515790f028 [36mStatusCode:[32m204 [36mBody:[32m{} [33m36 ms	25.02.2023, 04:36:15
+
+GET [36mURL:[32m/favs [36mStatusCode:[32m200 [36mBody:[32m{} [33m12 ms	25.02.2023, 04:36:15
+
+DELETE [36mURL:[32m/album/82cf2d00-18e9-4481-9bab-cc515790f028 [36mStatusCode:[32m204 [36mBody:[32m{} [33m14 ms	25.02.2023, 04:36:15
+
+POST [36mURL:[32m/artist [36mStatusCode:[32m201 [36mBody:[32m{"name":"TEST_artist","grammy":true} [33m17 ms	25.02.2023, 04:36:15
+
+POST [36mURL:[32m/favs/artist/f900f01d-d478-404d-8d4b-3eb17bec5e68 [36mStatusCode:[32m201 [36mBody:[32m{} [33m33 ms	25.02.2023, 04:36:16
+
+DELETE [36mURL:[32m/favs/artist/f900f01d-d478-404d-8d4b-3eb17bec5e68 [36mStatusCode:[32m204 [36mBody:[32m{} [33m36 ms	25.02.2023, 04:36:16
+
+GET [36mURL:[32m/favs [36mStatusCode:[32m200 [36mBody:[32m{} [33m9 ms	25.02.2023, 04:36:16
+
+DELETE [36mURL:[32m/artist/f900f01d-d478-404d-8d4b-3eb17bec5e68 [36mStatusCode:[32m204 [36mBody:[32m{} [33m16 ms	25.02.2023, 04:36:16
+
+POST [36mURL:[32m/track [36mStatusCode:[32m201 [36mBody:[32m{"name":"Test track","duration":335,"artistId":null,"albumId":null,"id":"83147d61-6e71-4a21-b9a3-a786bb613ff9"} [33m17 ms	25.02.2023, 04:36:16
+
+POST [36mURL:[32m/favs/track/83147d61-6e71-4a21-b9a3-a786bb613ff9 [36mStatusCode:[32m201 [36mBody:[32m{} [33m44 ms	25.02.2023, 04:36:16
+
+DELETE [36mURL:[32m/favs/track/83147d61-6e71-4a21-b9a3-a786bb613ff9 [36mStatusCode:[32m204 [36mBody:[32m{} [33m41 ms	25.02.2023, 04:36:16
+
+GET [36mURL:[32m/favs [36mStatusCode:[32m200 [36mBody:[32m{} [33m10 ms	25.02.2023, 04:36:16
+
+DELETE [36mURL:[32m/track/83147d61-6e71-4a21-b9a3-a786bb613ff9 [36mStatusCode:[32m204 [36mBody:[32m{} [33m12 ms	25.02.2023, 04:36:16
+
+DELETE [36mURL:[32m/album/some-invalid-id [36mStatusCode:[32m400 [36mBody:[32m{} [33m1 ms	25.02.2023, 04:36:16
+
+DELETE [36mURL:[32m/album/0a35dd62-e09f-444b-a628-f4e7c6954f57 [36mStatusCode:[32m404 [36mBody:[32m{} [33m4 ms	25.02.2023, 04:36:16
+
+DELETE [36mURL:[32m/artist/0a35dd62-e09f-444b-a628-f4e7c6954f57 [36mStatusCode:[32m404 [36mBody:[32m{} [33m4 ms	25.02.2023, 04:36:16
+
+DELETE [36mURL:[32m/track/0a35dd62-e09f-444b-a628-f4e7c6954f57 [36mStatusCode:[32m404 [36mBody:[32m{} [33m5 ms	25.02.2023, 04:36:16
+
+POST [36mURL:[32m/auth/login [36mStatusCode:[32m201 [36mBody:[32m{"login":"user1","password":"12345"} [33m274 ms	25.02.2023, 05:48:00
+
+GET [36mURL:[32m/favs [36mStatusCode:[32m200 [36mBody:[32m{} [33m337 ms	25.02.2023, 05:50:06
+
+GET [36mURL:[32m/favs [36mStatusCode:[32m200 [36mBody:[32m{} [33m24 ms	25.02.2023, 05:50:08
+
+GET [36mURL:[32m/favs [36mStatusCode:[32m200 [36mBody:[32m{} [33m33 ms	25.02.2023, 05:50:12
+
+GET [36mURL:[32m/favs [36mStatusCode:[32m200 [36mBody:[32m{} [33m22 ms	25.02.2023, 05:50:14
+
+POST [36mURL:[32m/auth/refresh [36mStatusCode:[32m201 [36mBody:[32m{"refreshToken":"test"} [33m4 ms	25.02.2023, 06:08:27
+
+POST [36mURL:[32m/auth/refresh [36mStatusCode:[32m403 [36mBody:[32m{"refreshToken":"test"} [33m14 ms	25.02.2023, 06:09:42
+
+POST [36mURL:[32m/auth/login [36mStatusCode:[32m201 [36mBody:[32m{"login":"user1","password":"12345"} [33m383 ms	25.02.2023, 06:09:50
+
+POST [36mURL:[32m/auth/refresh [36mStatusCode:[32m403 [36mBody:[32m{"refreshToken":"test"} [33m3 ms	25.02.2023, 06:10:03
+
+POST [36mURL:[32m/auth/refresh [36mStatusCode:[32m403 [36mBody:[32m{"refreshToken":"test"} [33m2 ms	25.02.2023, 06:10:16
+
+POST [36mURL:[32m/auth/refresh [36mStatusCode:[32m403 [36mBody:[32m{"refreshToken":"test"} [33m2 ms	25.02.2023, 06:10:43
+
+POST [36mURL:[32m/auth/login [36mStatusCode:[32m201 [36mBody:[32m{"login":"user1","password":"12345"} [33m255 ms	25.02.2023, 06:11:42
+
+POST [36mURL:[32m/auth/refresh [36mStatusCode:[32m403 [36mBody:[32m{"refreshToken":"test"} [33m1 ms	25.02.2023, 06:11:53
+
+POST [36mURL:[32m/auth/refresh [36mStatusCode:[32m403 [36mBody:[32m{"refreshToken":"test"} [33m2 ms	25.02.2023, 06:11:55
+
+POST [36mURL:[32m/auth/refresh [36mStatusCode:[32m403 [36mBody:[32m{"refreshToken":"test"} [33m22 ms	25.02.2023, 06:13:15
+
+POST [36mURL:[32m/auth/refresh [36mStatusCode:[32m403 [36mBody:[32m{"refreshToken":"test"} [33m3 ms	25.02.2023, 06:13:17
+
+POST [36mURL:[32m/auth/refresh [36mStatusCode:[32m403 [36mBody:[32m{"refreshToken":"test"} [33m24 ms	25.02.2023, 06:14:43
+
+POST [36mURL:[32m/auth/refresh [36mStatusCode:[32m201 [36mBody:[32m{"refreshToken":"test"} [33m27 ms	25.02.2023, 06:15:31
+
+POST [36mURL:[32m/auth/refresh [36mStatusCode:[32m201 [36mBody:[32m{"refreshToken":"test"} [33m4 ms	25.02.2023, 06:15:54
+
+POST [36mURL:[32m/auth/refresh [36mStatusCode:[32m201 [36mBody:[32m{"refreshToken":"test"} [33m7 ms	25.02.2023, 06:15:55
+
+POST [36mURL:[32m/auth/refresh [36mStatusCode:[32m201 [36mBody:[32m{"refreshToken":"test"} [33m2 ms	25.02.2023, 06:15:57
+
+POST [36mURL:[32m/auth/refresh [36mStatusCode:[32m201 [36mBody:[32m{"refreshToken":"test"} [33m4 ms	25.02.2023, 06:15:58
+
+POST [36mURL:[32m/auth/refresh [36mStatusCode:[32m201 [36mBody:[32m{"refreshToken":"test"} [33m3 ms	25.02.2023, 06:15:59
+
+POST [36mURL:[32m/auth/refresh [36mStatusCode:[32m201 [36mBody:[32m{"refreshToken":"test"} [33m3 ms	25.02.2023, 06:16:01
+
+POST [36mURL:[32m/auth/refresh [36mStatusCode:[32m201 [36mBody:[32m{"refreshToken":"test"} [33m2 ms	25.02.2023, 06:16:02
+
+POST [36mURL:[32m/auth/refresh [36mStatusCode:[32m201 [36mBody:[32m{"refreshToken":"test"} [33m6 ms	25.02.2023, 06:16:03
+
+POST [36mURL:[32m/auth/refresh [36mStatusCode:[32m201 [36mBody:[32m{"refreshToken":"test"} [33m3 ms	25.02.2023, 06:16:19
+
+POST [36mURL:[32m/auth/refresh [36mStatusCode:[32m201 [36mBody:[32m{"refreshToken":"test"} [33m3 ms	25.02.2023, 06:16:20
+
+POST [36mURL:[32m/auth/refresh [36mStatusCode:[32m201 [36mBody:[32m{"refreshToken":"test"} [33m13 ms	25.02.2023, 06:16:31
+
+POST [36mURL:[32m/auth/refresh [36mStatusCode:[32m201 [36mBody:[32m{"refreshToken":"test"} [33m4 ms	25.02.2023, 06:17:15
+
+POST [36mURL:[32m/auth/login [36mStatusCode:[32m201 [36mBody:[32m{"login":"user1","password":"12345"} [33m48 ms	25.02.2023, 06:17:33
+
+POST [36mURL:[32m/auth/refresh [36mStatusCode:[32m201 [36mBody:[32m{"refreshToken":"test"} [33m14 ms	25.02.2023, 06:17:36
+
+POST [36mURL:[32m/auth/refresh [36mStatusCode:[32m201 [36mBody:[32m{"refreshToken":"test"} [33m4 ms	25.02.2023, 06:17:38
+
+POST [36mURL:[32m/auth/refresh [36mStatusCode:[32m201 [36mBody:[32m{"refreshToken":"test"} [33m3 ms	25.02.2023, 06:18:15
+
+POST [36mURL:[32m/auth/refresh [36mStatusCode:[32m201 [36mBody:[32m{"refreshToken":"test"} [33m2 ms	25.02.2023, 06:18:17
+
+POST [36mURL:[32m/auth/refresh [36mStatusCode:[32m403 [36mBody:[32m{"refreshToken":"test"} [33m4 ms	25.02.2023, 06:18:23
+
+POST [36mURL:[32m/auth/refresh [36mStatusCode:[32m201 [36mBody:[32m{"refreshToken":"test"} [33m3 ms	25.02.2023, 06:18:47
+
+POST [36mURL:[32m/auth/refresh [36mStatusCode:[32m201 [36mBody:[32m{"refreshToken":"test"} [33m3 ms	25.02.2023, 06:19:21
+
+POST [36mURL:[32m/auth/refresh [36mStatusCode:[32m201 [36mBody:[32m{"refreshToken":"test"} [33m4 ms	25.02.2023, 06:19:28
+
+POST [36mURL:[32m/auth/refresh [36mStatusCode:[32m201 [36mBody:[32m{"refreshToken":"test"} [33m3 ms	25.02.2023, 06:20:48
+
+POST [36mURL:[32m/auth/login [36mStatusCode:[32m201 [36mBody:[32m{"login":"user1","password":"12345"} [33m319 ms	25.02.2023, 06:20:57
+
+POST [36mURL:[32m/auth/login [36mStatusCode:[32m201 [36mBody:[32m{"login":"user1","password":"12345"} [33m16 ms	25.02.2023, 06:20:58
+
+POST [36mURL:[32m/auth/login [36mStatusCode:[32m201 [36mBody:[32m{"login":"user1","password":"12345"} [33m38 ms	25.02.2023, 06:21:00
+
+POST [36mURL:[32m/auth/login [36mStatusCode:[32m201 [36mBody:[32m{"login":"user1","password":"12345"} [33m66 ms	25.02.2023, 06:21:01
+
+POST [36mURL:[32m/auth/refresh [36mStatusCode:[32m201 [36mBody:[32m{"refreshToken":"test"} [33m9 ms	25.02.2023, 06:21:05
+
+POST [36mURL:[32m/auth/refresh [36mStatusCode:[32m201 [36mBody:[32m{"refreshToken":"test"} [33m2 ms	25.02.2023, 06:21:08
+
+POST [36mURL:[32m/auth/login [36mStatusCode:[32m201 [36mBody:[32m{"login":"user1","password":"12345"} [33m52 ms	25.02.2023, 06:22:04
+
+POST [36mURL:[32m/auth/refresh [36mStatusCode:[32m201 [36mBody:[32m{"refreshToken":"test"} [33m26 ms	25.02.2023, 06:23:48
+
+POST [36mURL:[32m/auth/refresh [36mStatusCode:[32m201 [36mBody:[32m{"refreshToken":"test"} [33m3 ms	25.02.2023, 06:23:52
+
+POST [36mURL:[32m/auth/login [36mStatusCode:[32m201 [36mBody:[32m{"login":"user1","password":"12345"} [33m302 ms	25.02.2023, 06:23:57
+
+POST [36mURL:[32m/auth/refresh [36mStatusCode:[32m201 [36mBody:[32m{"refreshToken":"test"} [33m2 ms	25.02.2023, 06:24:06
+
+POST [36mURL:[32m/auth/refresh [36mStatusCode:[32m201 [36mBody:[32m{"refreshToken":"test"} [33m3 ms	25.02.2023, 06:24:09
+
+POST [36mURL:[32m/auth/refresh [36mStatusCode:[32m201 [36mBody:[32m{"refreshToken":"test"} [33m4 ms	25.02.2023, 06:24:12
+
+POST [36mURL:[32m/auth/refresh [36mStatusCode:[32m201 [36mBody:[32m{"refreshToken":"test"} [33m2 ms	25.02.2023, 06:24:14
+
+POST [36mURL:[32m/auth/refresh [36mStatusCode:[32m201 [36mBody:[32m{"refreshToken":"test"} [33m3 ms	25.02.2023, 06:24:16
+
+POST [36mURL:[32m/auth/refresh [36mStatusCode:[32m201 [36mBody:[32m{"refreshToken":"test"} [33m4 ms	25.02.2023, 06:24:17
+
+POST [36mURL:[32m/auth/refresh [36mStatusCode:[32m201 [36mBody:[32m{"refreshToken":"test"} [33m3 ms	25.02.2023, 06:24:19
+
+POST [36mURL:[32m/auth/refresh [36mStatusCode:[32m201 [36mBody:[32m{"refreshToken":"test"} [33m7 ms	25.02.2023, 06:24:21
+
+POST [36mURL:[32m/auth/refresh [36mStatusCode:[32m201 [36mBody:[32m{"refreshToken":"test"} [33m2 ms	25.02.2023, 06:24:23
+
+POST [36mURL:[32m/auth/refresh [36mStatusCode:[32m201 [36mBody:[32m{"refreshToken":"test"} [33m3 ms	25.02.2023, 06:24:24
+
+POST [36mURL:[32m/auth/refresh [36mStatusCode:[32m201 [36mBody:[32m{"refreshToken":"test"} [33m4 ms	25.02.2023, 06:24:26
+
+POST [36mURL:[32m/auth/refresh [36mStatusCode:[32m403 [36mBody:[32m{"refreshToken":"test"} [33m4 ms	25.02.2023, 06:24:28
+
+POST [36mURL:[32m/auth/refresh [36mStatusCode:[32m403 [36mBody:[32m{"refreshToken":"test"} [33m2 ms	25.02.2023, 06:24:31
+
+POST [36mURL:[32m/auth/login [36mStatusCode:[32m201 [36mBody:[32m{"login":"user1","password":"12345"} [33m57 ms	25.02.2023, 06:51:55
+
+POST [36mURL:[32m/auth/login [36mStatusCode:[32m201 [36mBody:[32m{"login":"user1","password":"12345"} [33m19 ms	25.02.2023, 06:52:02
+
+POST [36mURL:[32m/auth/login [36mStatusCode:[32m201 [36mBody:[32m{"login":"user1","password":"12345"} [33m88 ms	25.02.2023, 06:52:57
+
+POST [36mURL:[32m/auth/login [36mStatusCode:[32m201 [36mBody:[32m{"login":"user1","password":"12345"} [33m61 ms	25.02.2023, 06:55:49
+
+POST [36mURL:[32m/auth/refresh [36mStatusCode:[32m201 [36mBody:[32m{"refreshToken":"test"} [33m31 ms	25.02.2023, 07:24:51
+
+POST [36mURL:[32m/auth/refresh [36mStatusCode:[32m201 [36mBody:[32m{"refreshToken":"test"} [33m29 ms	25.02.2023, 07:40:14
+
+POST [36mURL:[32m/auth/refresh [36mStatusCode:[32m403 [36mBody:[32m{"refreshToke":"test"} [33m13 ms	25.02.2023, 07:42:51
+
+POST [36mURL:[32m/auth/refresh [36mStatusCode:[32m403 [36mBody:[32m{"refreshToke":"test"} [33m22 ms	25.02.2023, 07:43:46
+
+POST [36mURL:[32m/auth/refresh [36mStatusCode:[32m403 [36mBody:[32m{} [33m2 ms	25.02.2023, 07:43:52
+
+POST [36mURL:[32m/auth/refresh [36mStatusCode:[32m403 [36mBody:[32m{} [33m1 ms	25.02.2023, 07:43:54
+
+POST [36mURL:[32m/auth/refresh [36mStatusCode:[32m403 [36mBody:[32m{"refreshToken":"test"} [33m1 ms	25.02.2023, 07:44:03
+
+POST [36mURL:[32m/auth/refresh [36mStatusCode:[32m403 [36mBody:[32m{"refreshToke":"test"} [33m15 ms	25.02.2023, 07:45:42
+
+POST [36mURL:[32m/auth/refresh [36mStatusCode:[32m403 [36mBody:[32m{"refreshToke":"test"} [33m1 ms	25.02.2023, 07:45:44
+
+POST [36mURL:[32m/auth/refresh [36mStatusCode:[32m403 [36mBody:[32m{"refreshToke":"test"} [33m2 ms	25.02.2023, 07:45:45
+
+POST [36mURL:[32m/auth/refresh [36mStatusCode:[32m403 [36mBody:[32m{"test":"test"} [33m1 ms	25.02.2023, 07:45:52
+
+POST [36mURL:[32m/auth/refresh [36mStatusCode:[32m201 [36mBody:[32m{"refreshToken":"test"} [33m25 ms	25.02.2023, 07:48:41
+
+POST [36mURL:[32m/auth/refresh [36mStatusCode:[32m201 [36mBody:[32m{"refreshToken":"test"} [33m2 ms	25.02.2023, 07:48:42
+
+POST [36mURL:[32m/auth/refresh [36mStatusCode:[32m400 [36mBody:[32m{"refreshToke":"test"} [33m5 ms	25.02.2023, 07:49:26
+
+POST [36mURL:[32m/auth/refresh [36mStatusCode:[32m403 [36mBody:[32m{"refreshToke":"test"} [33m53 ms	25.02.2023, 07:50:38
+
+POST [36mURL:[32m/auth/refresh [36mStatusCode:[32m403 [36mBody:[32m{"refreshToke":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsb2dpbiI6InVzZXIxIiwiaWQiOiIzNWQ2YWQ4YS01MjI4LTRhNzItYTJiNy1mYmQ1MGYyMmM3Y2MiLCJpYXQiOjE2NzczMDgxNDksImV4cCI6MTY3NzM5NDU0OX0.YdVRE7cB0aN_uhMNm28dTH24QpUwoTEuWgzVHEtceJI"} [33m13 ms	25.02.2023, 07:57:11
+
+POST [36mURL:[32m/auth/refresh [36mStatusCode:[32m201 [36mBody:[32m{"refreshToken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsb2dpbiI6InVzZXIxIiwiaWQiOiIzNWQ2YWQ4YS01MjI4LTRhNzItYTJiNy1mYmQ1MGYyMmM3Y2MiLCJpYXQiOjE2NzczMDgxNDksImV4cCI6MTY3NzM5NDU0OX0.YdVRE7cB0aN_uhMNm28dTH24QpUwoTEuWgzVHEtceJI"} [33m22 ms	25.02.2023, 07:57:17
+
+POST [36mURL:[32m/auth/refresh [36mStatusCode:[32m400 [36mBody:[32m{"refreshToke":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsb2dpbiI6InVzZXIxIiwiaWQiOiIzNWQ2YWQ4YS01MjI4LTRhNzItYTJiNy1mYmQ1MGYyMmM3Y2MiLCJpYXQiOjE2NzczMDgxNDksImV4cCI6MTY3NzM5NDU0OX0.YdVRE7cB0aN_uhMNm28dTH24QpUwoTEuWgzVHEtceJI"} [33m38 ms	25.02.2023, 07:58:24
+
+POST [36mURL:[32m/auth/refresh [36mStatusCode:[32m400 [36mBody:[32m{"refreshToke":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsb2dpbiI6InVzZXIxIiwiaWQiOiIzNWQ2YWQ4YS01MjI4LTRhNzItYTJiNy1mYmQ1MGYyMmM3Y2MiLCJpYXQiOjE2NzczMDgxNDksImV4cCI6MTY3NzM5NDU0OX0.YdVRE7cB0aN_uhMNm28dTH24QpUwoTEuWgzVHEtceJI"} [33m13 ms	25.02.2023, 08:00:44
+
+POST [36mURL:[32m/auth/refresh [36mStatusCode:[32m201 [36mBody:[32m{"refreshToken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsb2dpbiI6InVzZXIxIiwiaWQiOiIzNWQ2YWQ4YS01MjI4LTRhNzItYTJiNy1mYmQ1MGYyMmM3Y2MiLCJpYXQiOjE2NzczMDgxNDksImV4cCI6MTY3NzM5NDU0OX0.YdVRE7cB0aN_uhMNm28dTH24QpUwoTEuWgzVHEtceJI"} [33m26 ms	25.02.2023, 08:01:00
+
+POST [36mURL:[32m/auth/refresh [36mStatusCode:[32m403 [36mBody:[32m{"refreshToken":"eJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsb2dpbiI6InVzZXIxIiwiaWQiOiIzNWQ2YWQ4YS01MjI4LTRhNzItYTJiNy1mYmQ1MGYyMmM3Y2MiLCJpYXQiOjE2NzczMDgxNDksImV4cCI6MTY3NzM5NDU0OX0.YdVRE7cB0aN_uhMNm28dTH24QpUwoTEuWgzVHEtceJI"} [33m3 ms	25.02.2023, 08:01:09
+
+POST [36mURL:[32m/auth/refresh [36mStatusCode:[32m201 [36mBody:[32m{"refreshToken":"eJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsb2dpbiI6InVzZXIxIiwiaWQiOiIzNWQ2YWQ4YS01MjI4LTRhNzItYTJiNy1mYmQ1MGYyMmM3Y2MiLCJpYXQiOjE2NzczMDgxNDksImV4cCI6MTY3NzM5NDU0OX0.YdVRE7cB0aN_uhMNm28dTH24QpUwoTEuWgzVHEtceJI"} [33m27 ms	25.02.2023, 08:13:55
+
+POST [36mURL:[32m/auth/refresh [36mStatusCode:[32m403 [36mBody:[32m{"refreshToken":"eJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsb2dpbiI6InVzZXIxIiwiaWQiOiIzNWQ2YWQ4YS01MjI4LTRhNzItYTJiNy1mYmQ1MGYyMmM3Y2MiLCJpYXQiOjE2NzczMDgxNDksImV4cCI6MTY3NzM5NDU0OX0.YdVRE7cB0aN_uhMNm28dTH24QpUwoTEuWgzVHEtceJI"} [33m14 ms	25.02.2023, 08:21:58
+
+POST [36mURL:[32m/auth/login [36mStatusCode:[32m201 [36mBody:[32m{"login":"user1","password":"12345"} [33m445 ms	25.02.2023, 08:22:15
+
+POST [36mURL:[32m/auth/refresh [36mStatusCode:[32m403 [36mBody:[32m{"refreshToken":"eJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsb2dpbiI6InVzZXIxIiwiaWQiOiIzNWQ2YWQ4YS01MjI4LTRhNzItYTJiNy1mYmQ1MGYyMmM3Y2MiLCJpYXQiOjE2NzczMDgxNDksImV4cCI6MTY3NzM5NDU0OX0.YdVRE7cB0aN_uhMNm28dTH24QpUwoTEuWgzVHEtceJI"} [33m2 ms	25.02.2023, 08:22:59
+
+POST [36mURL:[32m/auth/refresh [36mStatusCode:[32m201 [36mBody:[32m{"refreshToken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsb2dpbiI6InVzZXIxIiwiaWQiOiIzNWQ2YWQ4YS01MjI4LTRhNzItYTJiNy1mYmQ1MGYyMmM3Y2MiLCJpYXQiOjE2NzczMTMzMzUsImV4cCI6MTY3NzM5OTczNX0.WV6kv7RtoZpqgugBjlTwAVwhKsXaNHvN22kW-S15Wak"} [33m16 ms	25.02.2023, 08:23:15
+
+POST [36mURL:[32m/auth/refresh [36mStatusCode:[32m201 [36mBody:[32m{"refreshToken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsb2dpbiI6InVzZXIxIiwiaWQiOiIzNWQ2YWQ4YS01MjI4LTRhNzItYTJiNy1mYmQ1MGYyMmM3Y2MiLCJpYXQiOjE2NzczMTMzMzUsImV4cCI6MTY3NzM5OTczNX0.WV6kv7RtoZpqgugBjlTwAVwhKsXaNHvN22kW-S15Wak"} [33m46 ms	25.02.2023, 08:27:07
+
+POST [36mURL:[32m/auth/refresh [36mStatusCode:[32m403 [36mBody:[32m{"refreshToken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsb2dpbiI6InVzZXIxIiwiaWQiOiIzNWQ2YWQ4YS01MjI4LTRhNzItYTJiNy1mYmQ1MGYyMmM3Y2MiLCJpYXQiOjE2NzczMTMzMzUsImV4cCI6MTY3NzM5OTczNX0.WV6kv7RtoZpqgugBjlTwAVwhKsXaNHvN22kW-S15Wa"} [33m21 ms	25.02.2023, 08:27:24
+
+POST [36mURL:[32m/auth/refresh [36mStatusCode:[32m201 [36mBody:[32m{"refreshToken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsb2dpbiI6InVzZXIxIiwiaWQiOiIzNWQ2YWQ4YS01MjI4LTRhNzItYTJiNy1mYmQ1MGYyMmM3Y2MiLCJpYXQiOjE2NzczMTMzMzUsImV4cCI6MTY3NzM5OTczNX0.WV6kv7RtoZpqgugBjlTwAVwhKsXaNHvN22kW-S15Wak"} [33m17 ms	25.02.2023, 08:27:31
+
+POST [36mURL:[32m/auth/signup [36mStatusCode:[32m400 [36mBody:[32m{"login":"user1"} [33m280 ms	25.02.2023, 08:34:46
+
+POST [36mURL:[32m/auth/signup [36mStatusCode:[32m500 [36mBody:[32m{"login":"user2"} [33m313 ms	25.02.2023, 08:35:14
+
+POST [36mURL:[32m/auth/signup [36mStatusCode:[32m400 [36mBody:[32m{"login":"user2"} [33m27 ms	25.02.2023, 08:36:22
+
+POST [36mURL:[32m/auth/signup [36mStatusCode:[32m400 [36mBody:[32m{"password":"12345"} [33m3 ms	25.02.2023, 08:36:41
+
+POST [36mURL:[32m/auth/signup [36mStatusCode:[32m400 [36mBody:[32m{"login":123,"password":"12345"} [33m2 ms	25.02.2023, 08:36:50
+
+POST [36mURL:[32m/auth/signup [36mStatusCode:[32m500 [36mBody:[32m{"login":"user2","password":"12345"} [33m284 ms	25.02.2023, 08:36:58
+
+POST [36mURL:[32m/auth/signup [36mStatusCode:[32m201 [36mBody:[32m{"login":"user2","password":"12345"} [33m301 ms	25.02.2023, 08:38:57
+
+POST [36mURL:[32m/auth/signup [36mStatusCode:[32m201 [36mBody:[32m{"login":"user3","password":"12345"} [33m202 ms	25.02.2023, 08:39:41
+
+POST [36mURL:[32m/auth/login [36mStatusCode:[32m201 [36mBody:[32m{"login":"user1","password":"12345"} [33m248 ms	25.02.2023, 08:39:58
+
+POST [36mURL:[32m/auth/refresh [36mStatusCode:[32m201 [36mBody:[32m{"refreshToken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsb2dpbiI6InVzZXIxIiwiaWQiOiIzNWQ2YWQ4YS01MjI4LTRhNzItYTJiNy1mYmQ1MGYyMmM3Y2MiLCJpYXQiOjE2NzczMTMzMzUsImV4cCI6MTY3NzM5OTczNX0.WV6kv7RtoZpqgugBjlTwAVwhKsXaNHvN22kW-S15Wak"} [33m31 ms	25.02.2023, 08:40:06
+
+POST [36mURL:[32m/auth/login [36mStatusCode:[32m500 [36mBody:[32m{"login":"user1"} [33m279 ms	25.02.2023, 08:41:28
+
+POST [36mURL:[32m/auth/login [36mStatusCode:[32m400 [36mBody:[32m{"login":"user1"} [33m26 ms	25.02.2023, 08:42:19
+
+POST [36mURL:[32m/auth/login [36mStatusCode:[32m201 [36mBody:[32m{"login":"user1","password":"12345"} [33m44 ms	25.02.2023, 08:42:24
+
+POST [36mURL:[32m/auth/login [36mStatusCode:[32m403 [36mBody:[32m{"login":"user1","password":"123456"} [33m12 ms	25.02.2023, 08:42:29
+
+POST [36mURL:[32m/auth/login [36mStatusCode:[32m500 [36mBody:[32m{"login":"user11","password":"12345"} [33m267 ms	25.02.2023, 08:53:39
+
+POST [36mURL:[32m/auth/login [36mStatusCode:[32m500 [36mBody:[32m{"login":"user11","password":"12345"} [33m16 ms	25.02.2023, 08:53:41
+
+POST [36mURL:[32m/auth/login [36mStatusCode:[32m500 [36mBody:[32m{"login":"user11","password":"12345"} [33m64 ms	25.02.2023, 08:56:25
+
+POST [36mURL:[32m/auth/login [36mStatusCode:[32m500 [36mBody:[32m{"login":"user11","password":"12345"} [33m72 ms	25.02.2023, 08:57:36
+
+POST [36mURL:[32m/auth/login [36mStatusCode:[32m403 [36mBody:[32m{"login":"user11","password":"12345"} [33m160 ms	25.02.2023, 08:59:43
+
+POST [36mURL:[32m/auth/login [36mStatusCode:[32m403 [36mBody:[32m{"login":"user11","password":"12345"} [33m57 ms	25.02.2023, 09:01:30
+
+POST [36mURL:[32m/auth/login [36mStatusCode:[32m403 [36mBody:[32m{"login":"user11","password":"12345"} [33m59 ms	25.02.2023, 09:02:00
+
+POST [36mURL:[32m/auth/login [36mStatusCode:[32m400 [36mBody:[32m{"password":"12345"} [33m4 ms	25.02.2023, 09:02:04
+
+POST [36mURL:[32m/auth/login [36mStatusCode:[32m403 [36mBody:[32m{"login":"user1","password":"1234578"} [33m254 ms	25.02.2023, 09:02:13
+
+POST [36mURL:[32m/auth/login [36mStatusCode:[32m201 [36mBody:[32m{"login":"user1","password":"12345"} [33m29 ms	25.02.2023, 09:02:17
+
+POST [36mURL:[32m/auth/refresh [36mStatusCode:[32m400 [36mBody:[32m{"refreshToke":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsb2dpbiI6InVzZXIxIiwiaWQiOiIzNWQ2YWQ4YS01MjI4LTRhNzItYTJiNy1mYmQ1MGYyMmM3Y2MiLCJpYXQiOjE2NzczMTMzMzUsImV4cCI6MTY3NzM5OTczNX0.WV6kv7RtoZpqgugBjlTwAVwhKsXaNHvN22kW-S15Wak"} [33m3 ms	25.02.2023, 09:04:30
+
+POST [36mURL:[32m/auth/refresh [36mStatusCode:[32m401 [36mBody:[32m{"refreshToke":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsb2dpbiI6InVzZXIxIiwiaWQiOiIzNWQ2YWQ4YS01MjI4LTRhNzItYTJiNy1mYmQ1MGYyMmM3Y2MiLCJpYXQiOjE2NzczMTMzMzUsImV4cCI6MTY3NzM5OTczNX0.WV6kv7RtoZpqgugBjlTwAVwhKsXaNHvN22kW-S15Wak"} [33m16 ms	25.02.2023, 09:08:26
+
+POST [36mURL:[32m/auth/refresh [36mStatusCode:[32m200 [36mBody:[32m{"refreshToken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsb2dpbiI6InVzZXIxIiwiaWQiOiIzNWQ2YWQ4YS01MjI4LTRhNzItYTJiNy1mYmQ1MGYyMmM3Y2MiLCJpYXQiOjE2NzczMTMzMzUsImV4cCI6MTY3NzM5OTczNX0.WV6kv7RtoZpqgugBjlTwAVwhKsXaNHvN22kW-S15Wak"} [33m24 ms	25.02.2023, 09:08:36
+
+POST [36mURL:[32m/auth/refresh [36mStatusCode:[32m403 [36mBody:[32m{"refreshToken":"eJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsb2dpbiI6InVzZXIxIiwiaWQiOiIzNWQ2YWQ4YS01MjI4LTRhNzItYTJiNy1mYmQ1MGYyMmM3Y2MiLCJpYXQiOjE2NzczMTMzMzUsImV4cCI6MTY3NzM5OTczNX0.WV6kv7RtoZpqgugBjlTwAVwhKsXaNHvN22kW-S15Wak"} [33m2 ms	25.02.2023, 09:08:40
+

@@ -48,10 +48,7 @@ export class UsersController {
   @UsePipes(ValidationPipe)
   @Put(':id')
   @HttpCode(HttpStatus.OK)
-  update(
-    @Param('id', ParseUUIDPipe) id: string,
-    @Body() updateUser: UpdateUserDto,
-  ) {
+  update(@Param('id', ParseUUIDPipe) id: string, @Body() updateUser: UpdateUserDto) {
     return this.usersService.update(id, updateUser)
   }
 
