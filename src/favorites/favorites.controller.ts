@@ -8,14 +8,12 @@ type Path = 'artist' | 'album' | 'track'
 export class FavoritesController {
   constructor(private readonly favoriteService: FavoritesService) {}
 
-  // @UseGuards(JwtAuthGuard)
   @UseInterceptors(ClassSerializerInterceptor)
   @Get()
   async getAll() {
     return this.favoriteService.getAll()
   }
 
-  // @UseGuards(JwtAuthGuard)
   @Post(':path/:id')
   @HttpCode(HttpStatus.CREATED)
   addArtist(@Req() req: Request, @Param('path') path: Path, @Param('id', ParseUUIDPipe) id: string) {
@@ -30,7 +28,6 @@ export class FavoritesController {
     }
   }
 
-  // @UseGuards(JwtAuthGuard)
   @Delete(':path/:id')
   @HttpCode(HttpStatus.NO_CONTENT)
   deleteArtist(@Req() req: Request, @Param('path') path: Path, @Param('id', ParseUUIDPipe) id: string) {

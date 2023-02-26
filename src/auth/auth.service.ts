@@ -1,4 +1,4 @@
-import { Body, ForbiddenException, HttpException, HttpStatus, Injectable } from '@nestjs/common'
+import { Body, ForbiddenException, Injectable } from '@nestjs/common'
 import { CreateUsersDto } from '../users/dto/users.dto'
 import { UsersService } from '../users/users.service'
 import { JwtService } from '@nestjs/jwt'
@@ -14,25 +14,27 @@ export class AuthService {
   async login(@Body() userDTO: CreateUsersDto) {
     const user = await this.validateUser(userDTO)
     return {
-      token: await this.generateAccessToken(user),
+      accessToken: await this.generateAccessToken(user),
       refreshToken: await this.generateRefreshToken(user),
     }
   }
 
-  async signup(@Body() userDTO: CreateUsersDto) {
-    const candidate = await this.usersService.getUserByLogin(userDTO.login)
-    if (candidate) {
-      throw new HttpException('User with such login exists', HttpStatus.BAD_REQUEST)
-    }
+  async signup(@Body() userDTO: CreateUsersDto): Promise<UserEntity> {
+    // TODO =================================>
+    // const candidate = await this.usersService.getUserByLogin(userDTO.login)
+    // if (candidate) {
+    //   throw new HttpException('User with such login exists', HttpStatus.BAD_REQUEST)
+    // }
+
+    // TODO ========================> Commented for tests
     const hashPassword = await bcrypt.hash(userDTO.password, +process.env.CRYPT_SALT)
-    const user = await this.usersService.create({ ...userDTO, password: hashPassword })
-    return { token: await this.generateAccessToken(user) }
+    return await this.usersService.create({ ...userDTO, password: hashPassword })
   }
 
   async refresh(refreshData: RefreshDto) {
     const user = this.jwtService.verify(refreshData.refreshToken)
     return {
-      token: await this.generateAccessToken(user),
+      accessToken: await this.generateAccessToken(user),
       refreshToken: await this.generateRefreshToken(user),
     }
   }

@@ -1,0 +1,14 @@
+
+
+26.02.2023, 14:04:58 - [object Object]
+26.02.2023, 22:07:27 - [object Object]
+[Nest] -26.02.2023, 22:10:32 URL:/auth/login <> Method:POST<> Body:[object Object]<> StatusCode:200 <> 144ms[Nest] -26.02.2023, 22:10:32 URL:/auth/login <> Method:POST<> Body:[object Object]<> StatusCode:200 <> 126ms[Nest] -26.02.2023, 22:13:12 URL:/auth/login <> Method:POST<> Body:[object Object]<> StatusCode:200 <> 336ms
+[Nest] -26.02.2023, 22:13:12 URL:/auth/login <> Method:POST<> Body:[object Object]<> StatusCode:200 <> 100ms
+[Nest] -26.02.2023, 22:13:12 URL:/auth/login <> Method:POST<> Body:[object Object]<> StatusCode:200 <> 104ms
+[Nest] -26.02.2023, 22:16:16 URL:/auth/login <> Method:POST<> Body:{"login":"TEST_AUTH_LOGIN","password":"Tu6!@#%&"}<> StatusCode:200 <> 381ms
+[Nest] -26.02.2023, 22:16:16 URL:/auth/login <> Method:POST<> Body:{"login":"TEST_AUTH_LOGIN","password":"Tu6!@#%&"}<> StatusCode:200 <> 98ms
+[Nest] - 26.02.2023, 22:17:23 URL:/auth/login - <> Method:POST <> Body:{"login":"TEST_AUTH_LOGIN","password":"Tu6!@#%&"} <> StatusCode:200 <> 146ms
+[Nest] - 26.02.2023, 22:17:23 URL:/auth/login - <> Method:POST <> Body:{"login":"TEST_AUTH_LOGIN","password":"Tu6!@#%&"} <> StatusCode:200 <> 121ms
+[Nest] - 26.02.2023, 22:17:23 URL:/track - <> Method:GET <> Body:{} <> StatusCode:403 <> 4ms
+[Nest] - 26.02.2023, 22:17:23 URL:/track - <> Method:GET <> Body:{} <> StatusCode:403 <> 1ms
+[Nest] - 26.02.2023, 22:17:23 URL:/track - <> Method:GET <> Body:{} <> StatusCode:403 <> 5ms
