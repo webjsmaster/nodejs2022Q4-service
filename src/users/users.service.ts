@@ -1,4 +1,4 @@
-import { ForbiddenException, Injectable, Logger, NotFoundException } from '@nestjs/common'
+import { ForbiddenException, Injectable, InternalServerErrorException, Logger, NotFoundException } from '@nestjs/common'
 import { CreateUsersDto, UpdateUserDto } from './dto/users.dto'
 import { InjectRepository } from '@nestjs/typeorm'
 import { UserEntity } from './entity/users.entity'
@@ -61,5 +61,9 @@ export class UsersService {
   async getUserByLogin(login: string): Promise<UserEntity> {
     const user = await this.userRepository.findOne({ where: { login } })
     return !!user ? user : null
+  }
+
+  async testing() {
+    return new NotFoundException('User not found')
   }
 }

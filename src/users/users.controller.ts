@@ -6,6 +6,7 @@ import {
   Get,
   HttpCode,
   HttpStatus,
+  InternalServerErrorException,
   Param,
   ParseUUIDPipe,
   Post,
@@ -56,5 +57,10 @@ export class UsersController {
   @HttpCode(HttpStatus.NO_CONTENT)
   delete(@Param('id', ParseUUIDPipe) id: string) {
     return this.usersService.delete(id)
+  }
+
+  @Get('/test/1')
+  testing() {
+    return this.usersService.testing()
   }
 }

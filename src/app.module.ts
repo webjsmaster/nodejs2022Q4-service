@@ -10,8 +10,9 @@ import { typeOrmConfig } from './typeorm.config'
 import { MyLogger } from './logging/logger.servise'
 import { LoggerMiddleware } from './middleware/logger.middleware'
 import { AuthModule } from './auth/auth.module'
-import { APP_GUARD } from '@nestjs/core'
+import { APP_FILTER, APP_GUARD } from '@nestjs/core'
 import { JwtAuthGuard } from './auth/jwt-auth.guard'
+import { AllExceptionsFilter } from './exceptioFilter/http-exception.filter'
 
 @Module({
   imports: [
@@ -33,6 +34,10 @@ import { JwtAuthGuard } from './auth/jwt-auth.guard'
     {
       provide: APP_GUARD,
       useClass: JwtAuthGuard,
+    },
+    {
+      provide: APP_FILTER,
+      useClass: AllExceptionsFilter,
     },
   ],
 })

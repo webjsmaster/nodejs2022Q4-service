@@ -34,7 +34,6 @@ export class ArtistsService {
 
   async create(data: ArtistDto): Promise<ArtistEntity> {
     const artist = await this.artistRepository.save({
-      id: crypto.randomUUID(),
       ...data,
     })
     return await this.getOne(artist.id)

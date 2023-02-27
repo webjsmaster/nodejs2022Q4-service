@@ -1,26 +1,25 @@
 import { LoggerService } from '@nestjs/common'
 import { logsRecorder } from '../utils/logsRecorder'
-import { currentDate } from '../utils/date-format'
 import { IBodyLogger } from '../types/logger'
 
 export class MyLogger implements LoggerService {
   log(message: IBodyLogger) {
-    logsRecorder(message, currentDate, 'log')
+    logsRecorder(message, 'log')
   }
 
-  error(message: any, ...optionalParams: any[]) {
-    logsRecorder(message, currentDate, 'error')
+  error(message: IBodyLogger) {
+    logsRecorder(message, 'error')
   }
 
-  warn(message: any, ...optionalParams: any[]) {
-    logsRecorder(message, currentDate, 'warn')
+  warn(message: IBodyLogger) {
+    logsRecorder(message, 'warn')
   }
 
-  debug?(message: any, ...optionalParams: any[]) {
-    logsRecorder(message, currentDate, 'debug')
+  debug?(message: IBodyLogger) {
+    logsRecorder(message, 'debug')
   }
 
-  verbose?(message: any, ...optionalParams: any[]) {
-    logsRecorder(message, currentDate, 'verbose')
+  verbose?(message: IBodyLogger) {
+    logsRecorder(message, 'verbose')
   }
 }
