@@ -1,72 +1,35 @@
 # Home Library Service
 
-## Prerequisites
+## Downloading, Installing and Running the App
 
-- Git - [Download & Install Git](https://git-scm.com/downloads).
-- Node.js - [Download & Install Node.js](https://nodejs.org/en/download/) and the npm package manager.
-
-## Downloading
+- Clone the repository by running
 
 ```
-git clone {repository URL}
+git clone https://github.com/webjsmaster/nodejs2022Q4-service.git
 ```
 
-## Installing NPM modules
+- On your local machine `cd` to the folder with the cloned repository
+- Install all NPM dependencies by running `npm i` from the command line ****(yarn is desirable not to use )****
+- Rename the file `.env.example` into `.env`
+- The application has two modes of running: development and production
+- Run `npm run start` to run the application in the production mode
+- Run `npm run start:dev` to run the application in the development mode
+- Once the application is running, you can make CRUD requests to the relevant endpoints
+- There is a swagger file showing available endpoints and required request body and response body.
 
-```
-npm install
-```
+[Swagger](https://github.com/webjsmaster/nodejs2022Q4-service/blob/6b48ed3bf708d2462f2230caa80c3aa8ce4f62fe/doc/api.yaml#L1-L792)
 
-## Running application
+*You can also use* ***Postman Collections***
 
-```
-npm start
-```
+[Postman](https://github.com/webjsmaster/nodejs2022Q4-service/blob/development2/Nodejs2022Q4-service.postman_collection.json)
 
-After starting the app on port (4000 as default) you can open
-in your browser OpenAPI documentation by typing http://localhost:4000/doc/.
-For more information about OpenAPI/Swagger please visit https://swagger.io/.
+- To deploy the app and the database to docker, run `npm run docker:build`
+- Run `npm run docker:start` to start the containers
+- Run `npm run migration:run` to run migration table for database
+- Run `npm run docker:test` to run the e2e tests inside the docker
+- Run `npm run docker:scan:app` to scan the application for vulnerabilities
+- Run `npm run docker:scan:db` to scan the database for vulnerabilities
+- Run `npm run docker:stop` to stop the containers
 
-## Testing
-
-After application running open new terminal and enter:
-
-To run all tests without authorization
-
-```
-npm run test
-```
-
-To run only one of all test suites
-
-```
-npm run test -- <path to suite>
-```
-
-To run all test with authorization
-
-```
-npm run test:auth
-```
-
-To run only specific test suite with authorization
-
-```
-npm run test:auth -- <path to suite>
-```
-
-### Auto-fix and format
-
-```
-npm run lint
-```
-
-```
-npm run format
-```
-
-### Debugging in VSCode
-
-Press <kbd>F5</kbd> to debug.
-
-For more information, visit: https://code.visualstudio.com/docs/editor/debugging
+- The application is running on port 4000
+- The postgres database is running on port 5432

@@ -15,9 +15,9 @@ import {
   ValidationPipe,
 } from '@nestjs/common'
 import { UsersService } from './users.service'
-import { CreateUsersDto, FindOneParams, UpdateUserDto } from './dto/users.dto'
+import { CreateUsersDto, UpdateUserDto } from './dto/users.dto'
 
-//nest g controller users
+//npx @nestjs/cli g c users
 
 @Controller('user')
 export class UsersController {
@@ -32,7 +32,7 @@ export class UsersController {
   @UseInterceptors(ClassSerializerInterceptor)
   @Get(':id')
   @HttpCode(HttpStatus.OK)
-  getOne(@Param('id', ParseUUIDPipe) id: FindOneParams) {
+  getOne(@Param('id', ParseUUIDPipe) id: string) {
     return this.usersService.getOne(id)
   }
 
@@ -50,9 +50,9 @@ export class UsersController {
   @HttpCode(HttpStatus.OK)
   update(
     @Param('id', ParseUUIDPipe) id: string,
-    @Body() ChangeUser: UpdateUserDto,
+    @Body() updateUser: UpdateUserDto,
   ) {
-    return this.usersService.update(id, ChangeUser)
+    return this.usersService.update(id, updateUser)
   }
 
   @Delete(':id')

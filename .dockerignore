@@ -1,0 +1,5 @@
+.dockerignore
+node_modules
+Nodejs2022Q4-service.postman_collection.json
+README.md
+.idea

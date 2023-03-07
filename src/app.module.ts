@@ -1,17 +1,25 @@
 import { Module } from '@nestjs/common'
-import { FavoriteModule } from './favorites/favorite.module'
-import { TracksModule } from './tracks/tracks.module'
 import { UsersModule } from './users/users.module'
-import { AlbumsModule } from './albums/albums.module'
+import { ConfigModule } from '@nestjs/config'
+import { TypeOrmModule } from '@nestjs/typeorm'
+import { TracksModule } from './tracks/tracks.module'
 import { ArtistsModule } from './artists/artists.module'
+import { AlbumsModule } from './albums/albums.module'
+import { FavoriteModule } from './favorites/favorite.module'
+import { typeOrmConfig } from './typeorm.config'
 
 @Module({
   imports: [
     UsersModule,
-    FavoriteModule,
     TracksModule,
-    AlbumsModule,
     ArtistsModule,
+    AlbumsModule,
+    FavoriteModule,
+    ConfigModule.forRoot({
+      isGlobal: true,
+      envFilePath: '.env',
+    }),
+    TypeOrmModule.forRoot(typeOrmConfig),
   ],
   controllers: [],
   providers: [],

@@ -1,38 +1,29 @@
+import { Injectable, NotFoundException } from '@nestjs/common'
+import { TrackDto } from './dto/track.dto'
+import { InjectRepository } from '@nestjs/typeorm'
+import { TrackEntity } from './entity/tracks.entity'
+import { Repository } from 'typeorm'
 import * as crypto from 'node:crypto'
-import {
-  forwardRef,
-  Inject,
-  Injectable,
-  NotFoundException,
-} from '@nestjs/common'
-import { DB } from 'src/DB/db.service'
-import { TracksEntity } from 'src/DB/entities/DBTracks'
-import { CreateTrackDto, TrackDto } from './dto/tracks.dto'
-import { FavoritesService } from '../favorites/favorites.service'
+import { FavoritesEntity } from '../favorites/entity/favorites.entity'
 
 @Injectable()
 export class TracksService {
-  private static db = new DB()
-
   constructor(
-    @Inject(forwardRef(() => FavoritesService))
-    private favoriteService: FavoritesService,
+    @InjectRepository(TrackEntity)
+    private readonly trackRepository: Repository<TrackEntity>,
+    // @Inject(forwardRef(() => FavoritesService))
+    // private favoriteService: FavoritesService,
+
+    @InjectRepository(FavoritesEntity)
+    private readonly favoriteRepository: Repository<FavoritesEntity>,
   ) {}
 
   async getAll() {
-    const tracksAll = await TracksService.db.tracks.findMany()
-    const arr: CreateTrackDto[] = []
-    tracksAll.forEach((track) => {
-      arr.push(new TrackDto(track))
-    })
-    return arr
+    return await this.trackRepository.find()
   }
 
   async getOne(id) {
-    const track = await TracksService.db.tracks.findOne({
-      key: 'id',
-      equals: id,
-    })
+    const track = await this.trackRepository.findOne({ where: { id } })
     if (track) {
       return track
     } else {
@@ -41,67 +32,47 @@ export class TracksService {
   }
 
   async getOneForFav(id) {
-    return await TracksService.db.tracks.findOne({
-      key: 'id',
-      equals: id,
-    })
+    return await this.trackRepository.findOne({ where: { id } })
   }
 
-  async getManyAndDelete(id: string, type: 'artistId' | 'albumId') {
-    const tracks = await TracksService.db.tracks.findMany({
-      key: type,
-      equals: id,
+  async getManyAndDelete(id: string, type: 'artist' | 'album') {
+    const tracks = await this.trackRepository.find({
+      where: { [type + 'Id']: id },
     })
-
     tracks.map((track) => {
-      TracksService.db.tracks.change(track.id, { ...track, [type]: null })
+      this.trackRepository.update(track.id, { ...track, [type + 'Id']: null })
     })
+    return { id, type }
   }
 
-  create(tracks: CreateTrackDto) {
-    const track = new TrackDto({
+  async create(tracks: TrackDto): Promise<TrackEntity> {
+    const track = await this.trackRepository.save({
       id: crypto.randomUUID(),
       name: tracks.name,
       duration: tracks.duration,
       artistId: tracks.artistId || null,
       albumId: tracks.albumId || null,
     })
-    TracksService.db.tracks.create(track as TracksEntity)
-    return track
+    return await this.getOne(track.id)
   }
 
-  async update(id: string, trackData: CreateTrackDto) {
-    const track: TracksEntity = await TracksService.db.tracks.findOne({
-      key: 'id',
-      equals: id,
+  async update(id: string, trackData: TrackDto) {
+    const track = await this.trackRepository.findOne({
+      where: { id },
     })
 
     if (!track) {
       throw new NotFoundException('Track not found')
     } else {
-      const newTrack = new TrackDto({
-        id: track.id,
-        name: trackData.name,
-        duration: trackData.duration,
-        artistId: trackData.artistId || null,
-        albumId: trackData.albumId || null,
-      })
-      return await TracksService.db.tracks.change(id, newTrack as TracksEntity)
+      await this.trackRepository.update(id, trackData)
+      return await this.getOne(track.id)
     }
   }
 
   async delete(id: string) {
-    const track: TracksEntity = await TracksService.db.tracks.findOne({
-      key: 'id',
-      equals: id as unknown as string,
-    })
-
+    const track = await this.getOne(id)
     if (track) {
-      const checkFav = await this.favoriteService.check(id, 'track')
-      if (checkFav !== -1) {
-        this.favoriteService.delete(id, 'track')
-      }
-      return await TracksService.db.tracks.delete(id)
+      return await this.trackRepository.delete({ id: track.id })
     } else {
       throw new NotFoundException('Track not found')
     }

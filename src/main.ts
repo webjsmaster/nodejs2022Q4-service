@@ -11,4 +11,5 @@ async function bootstrap() {
   app.useGlobalPipes(new ValidationPipe())
   console.log('Server started on: ', port)
 }
+
 bootstrap()
