@@ -6,6 +6,7 @@ import {
   Get,
   HttpCode,
   HttpStatus,
+  InternalServerErrorException,
   Param,
   ParseUUIDPipe,
   Post,
@@ -48,10 +49,7 @@ export class UsersController {
   @UsePipes(ValidationPipe)
   @Put(':id')
   @HttpCode(HttpStatus.OK)
-  update(
-    @Param('id', ParseUUIDPipe) id: string,
-    @Body() updateUser: UpdateUserDto,
-  ) {
+  update(@Param('id', ParseUUIDPipe) id: string, @Body() updateUser: UpdateUserDto) {
     return this.usersService.update(id, updateUser)
   }
 
@@ -59,5 +57,10 @@ export class UsersController {
   @HttpCode(HttpStatus.NO_CONTENT)
   delete(@Param('id', ParseUUIDPipe) id: string) {
     return this.usersService.delete(id)
+  }
+
+  @Get('/test/1')
+  testing() {
+    return this.usersService.testing()
   }
 }

@@ -1,8 +1,4 @@
-import {
-  ForbiddenException,
-  Injectable,
-  NotFoundException,
-} from '@nestjs/common'
+import { ForbiddenException, Injectable, InternalServerErrorException, Logger, NotFoundException } from '@nestjs/common'
 import { CreateUsersDto, UpdateUserDto } from './dto/users.dto'
 import { InjectRepository } from '@nestjs/typeorm'
 import { UserEntity } from './entity/users.entity'
@@ -10,18 +6,20 @@ import { DeleteResult, Repository } from 'typeorm'
 
 @Injectable()
 export class UsersService {
+  private readonly logger = new Logger(UsersService.name)
+
   constructor(
     @InjectRepository(UserEntity)
     private readonly userRepository: Repository<UserEntity>,
   ) {}
 
   async getAll(): Promise<UserEntity[]> {
+    this.logger.log('tset')
     return await this.userRepository.find()
   }
 
   async getOne(id: string): Promise<UserEntity> {
     const user = await this.userRepository.findOne({ where: { id } })
-
     if (user) {
       return user
     } else {
@@ -58,5 +56,14 @@ export class UsersService {
     } else {
       throw new NotFoundException('User not found')
     }
+  }
+
+  async getUserByLogin(login: string): Promise<UserEntity> {
+    const user = await this.userRepository.findOne({ where: { login } })
+    return !!user ? user : null
+  }
+
+  async testing() {
+    return new NotFoundException('User not found')
   }
 }

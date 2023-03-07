@@ -3,5 +3,6 @@
   "trailingComma": "all",
   "bracketSpacing": true,
   "bracketSameLine": true,
-  "semi": false
+  "semi": false,
+  "printWidth": 180
 }

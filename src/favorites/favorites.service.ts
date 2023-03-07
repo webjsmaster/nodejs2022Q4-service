@@ -1,10 +1,4 @@
-import {
-  forwardRef,
-  Inject,
-  Injectable,
-  NotFoundException,
-  UnprocessableEntityException,
-} from '@nestjs/common'
+import { forwardRef, Inject, Injectable, NotFoundException, UnprocessableEntityException } from '@nestjs/common'
 import { ArtistsService } from '../artists/artists.service'
 import { AlbumsService } from '../albums/albums.service'
 import { TracksService } from '../tracks/tracks.service'
@@ -96,9 +90,7 @@ export class FavoritesService {
     const exists = await this.doesExist(id, favs[0][type + 's'])
 
     if (exists) {
-      favs[0][type + 's'] = [...favs[0][type + 's']].filter(
-        (el) => el.id !== id,
-      )
+      favs[0][type + 's'] = [...favs[0][type + 's']].filter((el) => el.id !== id)
       await this.favoriteRepository.save(favs[0])
       return { message: 'Deleted to favorites list' }
     } else {

@@ -1,11 +1,4 @@
-import {
-  Column,
-  Entity,
-  JoinColumn,
-  ManyToOne,
-  PrimaryGeneratedColumn,
-} from 'typeorm'
-import { IsUUID } from 'class-validator'
+import { Column, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn } from 'typeorm'
 import { AlbumEntity } from '../../albums/entity/albums.entity'
 import { ArtistEntity } from '../../artists/entity/artists.entity'
 
@@ -17,7 +10,6 @@ export class TrackEntity {
   @Column()
   name: string
 
-  @IsUUID()
   @Column({ nullable: true })
   artistId: string | null
 
@@ -31,7 +23,6 @@ export class TrackEntity {
   })
   artist: string | null
 
-  @IsUUID()
   @Column({ nullable: true })
   albumId: string | null
 
